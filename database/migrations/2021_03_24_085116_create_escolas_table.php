@@ -15,6 +15,11 @@ class CreateEscolasTable extends Migration
     {
         Schema::create('escolas', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('tipo');
+            $table->string('localizacao');
+            $table->string('email')->unique();
+            $table->string('senha');
             $table->timestamps();
         });
     }
