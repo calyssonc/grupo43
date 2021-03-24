@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-    <p>Se você está lendo isso é porque consegue ver!</p>
+    <p>Novamente TESTANDO A BATATA NÂO SERA TIRADA</p>
 
     {{-- <head>
         <meta charset="utf-8">
