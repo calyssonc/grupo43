@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-    <p>Novamente TESTANDO A BATATA NÂO SERA TIRADA</p>
-    <p>Num ninho de mafagafos há sete mafagafinhos. Quando a mafagafa gafa, gafam os sete mafagafinhos.</p>
+    <p>BATATA</p>
+
 
     {{-- <head>
         <meta charset="utf-8">
