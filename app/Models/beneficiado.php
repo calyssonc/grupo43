@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class beneficiado extends Model
 {
     use HasFactory;
-}
+
+    protected $fillable = [ 'nome', 'email','senha', 'endereço', 'uf','cpf'];
+    protected $hidden = ['senha'];
+};
