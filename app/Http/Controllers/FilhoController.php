@@ -9,7 +9,7 @@ class FilhoController extends Controller
 {
     //Apresentar view de cadastro
     public function cadastro(){
-        return view('filhos.create');
+        return view('filho.create');
     }
     //CRUD
 
