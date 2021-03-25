@@ -9,7 +9,7 @@ class FilhoController extends Controller
 {
     //Apresentar view de cadastro
     public function cadastro(){
-        return view('filho.cadastro');
+        return view('filho.create');
     }
     //CRUD
 
@@ -20,9 +20,9 @@ class FilhoController extends Controller
         $filho = Filho::create($request->all());
         return "Cadastro realizado com sucesso";
     }
-    
-    
-    
+
+
+
     //Remover cadastro da escola no BD
-   
+
 }
