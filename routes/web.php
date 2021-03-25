@@ -2,11 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EscolaController;
+use App\Http\Controller\FilhoController;
 
 //Rota get para tela de cadastro de escola
-Route::get('escola/cadastro',[EscolaController::class, 'cadastro']);
+Route::get('escola/cadastro',[EscolaController::class, 'cadastro'])->name('escola.cadastro');
 //Rota post para cadastro de formulario de escola
-Route::post('escola/cadastro',[EscolaController::class, 'store']);
+Route::post('escola/cadastro',[EscolaController::class, 'store'])->name('escola.store');
+
+
 
 Route::get('/', function () {
     return view('welcome');

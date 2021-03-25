@@ -16,26 +16,10 @@ class EscolaController extends Controller
 
     //Cadastrar escola no BD
     public function store(Request $request){
-        $validado = $request->validate([
-            'nome' => 'required|max:255',
-            'tipo' => 'required',
-            'localizacao' => 'required',
-            'email' => 'required',
-            'senha' => 'required|max:15|min:5'
-        ]);
-
-        
-        
-        $escola = Escola::create([
-            'nome' =>$request->nome,
-            'tipo' =>$request->tipo,
-            'localizacao' =>$request->localizacao,
-            'email' =>$request->email,
-            'senha' =>$request->senha            
-        ]);
-        return $escola;
+        //cadastro no BD
+        $escola = Escola::create($request->all());
+        return "Cadastro realizado com sucesso";
     }
+
     
-    //Remover cadastro da escola no BD
-   
 }
