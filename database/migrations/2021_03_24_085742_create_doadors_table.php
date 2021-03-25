@@ -12,15 +12,15 @@ class CreateDoadorsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
         Schema::create('doadors', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('email');
-            $table->string('senha');
-            $table->string('endereco');
-            $table->string('uf');
-            $table->string('cpf');
+            $table->string('nome',200);
+            $table->string('email',50);
+            $table->string('senha',12);
+            $table->string('endereco',100);
+            $table->string('uf',3);
+            $table->string('cpf',11);
             $table->timestamps();
         });
     }

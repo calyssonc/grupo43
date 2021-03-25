@@ -9,7 +9,7 @@ class DoadorController extends Controller
 {
     //Apresentar view de cadastro
     public function cadastro(){
-        return view('doadors.create');
+        return view('doador.create');
     }
 
     //CRUD
@@ -20,5 +20,4 @@ class DoadorController extends Controller
         $escola = doador::create($request->all());
         return "Cadastro realizado com sucesso";
     }
-
 }
