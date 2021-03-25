@@ -12,7 +12,7 @@ Route::post('escola/cadastro',[EscolaController::class, 'store'])->name('escola.
 //Rota get para tela de cadastro do filho
 Route::get('filho/cadastro',[FilhoController::class, 'cadastro'])->name('filho.cadastro');
 //Rota post para cadastro de formulário de filho
-Route::post('filho/cadastro', [FilhoController::class, 'store'])->name('filho.cadastro');
+Route::post('filho/cadastro',[FilhoController::class, 'store'])->name('filho.store');
 
 
 
