@@ -13,16 +13,14 @@ Route::get('escola/cadastro',[EscolaController::class, 'cadastro'])->name('escol
 Route::post('escola/cadastro',[EscolaController::class, 'store'])->name('escola.store');
 
 //Rota get para tela de cadastro do filho
-Route::get('filho/cadastro',[FilhoController::class, 'cadastro'])->name('escola.cadastro');
+Route::get('filho/cadastro',[FilhoController::class, 'cadastro'])->name('filho.cadastro');
 //Rota post para cadastro de formulario de escola
-Route::post('filho/cadastro',[FilhoController::class, 'store'])->name('escola.store');
+Route::post('filho/cadastro',[FilhoController::class, 'store'])->name('filho.store');
 
 //Rota get para tela de cadastro do filho
 Route::get('doador/cadastro',[DoadorController::class, 'cadastro'])->name('doador.cadastro');
 //Rota post para cadastro de formulário de filho
 Route::post('doador/cadastro', [DoadorController::class, 'store'])->name('doador.store');
-Route::post('filho/cadastro',[FilhoController::class, 'store'])->name('filho.store');
-
 
 
 Route::get('/', function () {
