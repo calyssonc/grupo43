@@ -5,6 +5,8 @@ use App\Http\Controllers\EscolaController;
 use App\Http\Controllers\DoadorController;
 use App\Http\Controllers\FilhoController;
 
+
+
 //Rota get para tela de cadastro de escola
 Route::get('escola/cadastro',[EscolaController::class, 'cadastro'])->name('escola.cadastro');
 //Rota post para cadastro de formulario de escola
@@ -19,6 +21,7 @@ Route::post('filho/cadastro',[FilhoController::class, 'store'])->name('escola.st
 Route::get('doador/cadastro',[DoadorController::class, 'cadastro'])->name('doador.cadastro');
 //Rota post para cadastro de formulário de filho
 Route::post('doador/cadastro', [DoadorController::class, 'store'])->name('doador.store');
+Route::post('filho/cadastro',[FilhoController::class, 'store'])->name('filho.store');
 
 
 
