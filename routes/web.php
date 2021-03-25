@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EscolaController;
+use App\Http\Controller\DoadorController;
 use App\Http\Controller\FilhoController;
 
 //Rota get para tela de cadastro de escola
@@ -12,7 +13,12 @@ Route::post('escola/cadastro',[EscolaController::class, 'store'])->name('escola.
 //Rota get para tela de cadastro do filho
 Route::get('filho/cadastro',[FilhoController::class, 'cadastro'])->name('filho.cadastro');
 //Rota post para cadastro de formulário de filho
-Route::post('filho/cadastro', [FilhoController::class, 'store'])->name('filho.cadastro');
+Route::post('filho/cadastro', [FilhoController::class, 'store'])->name('filho.store');
+
+//Rota get para tela de cadastro do filho
+Route::get('doador/cadastro',[DoadorController::class, 'cadastro'])->name('doador.cadastro');
+//Rota post para cadastro de formulário de filho
+Route::post('doador/cadastro', [DoadorController::class, 'store'])->name('doador.store');
 
 
 

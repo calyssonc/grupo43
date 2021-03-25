@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDoardorsTable extends Migration
+class CreateDoadorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,14 @@ class CreateDoardorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('doardors', function (Blueprint $table) {
+        Schema::create('doadors', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('email');
+            $table->string('senha');
+            $table->string('endereco');
+            $table->string('uf');
+            $table->string('cpf');
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ class CreateDoardorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doardors');
+        Schema::dropIfExists('doadors');
     }
 }
