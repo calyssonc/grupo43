@@ -3,21 +3,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\doador;
+use App\Models\Doador;
 
 class DoadorController extends Controller
 {
     //Apresentar view de cadastro
     public function cadastro(){
-        return view('doador.create');
+        return view('doador.cadastro');
+    }
+    //Apresentar view de Edição
+    public function editar(Request $request, $id){
+        $doador = Doador::find($id);
+        return view('doador.editar', compact('doador'));
     }
 
     //CRUD
+    //Retorna todos doadores do BD
+    public function apresentarTodos(){
+        $doadores['doadores'] = Doador::all();
+        return $doadores;
+    }
+    
+    //Atualiza um doador do BD
+    //Não foi resolvido pois há problemas com laravel
+    public function atualizarDadoPeloId(Request $request,  $id){
+        $doador = Doador::find($id);
+        $doador($request->all());
+        $doador.save();
 
-    //Cadastrar escola no BD
+        return "Atualizado com sucesso";
+    }
+
+    //Cadastrar doador no BD
     public function store(Request $request){
         //cadastro no BD
-        $escola = doador::create($request->all());
+        $doador = Doador::create($request->all());
         return "Cadastro realizado com sucesso";
     }
 }

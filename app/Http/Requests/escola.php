@@ -23,12 +23,12 @@ class escola extends FormRequest
      */
     public function rules()
     {
-        return  $validado = $request->validate([
-            'nome' => ['required','max:255'],
-            'tipo' => ['required'],
-            'localizacao' => ['required'],
-            'email' => ['required'],
-            'senha' => ['required','max:15','min:5']
-        ]);
+        return  [
+            'nome' => 'required|max:255|string',
+            'tipo' => 'required|string',
+            'localizacao' => 'required|string',
+            'email' => 'required|max:255|string',
+            'senha' => 'required|max:15|min:5'
+        ];
     }
 }
