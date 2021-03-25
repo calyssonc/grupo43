@@ -17,7 +17,7 @@ class FilhoController extends Controller
 
     public function store(Request $request){
         //Cadastro no BD
-        $filho = Filho::create($request->all());
+        $filho = filho::create($request->all());
         return "Cadastro realizado com sucesso";
     }
 
