@@ -9,6 +9,11 @@ Route::get('escola/cadastro',[EscolaController::class, 'cadastro'])->name('escol
 //Rota post para cadastro de formulario de escola
 Route::post('escola/cadastro',[EscolaController::class, 'store'])->name('escola.store');
 
+//Rota get para tela de cadastro do filho
+Route::get('filho/cadastro',[FilhoController::class, 'cadastro'])->name('filho.cadastro');
+//Rota post para cadastro de formulário de filho
+Route::post('filho/cadastro', [FilhoController::class, 'store'])->name('filho.cadastro');
+
 
 
 Route::get('/', function () {

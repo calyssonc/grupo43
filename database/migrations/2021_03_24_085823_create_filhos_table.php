@@ -16,9 +16,7 @@ class CreateFilhosTable extends Migration
         Schema::create('filhos', function (Blueprint $table) {
             $table->id();
             $table->string('nome',220);
-            $table->string('email')->unique();
-            $table->string('senha');
-            $table->string('RA');
+            $table->string('RA');   
             $table->timestamps();
         });
     }
