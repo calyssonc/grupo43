@@ -15,7 +15,13 @@ class CreateMaterialsTable extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->unsignedBigInteger('escola_id');
             $table->timestamps();
+        });
+
+        Schema::table('materials', function (Blueprint $table) {
+            $table->foreign('escola_id')->references('id')->on("escolas");
         });
     }
 

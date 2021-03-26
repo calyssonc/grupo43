@@ -20,6 +20,7 @@ class DoadorController extends Controller
     //CRUD
     //Retorna todos doadores do BD
     public function apresentarTodos(){
+        //Busca no bd
         $doadores['doadores'] = Doador::all();
         return $doadores;
     }
@@ -27,6 +28,7 @@ class DoadorController extends Controller
     //Atualiza um doador do BD
     //Não foi resolvido pois há problemas com laravel
     public function atualizarDadoPeloId(Request $request,  $id){
+        //Busca no BD com parametro ID
         $doador = Doador::find($id);
         $doador($request->all());
         $doador.save();
