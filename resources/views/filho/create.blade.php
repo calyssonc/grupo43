@@ -16,7 +16,7 @@
         <form>
             @csrf
                 <div><label for="nome">Nome</label><input type="text" name="nome" id="nome"></div>
-                <div><label for="ra">RA</label><input type="text" name="ra" id="ra"></div>
+                <div><label for="RA">RA</label><input type="text" name="RA" id="RA"></div>
                 <button type="submit"> Salvar </button>
                 @if ($errors->any())
                     <div class="alert alert-danger">
