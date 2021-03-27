@@ -27,5 +27,10 @@ class EscolaController extends Controller
         return "Cadastro realizado com sucesso";
     }
 
-    
+    //Deletar escolar do BD
+    public function delete(Request $request, $id){
+        Escola::delete($id);
+
+        return "Escola Deletada com sucesso";
+    }
 }

@@ -10,7 +10,7 @@ class Material extends Model
     use HasFactory;
     protected $fillable = ['nome','escola_id'];
 
-    public function escolas() {
+    public function escola() {
         return $this->belongsTo('App\Models\Escola');
     }
 }
