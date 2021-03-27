@@ -20,9 +20,9 @@ class CreateMaterialsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('material', function (Blueprint $table) {
-            $table->foreign('escola_id')->references('id')->on("escola");
-        });
+        // Schema::table('materials', function (Blueprint $table) {
+        //     $table->foreign('escola_id')->references('id')->on("escolas");
+        // });
     }
 
     /**
