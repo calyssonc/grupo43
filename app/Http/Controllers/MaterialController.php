@@ -33,4 +33,12 @@ class MaterialController extends Controller
 
         return "Cadastro  concluido";
     }
+
+    //Deletar material do BD
+    public function delete(Request $request,$id){
+
+        Escola::delete($id);
+
+        return "Material Deletado";
+    }
 }
