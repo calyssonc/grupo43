@@ -34,3 +34,5 @@ class EscolaController extends Controller
         return "Escola Deletada com sucesso";
     }
 }
+
+

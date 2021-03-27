@@ -15,7 +15,7 @@ Route::get('escola/cadastro', [EscolaController::class, 'cadastro'])->name('esco
 //Rota post para cadastro de formulario de escola
 Route::post('escola/cadastro', [EscolaController::class, 'store'])->name('escola.store');
 //Rota get retorna lista de escolas
-Route::get('escola/apresentarTodos', [EscolaController::class, 'apresentarTodos'])->name('escola.apresentarTodos');
+Route::get('escola/apresentarTodos',[EscolaController::class, 'apresentarTodos'])->name('escola.apresentarTodos');
 //Rota delete para deletar escola do banco de dados
 Route::delete('escola/delete',[EscolaController::class, 'delete'])->name('escola.delete');
 
