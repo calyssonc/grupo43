@@ -13,9 +13,17 @@ class CreateNecessitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('necessitas', function (Blueprint $table) {
+        Schema::create('necessita', function (Blueprint $table) {
             $table->id();
+            $table->number('material_Qty');
+            $table->boolean('status');
+            $table->unsignedBigInteger('material_id');
+            $table->unsignedBigInteger('filho_id');
             $table->timestamps();
+        });
+        Schema::table('necessita', function (Blueprint $table) {
+            $table->foreign('material_id')->references('id')->on("material");
+            $table->foreign('filho')->references('id')->on("filho");
         });
     }
 

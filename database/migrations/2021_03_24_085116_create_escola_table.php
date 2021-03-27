@@ -13,16 +13,19 @@ class CreateEscolasTable extends Migration
      */
     public function up()
     {
-        Schema::create('escolas', function (Blueprint $table) {
+        Schema::create('escola', function (Blueprint $table) {
             $table->id();
             $table->string('nome',220);
             $table->string('tipo',20);
             $table->string('localizacao');
-            $table->string('email')->unique();
-            $table->string('senha',220);
+            $table->string('cnpj')->unique();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
-    }
+        Schema::table('escola', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on("users");
+        });
+    } 
 
     /**
      * Reverse the migrations.

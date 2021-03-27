@@ -22,6 +22,18 @@ class MaterialController extends Controller
         return $materiais;
     }
 
+    //Atualiza uma escola do BD
+    public function atualizarDadoPeloId(StoreMaterial $request,  $id){
+        //Busca no BD com parametro ID
+        $material = Material::find($id);
+
+        if($material->update($request->all())){
+            return "Atualizado com sucesso";
+        } else {
+            return "Falha";
+        }
+    }
+
     //Cadastrar material no BD
     public function store(Request $request){
         //cadastro no bd
@@ -36,8 +48,7 @@ class MaterialController extends Controller
 
     //Deletar material do BD
     public function delete(Request $request,$id){
-
-        Escola::delete($id);
+        Material::where('id', $id)->delete($id);
 
         return "Material Deletado";
     }

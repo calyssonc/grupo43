@@ -10,11 +10,12 @@ class Doacao extends Model
     use HasFactory;
     
 
+   
     public function doador() {
-        return $this->belongsTo('App\Models\Escola');
+        return $this->belongsTo('App\Models\Doador');
     }
 
     public function necessita() {
-        return $this->belongsTo('App\Models\Escola');
+        return $this->belongsTo('App\Models\Necessita');
     }
 }

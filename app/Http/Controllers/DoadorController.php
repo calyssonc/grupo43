@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreDoador;
 use Illuminate\Http\Request;
 use App\Models\Doador;
+use App\Models\User;
 
 class DoadorController extends Controller
 {
@@ -11,6 +13,7 @@ class DoadorController extends Controller
     public function cadastro(){
         return view('doador.cadastro');
     }
+    
     //Apresentar view de Edição
     public function editar(Request $request, $id){
         $doador = Doador::find($id);
@@ -18,6 +21,7 @@ class DoadorController extends Controller
     }
 
     //CRUD
+
     //Retorna todos doadores do BD
     public function apresentarTodos(){
         //Busca no bd
@@ -26,20 +30,33 @@ class DoadorController extends Controller
     }
     
     //Atualiza um doador do BD
-    //Não foi resolvido pois há problemas com laravel
-    public function atualizarDadoPeloId(Request $request,  $id){
+    public function atualizarDadoPeloId(StoreDoador $request,  $id){
         //Busca no BD com parametro ID
         $doador = Doador::find($id);
-        $doador($request->all());
-        $doador.save();
 
-        return "Atualizado com sucesso";
+        if($doador->update($request->all())){
+            return "Atualizado com sucesso";
+        } else {
+            return "Falha";
+        }
+    }
+
+    //Deletar doador do BD
+    public function delete(Request $request, $id){
+        $escola = Doador::where('id',$id)->delete();
+
+        return "Doador Deletado com sucesso";
     }
 
     //Cadastrar doador no BD
-    public function store(Request $request){
+    public function store(Request $request, $idUser){
         //cadastro no BD
-        $doador = Doador::create($request->all());
+        $doador = new Doador($request->all());
+
+        $user = User::find($idUser);
+
+        $user->doadores()->save($doador);
+
         return "Cadastro realizado com sucesso";
     }
 }

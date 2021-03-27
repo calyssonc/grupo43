@@ -14,7 +14,7 @@ class CreateDoacaosTable extends Migration
     public function up()
     {
 
-        Schema::create('doacaos', function (Blueprint $table) {
+        Schema::create('doacao', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_doador');
             $table->unsignedBigInteger('id_necessita');
@@ -22,8 +22,8 @@ class CreateDoacaosTable extends Migration
         });
 
         Schema::table('doacaos', function (Blueprint $table) {
-            $table->foreign('id_doador')->references('id')->on("doadors");
-            $table->foreign('id_necessita')->references('id')->on("necessitas");
+            $table->foreign('id_doador')->references('id')->on("doador");
+            $table->foreign('id_necessita')->references('id')->on("necessita");
         });
     }
 
