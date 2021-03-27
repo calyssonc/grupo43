@@ -46,22 +46,6 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-
-        'escola' => [
-            'driver' => 'session',
-            'provider' => 'escola',
-        ],
-
-        'doador' => [
-            'driver' => 'session',
-            'provider' => 'doador',
-        ],
-
-        'beneficiado' => [
-            'driver' => 'session',
-            'provider' => 'beneficiado',
-        ],
-
     ],
 
     /*
