@@ -16,7 +16,7 @@
         <form method="POST" action="/material/cadastro">
             @csrf
                 <div><label for="nome">Nome</label><input type="text" name="nome" id="nome"></div>
-                <div><label for="escola_id">escola_id</label><input name="escola_id" id="escola_id" value={{$idEscola}}></div>
+                <div style="display:none"><label for="escola_id">escola_id</label><input name="escola_id" id="escola_id" value={{$idEscola}}></div>
                 <button type="submit"> Salvar </button>
         </form>
     </body>

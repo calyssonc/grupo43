@@ -8,6 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Doador extends Model
 {
     use HasFactory;
-    protected $fillable = ['nome','email','senha','endereco','uf','cpf'];
-    protected $hidden = ['senha'];
+    protected $fillable = ['nome','cpf'];
+
+
+    //FK User
+    public function user() {
+        return $this->belongsTo('App\Models\Users');
+    }
+
+    //FK Doação
+    public function doacoes() {
+        return $this->hasMany('App\Models\Doacao');
+    }
 }

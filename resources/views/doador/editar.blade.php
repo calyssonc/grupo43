@@ -23,6 +23,15 @@
                 <div><label for="uf">UF</label><input type="text" name="uf" id="uf" value={{$doador->uf}}></div>
                 <div><label for="cpf">CPF</label><input type="text" name="cpf" id="cpf" value={{$doador->cpf}}></div>
                 <button type="submit"> Salvar </button>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
         </form>
     </body>
 </html>

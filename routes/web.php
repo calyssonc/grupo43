@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EscolaController;
 use App\Http\Controllers\DoadorController;
 use App\Http\Controllers\FilhoController;
+use App\Http\Controllers\MaterialController;
+
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

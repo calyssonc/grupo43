@@ -2,37 +2,59 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doacao;
+use App\Models\Doador;
+use App\Models\Necessita;
 use Illuminate\Http\Request;
-use App\Models\Escola;
 
-class EscolaController extends Controller
+class DoacaoController extends Controller
 {
-    //Apresentar view de cadastro
-    public function cadastro(){
-        return view('escola.cadastro');
+    //Apresentar view cadastro recebendo o Id do Doador e da Necessidade
+    public function cadastro($idDoador, $idNecessita){
+        return view('doacao.cadastro', compact('idDoador', 'idNecessita'));
     }
 
     //CRUD
 
-    //Retorna todas as escolas do BD
+    //Retornar todos as doacoes no BD
     public function apresentarTodos(){
-        $escolas['escolas'] = Escola::all();
-        return $escolas;
+        //Busca todos as doações do BD
+        $doacoes['doacoes'] = Doacao::all();
+        return $doacoes;
     }
 
-    //Cadastrar escola no BD
+    //Atualiza uma doacao do BD
+    public function atualizarDadoPeloId(StoreDoacao $request,  $id){
+        //Busca no BD com parametro ID
+        $doacao = Doacao::find($id);
+
+        if($doacao->update($request->all())){
+            return "Atualizado com sucesso";
+        } else {
+            return "Falha";
+        }
+    }
+
+    //Cadastrar Doacao no BD
     public function store(Request $request){
-        //cadastro no BD
-        $escola = Escola::create($request->all());
-        return "Cadastro realizado com sucesso";
+       //cadastro no bd
+       $doacao = new Doacao($request->all());
+
+       $doador = Doador::find($request->doador_id);
+
+       $doador->doacoes()->save($doacao);
+
+       $necessita = Necessita::find($request->necessita_id);
+
+       $necessita->doacao()->save($doacao);
+
+       return "Cadastro  concluido";
     }
 
-    //Deletar escolar do BD
+    //Deletar doacao do BD
     public function delete(Request $request, $id){
-        Escola::delete($id);
+        $doacao = Doacao::where('id',$id)->delete();
 
-        return "Escola Deletada com sucesso";
+        return "Doacao Deletada com sucesso";
     }
 }
-
-
