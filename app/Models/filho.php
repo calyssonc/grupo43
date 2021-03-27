@@ -10,5 +10,4 @@ class filho extends Model
     use HasFactory;
 
     protected $fillable = ['nome','RA'];
-    protected $hidden = ['senha'];
 }

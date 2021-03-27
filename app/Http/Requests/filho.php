@@ -13,7 +13,7 @@ class filho extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,11 +22,9 @@ class filho extends FormRequest
      * @return array
      */
     public function rules(){
-
-        return $validado = $request->validate([
-            'nome'=>['requerid','max:255'],
-            'RA'=>['required']
-        
-        ]);       
+        return [
+            'nome' => 'required|max:255|string',
+            'RA' =>'required|string'
+        ];       
     }
 }

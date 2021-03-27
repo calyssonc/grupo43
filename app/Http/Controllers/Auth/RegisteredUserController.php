@@ -44,6 +44,8 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]));
 
+        $user->attachRole('doador');
+
         event(new Registered($user));
 
         return redirect(RouteServiceProvider::HOME);
