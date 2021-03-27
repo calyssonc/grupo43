@@ -13,10 +13,10 @@ class CreateFilhosTable extends Migration
      */
     public function up()
     {
-        Schema::create('filhos', function (Blueprint $table) {
+        Schema::create('filho', function (Blueprint $table) {
             $table->id();
             $table->string('nome',220);
-            $table->string('RA');   
+            $table->string('RA');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateFilhosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filhos');
+        Schema::dropIfExists('filho');
     }
 }

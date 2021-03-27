@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDoacaosTable extends Migration
+class CreateDoacaoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,6 @@ class CreateDoacaosTable extends Migration
      */
     public function up()
     {
-
         Schema::create('doacao', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_doador');
@@ -21,7 +20,7 @@ class CreateDoacaosTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('doacaos', function (Blueprint $table) {
+        Schema::table('doacao', function (Blueprint $table) {
             $table->foreign('id_doador')->references('id')->on("doador");
             $table->foreign('id_necessita')->references('id')->on("necessita");
         });
@@ -34,6 +33,6 @@ class CreateDoacaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doacaos');
+        Schema::dropIfExists('doacao');
     }
 }

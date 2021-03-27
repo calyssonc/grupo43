@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNecessitasTable extends Migration
+class CreateNecessitaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,15 +15,15 @@ class CreateNecessitasTable extends Migration
     {
         Schema::create('necessita', function (Blueprint $table) {
             $table->id();
-            $table->number('material_Qty');
-            $table->boolean('status');
+            $table->integer('material_qty');
+            $table->bigInteger('status');
             $table->unsignedBigInteger('material_id');
             $table->unsignedBigInteger('filho_id');
             $table->timestamps();
         });
         Schema::table('necessita', function (Blueprint $table) {
             $table->foreign('material_id')->references('id')->on("material");
-            $table->foreign('filho')->references('id')->on("filho");
+            $table->foreign('filho_id')->references('id')->on("filho");
         });
     }
 
@@ -34,6 +34,6 @@ class CreateNecessitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('necessitas');
+        Schema::dropIfExists('necessita');
     }
 }
