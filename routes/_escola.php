@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth', 'role:escola']], function () {
     Route::get('/dashboard-escola', [DashboardController::class, 'index'])->name('dashboard');

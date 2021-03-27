@@ -21,7 +21,7 @@ Route::post('material/cadastro', [MaterialController::class, 'store'])->name('ma
 //Rota get para retornar lista de Materiais
 Route::get('material/apresentarTodos', [MaterialController::class, 'apresentarTodos'])->name('material.apresentartodos');
 
-require __DIR__ . '/beneficiado.php';
-require __DIR__ . '/doador.php';
-require __DIR__ . '/escola.php';
+require __DIR__ . '/_beneficiado.php';
+require __DIR__ . '/_doador.php';
+require __DIR__ . '/_escola.php';
 require __DIR__ . '/auth.php';

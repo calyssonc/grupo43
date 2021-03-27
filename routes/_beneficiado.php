@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 //Rota get para tela de cadastro do filho
 Route::get('filho/cadastro', [FilhoController::class, 'cadastro'])->name('filho.cadastro');
