@@ -5,52 +5,87 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEscola;
 use Illuminate\Http\Request;
 use App\Models\Escola;
-use App\Models\User;
-
 
 class EscolaController extends Controller
 {
+    // public function index(){
+    //     return view('dashboard-escola');
+    // }
+
+    //Retorna todos os registros de escolas
+    public function index(){
+        $escolas = Escola::paginate();
+        return view('escola/index', compact('escolas'));
+    }
+
     //Apresentar view de cadastro
     public function cadastro(){
         return view('escola.cadastro');
     }
 
-    //CRUD
+    //Realiza o cadastro de uma nova escola
+    public function store(StoreEscola $request)
+    {
 
-    //Retorna todas as escolas do BD
-    public function apresentarTodos(){
-        $escolas['escolas'] = Escola::all();
-        return $escolas;
-    }
-
-    //Atualiza uma escola do BD
-    public function atualizarDadoPeloId(StoreEscola $request,  $id){
-        //Busca no BD com parametro ID
-        $escola = Escola::find($id);
-
-        if($escola->update($request->all())){
-            return "Atualizado com sucesso";
-        } else {
-            return "Falha";
+        if(Escola::create($request->all())){
+            return redirect()
+            ->route('escola.index')
+            ->with('message', "Adicionado!");
+        }else{
+            return redirect()
+            ->route('escola.index')
+            ->with('message', "Erro ao adicionar!");
         }
+
     }
 
-    //Cadastrar escola no BD
-    public function store(Request $request, $idUser){
-        //cadastro no BD
-        $escola = new Escola($request->all());
-
-        $user = User::find($idUser);
-
-        $user->escolas()->save($escola);
-
-        return "Cadastro realizado com sucesso";
+    //Mostra o perfil de uma escola cadastrada
+    public function show($id){
+        if(!$escola = Escola::where('id',$id)->first()){
+            return redirect()->route('escola.index');
+        }
+        return view('escola/show',compact('escola'));
     }
 
-    //Deletar escolar do BD
-    public function delete(Request $request, $id){
-        $escola = Escola::where('id',$id)->delete();
+    //Atualiza os dados de uma escola
+    public function update(StoreEscola $request,$id){
+        if(!$escola = Escola::where('id',$id)->first()){
+            return redirect()->back();
+        }
 
-        return "Escola Deletada com sucesso";
+        $escola->update($request->all());
+
+        return redirect()
+        ->route('escola.index')
+        ->with('message',"Atualizado!");
+    }
+
+    //Apaga um registro de escola do banco de dados
+    public function destroy($id)
+    {
+
+        if (!$escola = Escola::find($id)) {
+            return redirect()
+                ->route('escola.index')
+                ->with('message', "Escola não encontrada!");
+        }
+
+        $escola->delete();
+        return redirect()
+            ->route('escola.index')
+            ->with('message', "Apagado!");
+    }
+
+    public function search(Request $request)
+    {
+        $filters = $request->except('token');
+
+        $escolas = Escola::where('name', 'LIKE', "%{$request->search}%")
+            ->orWhere('localizacao', 'LIKE', "%{$request->search}%")
+            ->orWhere('tipo', 'LIKE', "%{$request->search}%")
+            ->orWhere('telefone', 'LIKE', "%{$request->search}%")
+            ->orWhere('email', 'LIKE', "%{$request->search}%")
+            ->paginate();
+        return view("/escola/index", compact('escolas', 'filters'));
     }
 }

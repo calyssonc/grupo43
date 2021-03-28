@@ -15,15 +15,15 @@ class CreateNecessitaTable extends Migration
     {
         Schema::create('necessita', function (Blueprint $table) {
             $table->id();
-            $table->integer('material_qty');
-            $table->bigInteger('status');
-            $table->unsignedBigInteger('material_id');
-            $table->unsignedBigInteger('filho_id');
+            $table->bigInteger('material_qty');
+            $table->string('status');
+            $table->unsignedBigInteger('id_material');
+            $table->unsignedBigInteger('id_filho');
             $table->timestamps();
         });
         Schema::table('necessita', function (Blueprint $table) {
-            $table->foreign('material_id')->references('id')->on("material");
-            $table->foreign('filho_id')->references('id')->on("filho");
+            $table->foreign('id_material')->references('id')->on("material");
+            $table->foreign('id_filho')->references('id')->on("filho");
         });
     }
 

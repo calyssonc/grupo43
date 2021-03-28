@@ -24,11 +24,12 @@ class StoreEscola extends FormRequest
     public function rules()
     {
         return  [
-            'nome' => 'required|max:255|string',
-            'tipo' => 'required|string',
-            'localizacao' => 'required|string',
-            'email' => 'required|max:255|string',
-            'senha' => 'required|max:15|min:5'
+            'name' => 'required|max:255',
+            'tipo' => 'required|max:20',
+            'localizacao' => 'required',
+            'email' => 'required|max:255',
+            'password' => 'required|max:15|min:5',
+            'telefone' => 'required|max:11|min:11'
         ];
     }
 }

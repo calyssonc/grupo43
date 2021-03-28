@@ -13,17 +13,18 @@ class CreateEscolaTable extends Migration
      */
     public function up()
     {
-        Schema::create('escola', function (Blueprint $table) {
+        Schema::create('escolas', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',220);
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
+
             $table->string('tipo',20);
             $table->string('localizacao');
-            $table->string('cnpj')->unique();
-            $table->unsignedBigInteger('user_id');
-            $table->timestamps();
-        });
-        Schema::table('escola', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on("users");
+            $table->string('telefone',11)->unique();
         });
     }
 
@@ -34,6 +35,6 @@ class CreateEscolaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('escola');
+        Schema::dropIfExists('escolas');
     }
 }

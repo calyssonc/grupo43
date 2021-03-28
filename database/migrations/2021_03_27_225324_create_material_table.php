@@ -15,13 +15,13 @@ class CreateMaterialTable extends Migration
     {
         Schema::create('material', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->unsignedBigInteger('escola_id');
+            $table->string('name');
+            $table->unsignedBigInteger('id_escola');
             $table->timestamps();
         });
 
         Schema::table('material', function (Blueprint $table) {
-            $table->foreign('escola_id')->references('id')->on("escola");
+            $table->foreign('id_escola')->references('id')->on("escolas");
         });
     }
 

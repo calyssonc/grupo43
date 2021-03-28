@@ -9,12 +9,19 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        if (Auth::user()->hasRole('escola')) {
-            return view('dashboard-escola');
-        } elseif (Auth::user()->hasRole('doador')) {
-            return view('dashboard-doador');
-        } elseif (Auth::user()->hasRole('beneficiado')) {
-            return view('dashboard-beneficiado');
+
+        if (Auth::user()) {
+            if (Auth::user()->hasRole('escola')) {
+                return view('dashboard-escola');
+            } elseif (Auth::user()->hasRole('doador')) {
+                return view('dashboard-doador');
+            } elseif (Auth::user()->hasRole('beneficiado')) {
+                return view('dashboard-beneficiado');
+            }
+        } else {
+            return view('dashboard');
         }
+
+        return view('dashboard');
     }
 }

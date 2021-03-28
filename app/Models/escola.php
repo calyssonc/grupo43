@@ -4,14 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laratrust\Traits\LaratrustUserTrait;
 
 
 
 class Escola extends Model
 {
+    use LaratrustUserTrait;
     use HasFactory;
 
-    protected $fillable = ['nome','tipo','localizacao',"cnpj"];
+    protected $fillable = ['name','email','password',"tipo","localizacao","telefone"];
 
 
     //FK User

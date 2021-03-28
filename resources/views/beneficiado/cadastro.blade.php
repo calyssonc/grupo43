@@ -1,13 +1,13 @@
 @extends('template/template')
 
-@section('title','Cadastro de doador')
+@section('title','Cadastro de beneficiado')
 
 @section('content')
 
 <x-guest-layout>
     <x-auth-card>
 
-        <h1>Cadastro de doador</h1>
+        <h1>Cadastro de Beneficiado</h1>
         <br>
 
         <x-slot name="logo">
@@ -19,12 +19,12 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('doador.cadastro') }}">
+        <form method="POST" action="{{ route('beneficiado.cadastro') }}">
             @csrf
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Nome do doador')" />
+                <x-label for="name" :value="__('Nome do beneficiado')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
@@ -38,9 +38,16 @@
 
             <!-- CPF -->
             <div>
-                <x-label for="cpf" :value="__('CPF do doador')" />
+                <x-label for="cpf" :value="__('CPF do beneficiado')" />
 
                 <x-input id="cpf" class="block mt-1 w-full" type="text" name="cpf" :value="old('cpf')" required />
+            </div>
+
+            <!-- Telefone -->
+            <div>
+                <x-label for="telefone" :value="__('telefone do beneficiado')" />
+
+                <x-input id="telefone" class="block mt-1 w-full" type="text" name="telefone" :value="old('telefone')" required />
             </div>
 
             <!-- Localização (ENREDEÇO) -->

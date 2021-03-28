@@ -21,7 +21,7 @@ class CreateDoacaoTable extends Migration
         });
 
         Schema::table('doacao', function (Blueprint $table) {
-            $table->foreign('id_doador')->references('id')->on("doador");
+            $table->foreign('id_doador')->references('id')->on("doadors");
             $table->foreign('id_necessita')->references('id')->on("necessita");
         });
     }
