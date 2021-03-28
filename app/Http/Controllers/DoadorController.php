@@ -13,7 +13,7 @@ class DoadorController extends Controller
     public function cadastro(){
         return view('doador.cadastro');
     }
-    
+
     //Apresentar view de Edição
     public function editar(Request $request, $id){
         $doador = Doador::find($id);
@@ -28,7 +28,7 @@ class DoadorController extends Controller
         $doadores['doadores'] = Doador::all();
         return $doadores;
     }
-    
+
     //Atualiza um doador do BD
     public function atualizarDadoPeloId(StoreDoador $request,  $id){
         //Busca no BD com parametro ID

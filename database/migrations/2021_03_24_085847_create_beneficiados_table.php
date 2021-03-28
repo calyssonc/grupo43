@@ -13,9 +13,18 @@ class CreateBeneficiadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('beneficiado', function (Blueprint $table) {
+        Schema::create('beneficiados', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
+
+            $table->string('localizacao');
+            $table->string('cpf',11)->unique();
+            $table->string('telfone',11)->unique();
         });
     }
 
@@ -26,6 +35,6 @@ class CreateBeneficiadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beneficiado');
+        Schema::dropIfExists('beneficiados');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DoadorController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth', 'role:doador']], function () {

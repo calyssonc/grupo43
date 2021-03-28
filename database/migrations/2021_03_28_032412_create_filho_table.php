@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFilhosTable extends Migration
+class CreateFilhoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,15 @@ class CreateFilhosTable extends Migration
     {
         Schema::create('filho', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',220);
-            $table->string('RA');
+            $table->string("name");
+            $table->string("ra");
+            $table->unsignedBigInteger("id_escola");
+            $table->unsignedBigInteger("id_beneficiado");
             $table->timestamps();
+        });
+        Schema::table('filho', function (Blueprint $table) {
+            $table->foreign('id_escola')->references('id')->on("escolas");
+            $table->foreign('id_beneficiado')->references('id')->on("beneficiados");
         });
     }
 

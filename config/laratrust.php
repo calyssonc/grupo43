@@ -74,6 +74,9 @@ return [
     */
     'user_models' => [
         'users' => \App\Models\User::class,
+        'escola' => \App\Models\Escola::class,
+        'doador' => \App\Models\Doador::class,
+        'beneficiado' => \App\Models\beneficiado::class,
     ],
 
     /*

@@ -13,15 +13,17 @@ class CreateDoadorTable extends Migration
      */
     public function up()
     {
-        Schema::create('doador', function (Blueprint $table) {
+        Schema::create('doadors', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',200);
-            $table->string('cpf',11);
-            $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
-        });
-        Schema::table('doador', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on("users");
+
+            $table->string('localizacao');
+            $table->string('cpf',11)->unique();
         });
     }
 
@@ -32,6 +34,6 @@ class CreateDoadorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doador');
+        Schema::dropIfExists('doadors');
     }
 }
