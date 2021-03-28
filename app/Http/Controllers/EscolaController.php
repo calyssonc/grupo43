@@ -10,6 +10,10 @@ use App\Models\User;
 
 class EscolaController extends Controller
 {
+    public function index(){
+        return view('dashboard-escola');
+    }
+
     //Apresentar view de cadastro
     public function cadastro(){
         return view('escola.cadastro');

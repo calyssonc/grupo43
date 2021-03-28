@@ -45,6 +45,18 @@
                                 name="password_confirmation" required />
             </div>
 
+            <!-- Escolher o tipo de usuário -->
+            <div class="mt-4">
+                <x-label for="role_id" value="{{ __('Registrar como:') }}"/>
+                <select name="role_id" class="block mt-1 w-full border-gray-300
+                focus:border-indigo-300 focus:ring focus:ring-indigo-200
+                focus:ring-opacity-50 rounded-md shadow-sm">
+                    <option value="escola">Escola</option>
+                    <option value="doador">Doador</option>
+                    <option value="beneficiado">Beneficiado</option>
+                </select>
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}

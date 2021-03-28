@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MaterialController;
 
@@ -7,9 +8,8 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+//Redireciona para o dash correto
+Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
 // A rota de material é dividida por muita coisa então só
 // vou fazer a organização futuramente
