@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEscola;
 use Illuminate\Http\Request;
 use App\Models\Escola;
-use App\Models\User;
-
 
 class EscolaController extends Controller
 {

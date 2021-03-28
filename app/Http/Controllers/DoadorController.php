@@ -5,58 +5,86 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreDoador;
 use Illuminate\Http\Request;
 use App\Models\Doador;
-use App\Models\User;
 
 class DoadorController extends Controller
 {
+    // public function index(){
+    //     return view('dashboard-doador');
+    // }
+
+    //Retorna todos os registros de doadors
+    public function index(){
+        $doadors = Doador::paginate();
+        return view('doador/index', compact('doadors'));
+    }
+
     //Apresentar view de cadastro
     public function cadastro(){
         return view('doador.cadastro');
     }
 
-    //Apresentar view de Edição
-    public function editar(Request $request, $id){
-        $doador = Doador::find($id);
-        return view('doador.editar', compact('doador'));
-    }
+    //Realiza o cadastro de uma nova doador
+    public function store(StoreDoador $request)
+    {
 
-    //CRUD
-
-    //Retorna todos doadores do BD
-    public function apresentarTodos(){
-        //Busca no bd
-        $doadores['doadores'] = Doador::all();
-        return $doadores;
-    }
-
-    //Atualiza um doador do BD
-    public function atualizarDadoPeloId(StoreDoador $request,  $id){
-        //Busca no BD com parametro ID
-        $doador = Doador::find($id);
-
-        if($doador->update($request->all())){
-            return "Atualizado com sucesso";
-        } else {
-            return "Falha";
+        if(Doador::create($request->all())){
+            return redirect()
+            ->route('doador.index')
+            ->with('message', "Adicionado!");
+        }else{
+            return redirect()
+            ->route('doador.index')
+            ->with('message', "Erro ao adicionar!");
         }
+
     }
 
-    //Deletar doador do BD
-    public function delete(Request $request, $id){
-        $escola = Doador::where('id',$id)->delete();
-
-        return "Doador Deletado com sucesso";
+    //Mostra o perfil de uma doador cadastrada
+    public function show($id){
+        if(!$doador = Doador::where('id',$id)->first()){
+            return redirect()->route('doador.index');
+        }
+        return view('doador/show',compact('doador'));
     }
 
-    //Cadastrar doador no BD
-    public function store(Request $request, $idUser){
-        //cadastro no BD
-        $doador = new Doador($request->all());
+    //Atualiza os dados de uma doador
+    public function update(StoreDoador $request,$id){
+        if(!$doador = Doador::where('id',$id)->first()){
+            return redirect()->back();
+        }
 
-        $user = User::find($idUser);
+        $doador->update($request->all());
 
-        $user->doadores()->save($doador);
+        return redirect()
+        ->route('doador.index')
+        ->with('message',"Atualizado!");
+    }
 
-        return "Cadastro realizado com sucesso";
+    //Apaga um registro de doador do banco de dados
+    public function destroy($id)
+    {
+
+        if (!$doador = Doador::find($id)) {
+            return redirect()
+                ->route('doador.index')
+                ->with('message', "doador não encontrado!");
+        }
+
+        $doador->delete();
+        return redirect()
+            ->route('doador.index')
+            ->with('message', "Apagado!");
+    }
+
+    public function search(Request $request)
+    {
+        $filters = $request->except('token');
+
+        $doadors = Doador::where('name', 'LIKE', "%{$request->search}%")
+            ->orWhere('localizacao', 'LIKE', "%{$request->search}%")
+            ->orWhere('cpf', 'LIKE', "%{$request->search}%")
+            ->orWhere('email', 'LIKE', "%{$request->search}%")
+            ->paginate();
+        return view("/doador/index", compact('doadors', 'filters'));
     }
 }

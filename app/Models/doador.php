@@ -1,29 +1,5 @@
 <?php
 
-// namespace App\Models;
-
-// use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Illuminate\Database\Eloquent\Model;
-// use Laratrust\Traits\LaratrustUserTrait;
-
-// class Doador extends Model
-// {
-//     use LaratrustUserTrait;
-//     use HasFactory;
-//     protected $fillable = ['nome','cpf'];
-
-
-//     //FK User
-//     public function user() {
-//         return $this->belongsTo('App\Models\Users');
-//     }
-
-//     //FK Doação
-//     public function doacoes() {
-//         return $this->hasMany('App\Models\Doacao');
-//     }
-// }
-
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -69,4 +45,3 @@ class Doador extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
-

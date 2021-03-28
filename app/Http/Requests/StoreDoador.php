@@ -24,12 +24,11 @@ class StoreDoador extends FormRequest
     public function rules()
     {
         return [
-          'nome'=> ["required","min:10","max:30"],
-          'email'=> ["required","email"],
-          'senha'=> ["required","min:10","max:30"],
-          'endereco'=> ["required","min:10","max:30"],
-          'uf'=> ["required","min:2","max:2"],
-          'cpf'=> ["required","min:10","max:30"]
+          'name' => 'required|max:255',
+          'email' => 'required|max:255',
+          'password' => 'required|max:15|min:5',
+          'localizacao' => 'required',
+          'cpf' => 'required|max:11|min:11'
         ];
     }
 }
