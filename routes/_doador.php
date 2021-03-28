@@ -4,8 +4,9 @@ use App\Http\Controllers\DoadorController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth', 'role:doador']], function () {
-    Route::get('/dashboard-doador', [DashboardController::class, 'index'])->name('dashboard');
 });
+
+Route::get('/dashboard-doador', [DashboardController::class, 'index'])->name('dashboard');
 
 //Rota get para tela de cadastro do doador
 Route::get('doador/cadastro', [DoadorController::class, 'cadastro'])->name('doador.cadastro');

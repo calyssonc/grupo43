@@ -13,7 +13,7 @@ class Escola extends Model
     use LaratrustUserTrait;
     use HasFactory;
 
-    protected $fillable = ['nome','tipo','localizacao',"cnpj"];
+    protected $fillable = ['name','email','password',"tipo","localizacao","telefone"];
 
 
     //FK User

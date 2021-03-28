@@ -24,7 +24,7 @@ class CreateEscolaTable extends Migration
 
             $table->string('tipo',20);
             $table->string('localizacao');
-            $table->string('telfone',11)->unique();
+            $table->string('telefone',11)->unique();
         });
     }
 
