@@ -24,7 +24,7 @@ class CreateBeneficiadosTable extends Migration
 
             $table->string('localizacao');
             $table->string('cpf',11)->unique();
-            $table->string('telfone',11)->unique();
+            $table->string('telefone',11)->unique();
         });
     }
 

@@ -10,9 +10,9 @@ Route::group(['middleware' => ['auth', 'role:doador']], function () {
 //Rota temporária para index
 Route::get('/doador/index', [DoadorController::class, 'index'])->name('doador.index');
 //Rota get para tela de cadastro de doador
-Route::get('doador/cadastro', [DoadorController::class, 'cadastro'])->name('doador.cadastro');
+Route::get('/doador/cadastro', [DoadorController::class, 'cadastro'])->name('doador.cadastro');
 //Rota para realizar o cadastro
-Route::post('doador/cadastro', [DoadorController::class, 'store'])->name('doador.store');
+Route::post('/doador/cadastro', [DoadorController::class, 'store'])->name('doador.store');
 //Rota para realizar pesquisa por doadors
 Route::any('/doador/search', [DoadorController::class, 'search'])->name('doador.search');
 //Rota delete para deletar doador do banco de dados

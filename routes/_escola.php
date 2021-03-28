@@ -10,9 +10,9 @@ Route::group(['middleware' => ['auth', 'role:escola']], function () {
 //Rota temporária para index
 Route::get('/escola/index', [EscolaController::class, 'index'])->name('escola.index');
 //Rota get para tela de cadastro de escola
-Route::get('escola/cadastro', [EscolaController::class, 'cadastro'])->name('escola.cadastro');
+Route::get('/escola/cadastro', [EscolaController::class, 'cadastro'])->name('escola.cadastro');
 //Rota para realizar o cadastro
-Route::post('escola/cadastro', [EscolaController::class, 'store'])->name('escola.store');
+Route::post('/escola/cadastro', [EscolaController::class, 'store'])->name('escola.store');
 //Rota para realizar pesquisa por escolas
 Route::any('/escola/search',[EscolaController::class,'search'])->name('escola.search');
 //Rota para mostrar o perfil de uma escola
