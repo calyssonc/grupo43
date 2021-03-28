@@ -13,7 +13,7 @@ class CreateBeneficiadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('beneficiados', function (Blueprint $table) {
+        Schema::create('beneficiado', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateBeneficiadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beneficiados');
+        Schema::dropIfExists('beneficiado');
     }
 }
