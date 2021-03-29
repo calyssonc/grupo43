@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreBeneficiado;
+use App\Http\Requests\StoreFilho;
 use Illuminate\Http\Request;
 use App\Models\Beneficiado;
+use App\Models\Escola;
+use App\Models\Filho;
 
 class BeneficiadoController extends Controller
 {
@@ -88,4 +91,5 @@ class BeneficiadoController extends Controller
             ->paginate();
         return view("/beneficiado/index", compact('beneficiados', 'filters'));
     }
+
 }
