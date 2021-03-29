@@ -29,7 +29,7 @@ class StoreBeneficiado extends FormRequest
             'password' => 'required|max:15|min:5',
             'localizacao' => 'required',
             'cpf' => 'required|max:11|min:11',
-            'telefone' => 'required|max:11|min:11'
+            'telefone' => 'required|max:11|min:11',
         ];
     }
 }

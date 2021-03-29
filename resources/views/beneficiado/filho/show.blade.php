@@ -13,10 +13,18 @@
     </br>
     <input type="text" name="ra" title="ra" id="ra" placeholder="Número de registro do aluno (RA)" value="{{ $filho->ra ?? old('ra') }}">
     </br>
-    <input type="number" name="id_escola" title="id_escola" id="id_escola" placeholder="Id da escola" value="{{ $filho->id_escola ?? old('id_escola') }}">
-    </br>
     <input type="number" name="id_beneficiado" title="id_beneficiado" id="id_beneficiado" placeholder="id_beneficiado" value="{{ $filho->id_beneficiado ?? old('id_beneficiado') }}">
     </br>
+    <label for="id_escola">Escola</label>
+    <select class="form-control" name="id_escola">
+        @foreach($escolas as $item)
+            @if ($item->id === $filho->id_escola)
+                <option selected value="{{$item->id}}">{{$item->name}}</option>
+            @else
+                <option value="{{$item->id}}">{{$item->name}}</option>
+            @endif
+        @endforeach
+    </select>
     <button type="submit">Atualizar</button>
 </form>
 

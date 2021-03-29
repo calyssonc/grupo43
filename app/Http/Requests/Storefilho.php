@@ -24,7 +24,7 @@ class StoreFilho extends FormRequest
     public function rules(){
         return [
             'name' => 'required|max:255|string',
-            'RA' =>'required|string',
+            'ra' =>'required|string',
             'id_escola' =>'required|string',
             'id_beneficiado' =>'required|string'
         ];

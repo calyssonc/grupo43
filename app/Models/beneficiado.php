@@ -29,11 +29,7 @@ class Beneficiado extends Authenticatable
         'password',
         'localizacao',
         'cpf',
-        'telefone',
-        'nome',
-        'ra',
-        'id_escola',
-        'id_beneficiado'
+        'telefone'
     ];
 
     /**

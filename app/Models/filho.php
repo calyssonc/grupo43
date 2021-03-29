@@ -9,7 +9,7 @@ class Filho extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'ra', 'id_escola', 'id_beneficiado'];
+    protected $fillable = ['name', 'ra', 'id_escola', 'id_beneficiado'];
 
     public function escola()
     {
@@ -20,5 +20,4 @@ class Filho extends Model
     {
         return $this->belongsTo(Beneficiado::class, "id_beneficiado");
     }
-
 }
