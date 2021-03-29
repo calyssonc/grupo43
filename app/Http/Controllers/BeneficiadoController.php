@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreBeneficiado;
+use App\Http\Requests\StoreFilho;
 use Illuminate\Http\Request;
 use App\Models\Beneficiado;
+use App\Models\Filho;
 
 class BeneficiadoController extends Controller
 {
@@ -87,5 +89,67 @@ class BeneficiadoController extends Controller
             ->orWhere('telefone', 'LIKE', "%{$request->search}%")
             ->paginate();
         return view("/beneficiado/index", compact('beneficiados', 'filters'));
+    }
+
+    //Apresentar view de cadastro
+    public function cadastroFilho()
+    {
+        return view('beneficiado.filho.cadastro',[]);
+    }
+
+    //Mostra os dados de um filho
+    public function showFilho($id)
+    {
+        if (!$filho = Filho::where('id', $id)->first()) {
+            return redirect()->route('beneficiado.index');
+        }
+        return view('beneficiado/filho/show', compact('filho'));
+    }
+
+    //Atualiza os dados de um filho
+    public function updateFilho(StoreFilho $request, $id)
+    {
+
+        dd($request->all());
+        if (!$filho = Filho::where('id', $id)->first()) {
+            return redirect()->back();
+        }
+
+        $filho->update($request->all());
+
+        return redirect()
+            ->route('beneficiado.index')
+            ->with('message', "Atualizado!");
+    }
+
+    //Apaga um registro do filho
+    public function destroyFilho($id)
+    {
+
+        if (!$filho = Filho::find($id)) {
+            return redirect()
+                ->route('beneficiado.index')
+                ->with('message', "filho não encontrado!");
+        }
+
+        $filho->delete();
+        return redirect()
+            ->route('beneficiado.index')
+            ->with('message', "Apagado!");
+    }
+
+    //Realiza o cadastro de uma nova beneficiado
+    public function storeFilho(StoreFilho $request)
+    {
+
+        if (Filho::create($request->all())) {
+            return redirect()
+                ->route('beneficiado.index')
+                ->with('message', "Adicionado!");
+        } else {
+            return redirect()
+                ->route('beneficiado.index')
+                ->with('message', "Erro ao adicionar!");
+        }
     }
 }

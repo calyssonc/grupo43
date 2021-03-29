@@ -23,7 +23,7 @@ class CreateNecessitaTable extends Migration
         });
         Schema::table('necessita', function (Blueprint $table) {
             $table->foreign('id_material')->references('id')->on("material");
-            $table->foreign('id_filho')->references('id')->on("filho");
+            $table->foreign('id_filho')->references('id')->on("filhos");
         });
     }
 

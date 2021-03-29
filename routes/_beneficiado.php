@@ -1,12 +1,19 @@
 <?php
 
 use App\Http\Controllers\BeneficiadoController;
+use App\Http\Controllers\FilhoController;
 use Illuminate\Support\Facades\Route;
 
 //Rota get para tela de cadastro do filho
-Route::get('filho/cadastro', [FilhoController::class, 'cadastro'])->name('filho.cadastro');
+Route::get('/beneficiado/filho/cadastro', [BeneficiadoController::class, 'cadastroFilho'])->name('filho.cadastro');
 //Rota post para cadastro de formulario de filho
-Route::post('filho/cadastro', [FilhoController::class, 'store'])->name('filho.store');
+Route::post('/beneficiado/filho/cadastro', [BeneficiadoController::class, 'storeFilho'])->name('filho.store');
+//Rota para mostrar o perfil de um filho do beneficiado
+Route::get('/beneficiado/filho/{id}', [BeneficiadoController::class, 'showFilho'])->name('filho.show');
+//Rota para atualizar os dados
+Route::put('/beneficiado/filho/{id}', [BeneficiadoController::class, 'updateFilho'])->name('filho.update');
+//Rota delete para deletar beneficiado do banco de dados
+Route::delete('/beneficiado/filho/{id}', [BeneficiadoController::class, 'destroyFilho'])->name('filho.destroy');
 
 //Rota temporária para index
 Route::get('/beneficiado/index', [BeneficiadoController::class, 'index'])->name('beneficiado.index');

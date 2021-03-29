@@ -13,6 +13,11 @@ class Beneficiado extends Authenticatable
     use LaratrustUserTrait;
     use HasFactory, Notifiable;
 
+    public function filho()
+    {
+        return $this->hasMany(Filho::class, "id_beneficiado");
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -25,6 +30,10 @@ class Beneficiado extends Authenticatable
         'localizacao',
         'cpf',
         'telefone',
+        'nome',
+        'ra',
+        'id_escola',
+        'id_beneficiado'
     ];
 
     /**
