@@ -14,6 +14,7 @@ class EscolaController extends Controller
 
     //Retorna todos os registros de escolas
     public function index(){
+        echo csrf_token(); 
         $escolas = Escola::paginate();
         return view('escola/index', compact('escolas'));
     }
@@ -26,7 +27,7 @@ class EscolaController extends Controller
     //Realiza o cadastro de uma nova escola
     public function store(StoreEscola $request)
     {
-
+        dd($request->all());
         if(Escola::create($request->all())){
             return redirect()
             ->route('escola.index')
