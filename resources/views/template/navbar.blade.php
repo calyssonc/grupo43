@@ -1,4 +1,4 @@
-<nav class="flex items-center p-3 flex-wrap font-bold">
+<nav class="flex items-center p-3 flex-wrap font-bold h-screen sm:h-auto">
 
     <a href="#" class="justify-center p-2 sm:mr-4 inline-flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
@@ -72,30 +72,3 @@
         </div>
     </div>
 </nav>
-
-<div class="border border-indigo-600 p-2 text-center flex flex-col sm:flex-row">
-    <ul class="bg-green-300 font-bold flex flex-col sm:flex-row sm:w-2/3 sm:justify-between">
-        <li class="bg-gray-500 p-1"><a href="">Home</a></li>
-        <li class="bg-gray-500 p-1"><a href="">Perfil</a></li>
-        <li class="bg-gray-500 p-1"><a href="">Galeria</a></li>
-        <li class="bg-gray-500 p-1"><a href="">Contato</a></li>
-        <li class="bg-gray-500 p-1"><a href="">Escolas</a></li>
-        <li class="bg-gray-500 p-1"><a href="">Fórum</a></li>
-    </ul>
-    <div class="bg-indigo-200 flex flex-col sm:flex-row sm:w-1/3 sm:justify-between">
-        <div class="flex flex-row sm:w-1/2">
-            <div>
-                <input class="h-1/2 rounded-full" placeholder="Caixa de pesquisa" type="text"/>
-                <button class="h-1/2 rounded-full bg-black ">O</button>
-            </div>
-        </div>
-        <div class="flex flex-row sm:w-1/2">
-            <div class="bg-red-300 sm:w-1/2 sm:justify-between">
-                <a class="h-15 border-2 border-blue-500 text-blue-500 rounded">Login</a>
-            </div>
-            <div class="bg-gray-300 sm:w-1/2">
-                <a class="bg-blue-500 text-white rounded">Cadastro</a>
-            </div>
-        </div>
-    </div>
-</div>
