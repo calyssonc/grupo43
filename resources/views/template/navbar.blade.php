@@ -1,4 +1,4 @@
-<nav class="flex items-center p-3 flex-wrap font-bold h-screen sm:h-auto">
+{{-- <nav class="flex items-center p-3 flex-wrap font-bold h-screen sm:h-auto">
 
     <a href="#" class="justify-center p-2 sm:mr-4 inline-flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
@@ -9,8 +9,9 @@
             <path fill="#5D4037" d="M34,13c0.6,0,1,0.4,1,1s-0.4,1-1,1s-1-0.4-1-1S33.4,13,34,13z M34,24c0,0.6,0.4,1,1,1s1-0.4,1-1s-0.4-1-1-1  S34,23.4,34,24z M26,17c0,0.6,0.4,1,1,1s1-0.4,1-1s-0.4-1-1-1S26,16.4,26,17z M14,32c0,0.6,0.4,1,1,1s1-0.4,1-1s-0.4-1-1-1  S14,31.4,14,32z M20,28.5c0,0.8,0.7,1.5,1.5,1.5c0.8,0,1.5-0.7,1.5-1.5c0-0.8-0.7-1.5-1.5-1.5C20.7,27,20,27.7,20,28.5z"/>
         </svg>
         <span class="text-xl tracking-wide">Batata</span>
-    </a>
+    </a> --}}
 
+    {{-- Aqui está o botão de abrir o menu --}}
     {{-- <span class="inline-flex p-3 hover:bg-blue-300 rounded sm:hidden ml-auto nav-toggler" data-target="#navigation">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30" height="30"
 	 viewBox="0 0 484.975 484.975" style="enable-background:new 0 0 484.975 484.975;" xml:space="preserve">
@@ -27,7 +28,7 @@
         </svg>
     </span> --}}
 
-    <div class="top-navbar w-full sm:inline-flex sm:flex-grow sm:w-auto" id="navigation">
+    {{-- <div class="top-navbar w-full sm:inline-flex sm:flex-grow sm:w-auto" id="navigation">
         <div class="sm:inline-flex sm:flex-row sm:m-auto flex flex-col text-center">
             <a href="#" class="sm:inline-flex sm:w-auto py-2 rounded hover:underline">
                 <span>Home</span>
@@ -71,4 +72,16 @@
             </a>
         </div>
     </div>
+</nav> --}}
+
+
+<nav class="flex flex-col">
+    <ul>
+        <li>teste</li>
+        <li>teste</li>
+        <li>teste</li>
+        <li>teste</li>
+        <li>teste</li>
+        <li>teste</li>
+    </ul>
 </nav>
