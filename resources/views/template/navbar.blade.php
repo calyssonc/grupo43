@@ -74,14 +74,85 @@
     </div>
 </nav> --}}
 
+<header class="flex justify-center items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4">
 
-<nav class="flex flex-col">
-    <ul>
-        <li>teste</li>
-        <li>teste</li>
-        <li>teste</li>
-        <li>teste</li>
-        <li>teste</li>
-        <li>teste</li>
-    </ul>
-</nav>
+    <!-- navigation -->
+    <nav class="w-full font-bold">
+      <ul class="flex flex-col md:flex-row items-center">
+        <li class="md:ml-4">
+            <a class="block hover:underline py-2 hover:text-black md:p-0" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve" width="55" height="55">
+                                <path fill="#8D6E63" d="M19.8,43c-0.7,0-1.4,0-2.1-0.1c-4.6-0.5-8.4-2.7-10.5-6.2c-5.1-8.3,0.1-13,5.1-17.4c1.3-1.2,2.7-2.4,3.9-3.7  c0.4-0.4,0.8-0.9,1.2-1.3c5.4-6,11.4-12.8,19.8-7c3.4,2.4,5.4,6,5.9,10.5c0.6,6.2-2,13.3-6.7,18.2l0,0C31.8,40.4,25.7,43,19.8,43z"/>
+                                <path fill="#795548" d="M19.8,43c-0.7,0-1.4,0-2.1-0.1c-4.6-0.5-8.4-2.7-10.5-6.2c-1.4-2.3-2-4.2-2.1-6c9.7,8.8,33.6,2.2,37.9-13  c0.6,6.2-2,13.3-6.7,18.2l0,0C31.8,40.4,25.7,43,19.8,43z"/>
+                                <circle fill="#3E2723" cx="22.5" cy="38.5" r="1.5"/>
+                                <path fill="#5D4037" d="M34,13c0.6,0,1,0.4,1,1s-0.4,1-1,1s-1-0.4-1-1S33.4,13,34,13z M34,24c0,0.6,0.4,1,1,1s1-0.4,1-1s-0.4-1-1-1  S34,23.4,34,24z M26,17c0,0.6,0.4,1,1,1s1-0.4,1-1s-0.4-1-1-1S26,16.4,26,17z M14,32c0,0.6,0.4,1,1,1s1-0.4,1-1s-0.4-1-1-1  S14,31.4,14,32z M20,28.5c0,0.8,0.7,1.5,1.5,1.5c0.8,0,1.5-0.7,1.5-1.5c0-0.8-0.7-1.5-1.5-1.5C20.7,27,20,27.7,20,28.5z"/>
+                </svg>
+            </a>
+        </li>
+        <li class="md:ml-4">
+          <a class="block hover:underline py-2 hover:text-black md:p-0" href="#">
+            Home
+          </a>
+        </li>
+        <li class="md:ml-4">
+          <a class="block hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
+            Perfil
+          </a>
+        </li>
+        <li class="md:ml-4">
+          <a class="block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
+            Galeria
+          </a>
+        </li>
+        <li class="md:ml-4">
+            <a class="block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
+                Contato
+            </a>
+        </li>
+        <li class="md:ml-4">
+            <a class="block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
+                Escolas
+            </a>
+        </li>
+        <li class="md:ml-4">
+            <a class="block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
+                Fórum
+            </a>
+        </li>
+        <li class="md:ml-4 mt-2 sm:mt-0">
+            <a class="block hover:underline hover:text-black" href="#">
+                <!-- Pesquisa -->
+                <form class="mb-4 w-full md:mb-0 flex flex-nowrap">
+                    <label class="hidden" for="search-form">Search</label>
+                    <input class="bg-grey-lightest focus:border-orange p-2 rounded-full shadow-inner w-full" placeholder="Pesquisa..." type="text">
+                    <button class="">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="30px" height="30px" viewBox="0 0 612.08 612.08" style="enable-background:new 0 0 612.08 612.08;"
+                        xml:space="preserve">
+                            <path d="M237.927,0C106.555,0,0.035,106.52,0.035,237.893c0,131.373,106.52,237.893,237.893,237.893
+                                c50.518,0,97.368-15.757,135.879-42.597l0.028-0.028l176.432,176.433c3.274,3.274,8.48,3.358,11.839,0l47.551-47.551
+                                c3.274-3.274,3.106-8.703-0.028-11.838L433.223,373.8c26.84-38.539,42.597-85.39,42.597-135.907C475.82,106.52,369.3,0,237.927,0z
+                                    M237.927,419.811c-100.475,0-181.918-81.443-181.918-181.918S137.453,55.975,237.927,55.975s181.918,81.443,181.918,181.918
+                                S338.402,419.811,237.927,419.811z"/>
+                        </svg>
+                    </button>
+                </form>
+                <!-- END Pesquisa -->
+            </a>
+        </li>
+        <li class="md:ml-4 mt-2 sm:mt-0">
+            <a class="block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
+                <span class="border-2 border-blue-500 text-blue-500 px-8 py-2 rounded">Login</span>
+            </a>
+        </li>
+        <li class="md:ml-4 mt-2 sm:mt-0">
+            <a class="block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
+                <span class="bg-blue-500 text-white px-4 py-2 rounded">Cadastro</span>
+            </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- END navigation -->
+
+  </header>
