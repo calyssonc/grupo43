@@ -5,10 +5,10 @@
 @section('content')
     <div id="imagem1" class="flex flex-col w-auto h-screen text-center">
         <div class="w-2/5 sm:w-1/2 h-auto p-4 sm:mt-16 ml-3 sm:ml-0">
-            <span class="text-white font-bold text-3xl sm:text-5xl">Dê um level up nas suas doações</span>
+            <p class="text-white font-bold text-3xl sm:text-5xl">Dê um level up nas suas doações</p>
         </div>
         <div class="w-2/5 sm:w-1/2 h-auto ml-3">
-            <span class="text-white text-xl sm:text-3xl">Apresentação do projeto tentando vender a ideia</span>
+            <p class="text-white text-xl sm:text-3xl">Apresentação do projeto tentando vender a ideia</p>
         </div>
         <div class="w-2/5 sm:w-1/2 h-auto mt-3 sm:mt-5 ml-3">
             <button class="text-white rounded bg-blue-500 p-3">Escolas próximas!</button>
