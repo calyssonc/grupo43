@@ -8,7 +8,7 @@
     <div class="h-screen w-full bg-blue-200 rounded-3xl flex flex-col md:flex-wrap">
         <div class="h-2/6 md:h-1/2 w-full md:w-1/5 md:order-1">
             <div class="flex justify-center items-center h-full w-full">
-                <p id="imagem1" class="bg-blue-300 rounded-full h-48 w-48"></p>
+                <p id="imagem1" class="rounded-full h-48 w-48"></p>
             </div>
         </div>
         <div class="h-2/6 md:h-full w-full md:w-4/5 md:order-3">
@@ -102,6 +102,41 @@
         </div>
     </div>
 
+    {{-- Histórico de Doações / Mais comentados --}}
+    <div class="h-screen w-full">
+        {{-- Histórico de doações inicio --}}
+        <div class="h-1/2 w-full border-t-2 border-b-2 border-yellow-700 flex justify-center items-center">
+            <div class="w-full h-full">
+                <div class="w-full h-full flex flex-col items-center justify-center">
+                    <p class="font-bold text-2xl text-center mb-4">Histórico de Doações</p>
+                    <div class="flex flex-row items-center rounded-full bg-blue-200 p-2 w-4/5">
+                        <div class="h-full w-1/5">
+                            <p id="imagem3" class="bg-blue-300 rounded-full h-16 w-16"></p>
+                        </div>
+                        <p class="w-2/5">Escola X</p>
+                        <p class="w-2/5 text-right">22/04/21</p>
+                    </div>
+                    <div class="flex flex-row mt-2 items-center rounded-full bg-blue-200 p-2 w-4/5">
+                        <div class="h-full w-1/5">
+                            <p id="imagem3" class="bg-blue-300 rounded-full h-16 w-16"></p>
+                        </div>
+                        <p class="w-2/5">Escola X</p>
+                        <p class="w-2/5 text-right">22/04/21</p>
+                    </div>
+                    <button class="bg-blue-500 text-white rounded py-1 px-5 mt-3">Nova doação</button>
+                </div>
+            </div>
+        </div>
+        {{-- Histórico de Doações FIM --}}
+
+        {{-- Mais comentados Inicio --}}
+        <div class="h-1/2 w-full">
+
+        </div>
+        {{-- Mais comentados FIM --}}
+    </div>
+
+    {{-- Imagens usada --}}
     <style>
         #imagem1{
             background: url(https://poltronanerd.com.br/wp-content/uploads/2018/04/Dean-Winchester.jpg) no-repeat center center;
@@ -112,6 +147,27 @@
         }
         #imagem2{
             background: url(https://media.discordapp.net/attachments/822990528931954688/827398547132907540/medalha_3.png) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        #imagem3{
+            background: url(https://media.discordapp.net/attachments/822990528931954688/827408127992791060/Escola_X_1.png) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        #imagem4{
+            background: url(https://media.discordapp.net/attachments/822990528931954688/827408200676016138/Escola_Y_1.png) no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        #imagem5{
+            background: url(https://media.discordapp.net/attachments/822990528931954688/827408254539530290/Escola_Z_1.png) no-repeat center center;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;

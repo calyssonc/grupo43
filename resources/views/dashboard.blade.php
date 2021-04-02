@@ -88,7 +88,7 @@
         background-size: cover;
     }
     #imagem2{
-        background: url(https://image.freepik.com/fotos-gratis/comida-feia-maos-de-crianca-segurando-vegetais-feios-uma-batata-em-forma-de-coracao-em-uma-mesa-de-prancha-de-madeira_152932-282.jpg) no-repeat center center;
+        background: url(https://cdn.discordapp.com/attachments/822990528931954688/827408420419272754/criancas-beneficiadas-com-as-doacoes_1.png) no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
