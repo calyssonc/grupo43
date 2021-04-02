@@ -103,9 +103,9 @@
     </div>
 
     {{-- Histórico de Doações / Mais comentados --}}
-    <div class="h-screen w-full">
+    <div class="h-screen w-full md:flex md:flex-row">
         {{-- Histórico de doações inicio --}}
-        <div class="h-1/2 w-full border-t-2 border-b-2 border-yellow-700 flex justify-center items-center">
+        <div class="h-1/2 md:h-full w-full md:w-1/2 border-t-2 border-b-2 md:border-b-0 md:border-r-4 md:border-t-4 border-yellow-600 flex justify-center items-center">
             <div class="w-full h-full">
                 <div class="w-full h-full flex flex-col items-center justify-center">
                     <p class="font-bold text-2xl text-center mb-4">Histórico de Doações</p>
@@ -123,15 +123,40 @@
                         <p class="w-2/5">Escola X</p>
                         <p class="w-2/5 text-right">22/04/21</p>
                     </div>
-                    <button class="bg-blue-500 text-white rounded py-1 px-5 mt-3">Nova doação</button>
+                    <button class="bg-blue-500 text-white rounded py-1 px-14 mt-3">Nova doação</button>
                 </div>
             </div>
         </div>
         {{-- Histórico de Doações FIM --}}
 
         {{-- Mais comentados Inicio --}}
-        <div class="h-1/2 w-full">
-
+        <div class="h-1/2 md:h-full w-full md:w-1/2 flex flex-col justify-center items-center md:border-t-4 md:border-yellow-600">
+            <div class="flex flex-col justify-center items-center w-full">
+                <p class="text-center text-2xl my-2">Mais comentados!</p>
+                <div class="w-full flex justify-center">
+                    <div class="w-5/6 flex flex-wrap justify-center items-center border border-black shadow-md rounded-lg">
+                        <div class="w-4/6 flex flex-col justify-center p-2">
+                            <p class="font-bold ml-2">Doação conjunta em santos</p>
+                            <p class="ml-2">Vamos realizar um mutirão para doar materiais para a escola xyz!</p>
+                        </div>
+                        <di class="w-2/6 flex justify-center">
+                            <button class="rounded bg-blue-500 text-white p-2">Saiba mais</button>
+                        </div>
+                    </div>
+                    <div class="mt-2 w-5/6 flex flex-wrap justify-center items-center border border-black shadow-md rounded-lg">
+                        <div class="w-4/6 flex flex-col justify-center p-2">
+                            <p class="font-bold ml-2">Doação conjunta em santos</p>
+                            <p class="ml-2">Vamos realizar um mutirão para doar materiais para a escola xyz!</p>
+                        </div>
+                        <di class="w-2/6 flex justify-center">
+                            <button class="rounded bg-blue-500 text-white p-2">Saiba mais</button>
+                        </div>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <button class="bg-blue-500 text-white rounded py-1 px-20 mt-3">Fórum</button>
+                    </div>
+                </div>
+            </div>
         </div>
         {{-- Mais comentados FIM --}}
     </div>
