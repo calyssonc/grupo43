@@ -71,29 +71,29 @@
 
     {{-- Pontos --}}
     <div class="bg-gray-300 h-96 w-full mt-8 flex flex-wrap">
-        <div class="bg-red-300 w-2/5 h-full flex justify-center items-center">
+        <div class="w-2/5 md:w-1/6 h-full flex justify-center items-center">
             <p id="imagem2" class="h-40 w-40"></p>
         </div>
-        <div class="bg-blue-200 w-3/5 h-full flex flex-wrap">
-            <div class="h-1/2 w-1/2 flex justify-center items-center">
+        <div class="w-3/5 md:w-5/6 h-full flex flex-wrap md:flex-row md:space-x-40 md:justify-center md:items-center">
+            <div class="h-1/2 md:h-auto w-1/2 md:w-auto flex justify-center items-center">
                 <div class="text-center p-2">
                     <p>Doações Realizadas</p>
                     <p class="text-6xl">5</p>
                 </div>
             </div>
-            <div class="h-1/2 w-1/2 flex justify-center items-center">
+            <div class="h-1/2 md:h-auto w-1/2 md:w-auto flex justify-center items-center">
                 <div class="text-center p-2">
                     <p>Urgências atendidas</p>
                     <p class="text-6xl">3</p>
                 </div>
             </div>
-            <div class="h-1/2 w-1/2 flex justify-center items-center">
+            <div class="h-1/2 md:h-auto w-1/2 md:w-auto flex justify-center items-center">
                 <div class="text-center p-2">
                     <p>Posição no Rank</p>
                     <p class="text-6xl">28</p>
                 </div>
             </div>
-            <div class="h-1/2 w-1/2 flex justify-center items-center">
+            <div class="h-1/2 md:h-auto w-1/2 md:w-auto flex justify-center items-center">
                 <div class="text-center p-2">
                     <p>Itens doados</p>
                     <p class="text-6xl">50</p>

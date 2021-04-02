@@ -1,3 +1,23 @@
+<div class="bg-blue-300 h-auto py-10">
+    <div class="flex flex-wrap text-center font-medium">
+        <div class="w-full sm:w-1/4 my-2">
+            <p class="text-3xl">300+</p>
+            <p>Escolas participantes</p>
+        </div>
+        <div class="w-full sm:w-1/4 my-2">
+            <p class="text-3xl">5.000+</p>
+            <p>Famílias inscritas</p>
+        </div>
+        <div class="w-full sm:w-1/4 my-2">
+            <p class="text-3xl">2.000+</p>
+            <p>Doadores Registrados</p>
+        </div>
+        <div class="w-full sm:w-1/4 my-2">
+            <p class="text-3xl">10+</p>
+            <p>Instituições Parceiras</p>
+        </div>
+    </div>
+</div>
 <div class="h-auto w-full">
     <div class="flex flex-wrap">
         <div class="h-20 w-full sm:w-2/6 flex flex-row justify-center items-center text-center">
