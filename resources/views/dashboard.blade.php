@@ -77,26 +77,6 @@
             </div>
         </div>
     </div>
-    <div class="bg-blue-300 h-auto py-10">
-        <div class="flex flex-wrap text-center font-medium">
-            <div class="w-full sm:w-1/4 my-2">
-                <p class="text-3xl">300+</p>
-                <p>Escolas participantes</p>
-            </div>
-            <div class="w-full sm:w-1/4 my-2">
-                <p class="text-3xl">5.000+</p>
-                <p>Famílias inscritas</p>
-            </div>
-            <div class="w-full sm:w-1/4 my-2">
-                <p class="text-3xl">2.000+</p>
-                <p>Doadores Registrados</p>
-            </div>
-            <div class="w-full sm:w-1/4 my-2">
-                <p class="text-3xl">10+</p>
-                <p>Instituições Parceiras</p>
-            </div>
-        </div>
-    </div>
 @endsection
 
 <style>
@@ -108,7 +88,7 @@
         background-size: cover;
     }
     #imagem2{
-        background: url(https://image.freepik.com/fotos-gratis/comida-feia-maos-de-crianca-segurando-vegetais-feios-uma-batata-em-forma-de-coracao-em-uma-mesa-de-prancha-de-madeira_152932-282.jpg) no-repeat center center;
+        background: url(https://cdn.discordapp.com/attachments/822990528931954688/827408420419272754/criancas-beneficiadas-com-as-doacoes_1.png) no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
