@@ -30,6 +30,37 @@
     <button type="submit">Deletar</button>
 </form>
 
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach ($escola->material as $material)
+    <tr>
+        <th scope="row">{{ $material->id }}</th>
+        <td>{{ $material->name }}</td>
+        <td>
+            {{-- <a href="{{ route('escola.showMaterial',$material->id) }}">Ver/Editar</a> --}}
+            <a href="#">Ver/Editar</a>
+        </td>
+    </tr>
+    @endforeach
+    </tbody>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+</table>
+
+<a class="btn btn-primary" href="{{ route('escola.cadastroMaterial') }}">Cadastrar Materiais</a>
+
 <style>
     h2{
         margin-top:35px;

@@ -15,7 +15,7 @@ class CreateNecessitaTable extends Migration
     {
         Schema::create('necessita', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('material_qty');
+            $table->bigInteger('material_qty')->default(1);
             $table->string('status');
             $table->unsignedBigInteger('id_material');
             $table->unsignedBigInteger('id_filho');

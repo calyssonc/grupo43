@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Filho;
 use App\Models\Escola;
 use App\Http\Requests\StoreFilho;
+use App\Models\Beneficiado;
 
 class FilhoController extends Controller
 {
@@ -16,7 +17,10 @@ class FilhoController extends Controller
         if (!$escolas = Escola::all(['id', 'name'])) {
             return redirect()->route('beneficiado.index');
         }
-        return view('beneficiado.filho.cadastro',compact('escolas'));
+        if (!$beneficiados = Beneficiado::all(['id', 'name'])) {
+            return redirect()->route('beneficiado.index');
+        }
+        return view('beneficiado.filho.cadastro',compact('escolas','beneficiados'));
     }
 
     //Mostra os dados de um filho

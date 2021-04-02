@@ -34,6 +34,8 @@
     <button type="submit">Deletar</button>
 </form>
 
+<a class="btn btn-primary" href="{{ route('filho.solicitarMaterial') }}">Solicitar material escolar</a>
+
 <style>
     h2{
         margin-top:35px;

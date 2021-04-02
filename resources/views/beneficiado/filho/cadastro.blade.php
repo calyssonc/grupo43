@@ -46,11 +46,14 @@
                 </select>
             </div>
 
-            <!-- ID escola -->
+            <!-- ID beneficiado -->
             <div>
-                <x-label for="id_beneficiado" :value="__('id_beneficiado')" />
-
-                <x-input id="id_beneficiado" class="block mt-1 w-full" type="text" name="id_beneficiado" :value="old('id_beneficiado')" required />
+                <x-label for="id_beneficiado" :value="__('Beneficiado')" />
+                <select class="form-control" name="id_beneficiado">
+                    @foreach($beneficiados as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <!-- Escolher o tipo de usuário -->

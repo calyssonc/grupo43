@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Material extends Model
 {
     use HasFactory;
-    protected $fillable = ['nome','escola_id'];
+    protected $table = "material";
+    protected $fillable = ['name','id_escola'];
 
     //FK Escola
     public function escola() {
