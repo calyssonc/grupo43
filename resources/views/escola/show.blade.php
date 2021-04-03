@@ -74,4 +74,130 @@
     </div>
 </div>
 
+{{-- Pontos --}}
+<div class="bg-gray-300 h-96 w-full mt-3 md:mt-8 flex flex-wrap">
+    <div class="w-2/5 md:w-1/6 h-full flex justify-center items-center">
+        <p id="imagem1" class="h-40 w-40"></p>
+    </div>
+    <div class="w-3/5 md:w-5/6 h-full flex flex-wrap md:flex-row md:space-x-40 md:justify-center md:items-center">
+        <div class="h-1/2 md:h-auto w-1/2 md:w-auto flex justify-center items-center">
+            <div class="text-center p-2">
+                <p>Posição no Ranking</p>
+                <p class="text-6xl">50</p>
+            </div>
+        </div>
+        <div class="h-1/2 md:h-auto w-1/2 md:w-auto flex justify-center items-center">
+            <div class="text-center p-2">
+                <p>Famílias cadastradas</p>
+                <p class="text-6xl">250</p>
+            </div>
+        </div>
+        <div class="h-1/2 md:h-auto w-1/2 md:w-auto flex justify-center items-center">
+            <div class="text-center p-2">
+                <p>Famílias beneficiadas</p>
+                <p class="text-6xl">170</p>
+            </div>
+        </div>
+        <div class="h-1/2 md:h-auto w-1/2 md:w-auto flex justify-center items-center">
+            <div class="text-center p-2">
+                <p>Doações Recebidas</p>
+                <p class="text-6xl">150</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- Lista de aluno --}}
+<div class="h-screen w-full flex flex-wrap">
+    <div class="w-full md:w-1/2 h-full flex justify-center items-center">
+        <div class="bg-blue-300 rounded-3xl h-5/6 w-5/6 flex flex-col items-center justify-center">
+            <p class="text-center font-semibold text-3xl my-2">Lista de Alunos</p>
+            <div class="bg-white rounded-3xl h-5/6 w-5/6 p-3">
+                <div class="mb-2 border-2 w-full h-16 flex flex-wrap justify-center items-center">
+                    <div class="h-1/2 w-1/2 flex justify-center items-center">
+                        <p class="text-xl">Juquinha</p>
+                    </div>
+                    <div class="h-1/2 w-1/2 flex justify-center items-center">
+                        <button class="bg-blue-500 text-white p-2 rounded-xl">Ver lista completa</button>
+                    </div>
+                </div>
+                <div class="mb-2 border-2 w-full h-16 flex flex-wrap justify-center items-center">
+                    <div class="h-1/2 w-1/2 flex justify-center items-center">
+                        <p class="text-xl">Maria</p>
+                    </div>
+                    <div class="h-1/2 w-1/2 flex justify-center items-center">
+                        <button class="bg-blue-500 text-white p-2 rounded-xl">Ver lista completa</button>
+                    </div>
+                </div>
+                <div class="mb-2 border-2 w-full h-16 flex flex-wrap justify-center items-center">
+                    <div class="h-1/2 w-1/2 flex justify-center items-center">
+                        <p class="text-xl">Igor</p>
+                    </div>
+                    <div class="h-1/2 w-1/2 flex justify-center items-center">
+                        <button class="bg-blue-500 text-white p-2 rounded-xl">Ver lista completa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h-0 w-0 md:w-1/2 md:h-full flex items-center justify-center">
+        <p id="imagem2" class="w-3/4 h-3/4 m-12"></p>
+    </div>
+</div>
+
+{{-- <form action="{{ route('escola.destroy',$escola->id) }}" method="post">
+    @csrf
+    @method("DELETE")
+    <button type="submit">Deletar</button>
+</form>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach ($escola->material as $material)
+    <tr>
+        <th scope="row">{{ $material->id }}</th>
+        <td>{{ $material->name }}</td>
+        <td>
+            <a href="{{ route('escola.showMaterial',$material->id) }}">Ver/Editar</a>
+        </td>
+    </tr>
+    @endforeach
+    </tbody>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+</table>
+
+<a class="btn btn-primary" href="{{ route('escola.cadastroMaterial') }}">Cadastrar Materiais</a> --}}
+
+
+{{-- Imagens usada --}}
+<style>
+    #imagem1{
+        background: url(https://media.discordapp.net/attachments/822990528931954688/827398547132907540/medalha_3.png) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    #imagem2{
+        background: url(https://clientes.meuvista.com/wp-content/uploads/2020/06/undraw_back_to_school_inwc-1024x751.png) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+
 @endsection

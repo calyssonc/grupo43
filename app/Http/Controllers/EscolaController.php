@@ -36,6 +36,7 @@ class EscolaController extends Controller
     //Realiza o cadastro de uma nova escola
     public function store(StoreEscola $request)
     {
+
         if(Escola::create($request->all())){
             return redirect()
             ->route('escola.index')

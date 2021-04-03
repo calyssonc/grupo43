@@ -15,7 +15,7 @@
             <div class="w-full flex justify-center items-center md:mt-20">
                 <div class="flex flex-row w-4/5">
                     <div class="w-1/2">
-                        <p class="text-2xl">Olá, Dean W!</p>
+                        <p class="text-2xl">Olá, {{ $doador->name }}!</p>
                     </div>
                     <div class="flex flex-row justify-center items-center w-1/2">
                         <div>
