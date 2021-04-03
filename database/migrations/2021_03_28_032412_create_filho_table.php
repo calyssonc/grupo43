@@ -13,7 +13,7 @@ class CreateFilhoTable extends Migration
      */
     public function up()
     {
-        Schema::create('filhos', function (Blueprint $table) {
+        Schema::create('filho', function (Blueprint $table) {
             $table->id();
             $table->string("name");
             $table->string("ra");
@@ -34,6 +34,6 @@ class CreateFilhoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filhos');
+        Schema::dropIfExists('filho');
     }
 }
