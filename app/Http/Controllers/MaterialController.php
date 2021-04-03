@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMaterial;
 use Illuminate\Http\Request;
 use App\Models\Material;
 use App\Models\Escola;
@@ -12,7 +13,7 @@ class MaterialController extends Controller
     public function cadastro($id){
         $idEscola = $id;
         return view('material.cadastro', compact('idEscola'));
-    }    
+    }
 
     //CRUD
     //Retornar todos materials no BD

@@ -13,12 +13,7 @@ class Material extends Model
 
     //FK Escola
     public function escola() {
-        return $this->belongsTo('App\Models\Escola');
-    }
-
-    //FK Necessita
-    public function necessidades() {
-        return $this->hasMany('App\Models\Necessita');
+        return $this->belongsTo(Escola::class,'id_escola');
     }
 
 }

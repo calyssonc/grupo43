@@ -8,21 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Necessita extends Model
 {
     use HasFactory;
-    protected $fillable = ['status','material_Qty'];
+    protected $table = "necessita";
+    protected $fillable = ['material_qty','status','id_material','id_filho'];
 
-    //FK Doacao
-    public function doacao() {
-        return $this->hasOne('App\Models\Doacao');
+    public function filho()
+    {
+        return $this->belongsTo(Filho::class, "id_filho");
     }
 
-    //FK Escola
-    public function material() {
-        return $this->belongsTo('App\Models\Material');
-    }
-
-    //FK Escola
-    public function filho() {
-        return $this->belongsTo('App\Models\Filho');
+    public function material()
+    {
+        return $this->belongsTo(Material::class, "id_material");
     }
 
 }

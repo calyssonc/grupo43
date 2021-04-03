@@ -34,7 +34,36 @@
     <button type="submit">Deletar</button>
 </form>
 
-<a class="btn btn-primary" href="{{ route('filho.solicitarMaterial') }}">Solicitar material escolar</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach ($necessita as $item)
+    <tr>
+        <th scope="row">{{ $item->id }}</th>
+        <td>{{ $item->material->name }}</td>
+        <td>
+            {{-- <a href="{{ route('item.show',$item->id) }}">Ver/Editar</a> --}}
+            <a href="#">Ver/Editar</a>
+        </td>
+    </tr>
+    @endforeach
+    </tbody>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+</table>
+
+<a class="btn btn-primary" href="{{ route('filho.solicitarMaterial',$filho->id) }}">Solicitar material escolar</a>
 
 <style>
     h2{
