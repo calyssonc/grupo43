@@ -59,24 +59,28 @@ O layout da aplicação está disponível no Figma:
 ### Mobile 
 🚧 Em desenvolvimento 🚧
 
-<p align="center">
-  <img alt="Mobile_Index" title="Mobile_Index" src="public\image\mobile_Index.png" width="150px">
+<p align="top"style="display: flex; align-items: flex-start; justify-content: center;">
+  <img alt="Mobile_Index" title="Mobile_Index" src="public\image\mobile_Index.png"width="150" >
 
   <img alt="Mobile_Perfil_Doador" title="Mobile_Perfil_Doador" src="public\image\mobile_Perfil_Doador.png" width="162px">
 
-   <img alt="mobile_Perfil_Escola" title="mobile_Perfil_Escola" src="public\image\mobile_Perfil_Escola.png" width="218px"> 
+   <img alt="mobile_Perfil_Escola" title="mobile_Perfil_Escola" src="public\image\mobile_Perfil_Escola.png" width="170px"> 
 
-<img alt="mobile_Perfil_Beneficiado" title="mobile_Perfil_Beneficiado" src="public\image\mobile_Perfil_Beneficiado.png" width="200px"> 
+<img alt="mobile_Perfil_Beneficiado" title="mobile_Perfil_Beneficiado" src="public\image\mobile_Perfil_Beneficiado.png" width="170px"> 
 
 </p>
 
 ### Web
 
-<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/web.svg" width="400px">
+🚧 Em desenvolvimento 🚧
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/sucesso-web.svg" width="400px" 
->
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+
+  <img alt="Perfil_Escola" title="Perfil_Escola" src="public\image\Perfil_Escola.png" width="400px">
+
+  <img alt="Perfil_Beneficiado" title="Perfil_Beneficiado" src="public\image\Perfil_Beneficiado.png" width="400px" >
+
+  <img alt="Perfil_Doador" title="Perfil_Doador" src="public\image\Perfil_Doador.png" width="400px" >
 </p>
 
 ---
@@ -193,7 +197,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 #### [](https://github.com/tgmarinho/Escodoa#utilit%C3%A1rios)**Utilitários**
 
--   Protótipo:  **[Figma](https://www.figma.com/)**  →  **[Protótipo (Escodoa)](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Escodoa)**
+-   Protótipo:  **[Figma](https://www.figma.com/)**  →  **[Protótipo (Escodoa)](https://www.figma.com/file/3ICXPDFiph0syb2LbamKxE/Hackathon?node-id=127%3A1551)**
 -   API:  **[IBGE API](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1)**  →  **[API de UFs](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-UFs-estadosGet)**,  **[API de Municípios](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-Municipios-estadosUFMunicipiosGet)**
 -   Maps:  **[Leaflet](https://react-leaflet.js.org/en/)**
 -   Editor:  **[Visual Studio Code](https://code.visualstudio.com/)**  → Extensions:  **[SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)**
@@ -205,10 +209,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 
 ---
-
+🧡
 ## 👨‍💻 Contribuidores
 
-💜 Um super thanks 👏 para essa galera que fez esse produto sair do campo da ideia e entrar nas lojas de aplicativos :)
+💜  🧡  Um super thanks 👏 para essa galera que fez esse produto sair do campo da ideia e entrar nas lojas de aplicativos :)
 
 <table>
   <tr>
@@ -241,27 +245,20 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ---
 
-## 🦸 Autor
+## 👨‍💻 Autores
+<table>
+    <a href="https://blog.rocketseat.com.br/author/thiago/">
+    <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/380327?s=460&u=61b426b901b8fe02e12019b1fdb67bf0072d4f00&v=4" width="100px;" alt=""/>
+    <br />
+    <sub><b>Thiago Marinho</b></sub></a> <a href="https://blog.rocketseat.com.br/author/thiago/" title="Rocketseat">🚀</a>
+    <br />
+</table>
 
-<a href="https://blog.rocketseat.com.br/author/thiago/">
- <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/u/380327?s=460&u=61b426b901b8fe02e12019b1fdb67bf0072d4f00&v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Thiago Marinho</b></sub></a> <a href="https://blog.rocketseat.com.br/author/thiago/" title="Rocketseat">🚀</a>
- <br />
-
-[![Twitter Badge](https://img.shields.io/badge/-@tgmarinho-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/tgmarinho)](https://twitter.com/tgmarinho) [![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/tgmarinho/) 
-[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:tgmarinho@gmail.com)
-
----
 
 ## 📝 Licença
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
 
-Feito com ❤️ por Thiago Marinho 👋🏽 [Entre em contato!](https://www.linkedin.com/in/tgmarinho/)
-
 ---
 
-##  Versões do README
-
-[Português 🇧🇷](./README.md)  |  [Inglês sem emojis 🇺🇸](./README-en.md) | [Portugues sem logo  🇧🇷](./README-sem-logo.md) 
+🧡 Nós somos aqueles que deixam o dia mais brilhante. 🧡 
