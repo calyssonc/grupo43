@@ -1,6 +1,7 @@
 
 <p align="center">
-  <img alt="GitHub" src="https://img.shields.io/github/license/calyssonc/grupo43">
+  <a href="https://github.com/calyssonc/grupo43/blob/DEV/LICENSE">
+  <img alt="lICENSE" src="https://img.shields.io/github/license/calyssonc/grupo43?color=orange&style=plastic">
   
  
 </p>
@@ -12,7 +13,7 @@
 	🚧  Doaup ♻️ Em construção 🚀 🚧
 </h4>
 
-<!-- <p align="center">
+<p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#-funcionalidades">Funcionalidades</a> •
  <a href="#-layout">Layout</a> • 
@@ -21,7 +22,7 @@
  <a href="#-contribuidores">Contribuidores</a> • 
  <a href="#-autor">Autor</a> • 
  <a href="#user-content--licença">Licença</a>
-</p> -->
+</p>
 
 
 ## 💻 Sobre o projeto
@@ -54,7 +55,7 @@ O Programa de formação é uma experiência online que dura 2 semanas, e tem co
 O layout da aplicação está disponível no Figma:
 
 <a href="https://www.figma.com/file/3ICXPDFiph0syb2LbamKxE/Hackathon?node-id=127%3A1551">
-  <img alt="Made by Grupo 43" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
+  <img alt="Made by Grupo 43" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361?color=orange&style=plastic">
 </a>
 
 
@@ -164,7 +165,7 @@ $ npm run dev:server
 
 ## 📝 Licença
 
-Este projeto esta sobe a licença [MIT](./LICENSE).
+Este projeto esta sobe a licença [MIT](https://github.com/calyssonc/grupo43/blob/DEV/LICENSE).
 
 ---
 
