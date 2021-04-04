@@ -13,6 +13,9 @@ class Escola extends Model
     use LaratrustUserTrait;
     use HasFactory;
 
+    protected $table = 'escolas';
+	protected $guard = 'escola';
+
     protected $fillable = ['name','email','password',"tipo","localizacao","telefone"];
 
     //FK Material

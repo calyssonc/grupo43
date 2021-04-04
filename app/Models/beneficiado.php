@@ -13,6 +13,9 @@ class Beneficiado extends Authenticatable
     use LaratrustUserTrait;
     use HasFactory, Notifiable;
 
+    protected $table = 'beneficiados';
+	protected $guard = 'beneficiado';
+
     public function filho()
     {
         return $this->hasMany(Filho::class, "id_beneficiado");

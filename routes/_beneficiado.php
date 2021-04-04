@@ -3,6 +3,10 @@
 use App\Http\Controllers\BeneficiadoController;
 use App\Http\Controllers\FilhoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\BeneficiadoLoginController;
+
+Route::get('/beneficiado/login',[BeneficiadoLoginController::class,'showLoginForm'])->name('beneficiado.login');
+Route::post('/beneficiado/login',[BeneficiadoLoginController::class,'login'])->name('beneficiado.login.submit');
 
 //Rota post para cadastro de formulario de filho
 Route::post('/beneficiado/filho/cadastro', [FilhoController::class, 'store'])->name('filho.store');
@@ -18,8 +22,6 @@ Route::delete('/beneficiado/filho/{id}', [FilhoController::class, 'destroy'])->n
 Route::get('/beneficiado/filho/solicitar-material/{id}', [FilhoController::class, 'solicitarMaterial'])->name('filho.solicitarMaterial');
 //Rota get para tela de cadastro do filho
 Route::get('/beneficiado/filho/cadastro/{id}', [FilhoController::class, 'cadastro'])->name('filho.cadastro');
-
-
 
 
 //Rota temporária para index
