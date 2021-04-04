@@ -45,10 +45,28 @@
             <button class="bg-blue-500 text-white w-full p-1 mt-4" type="submit" value="cadastrar" >Registre-se</button>
 
             </form>
-            <div class="flex flex-row mt-5 justify-center">
-                <p>Já possui uma conta?</p>
-                <a href="{{ route("login") }}" class="text-blue-400">Login</a>
+
+            <div class="flex flex-wrap mt-4">
+
+                <div class="flex flex-row text-center justify-center w-full">
+                    <div class="w-1/3 bg-gray-300 flex flex-nowrap justify-center items-center p-2">
+                        <p id="imagem2" class="h-5 w-5"></p>
+                        <p>Google</p>
+                    </div>
+                    <div class="w-1/3"></div>
+                    <div class="w-1/3 bg-gray-300 flex flex-nowrap justify-center items-center p-2">
+                        <p id="imagem3" class="h-5 w-5"></p>
+                        <p class="">Facebook</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-row justify-center w-full mt-4">
+                    <p>Já possui uma conta?</p>
+                    <a href="{{ route("login") }}" class="text-blue-400">Login</a>
+                </div>
+
             </div>
+
         </div>
     </div>
 </div>
@@ -56,6 +74,20 @@
 <style>
     #imagem1{
         background: url(https://uploads-ssl.webflow.com/5f4db4f2bfdf4b1052de205d/5fb6d6618b59c73a19453807_undraw_education_f8ru.svg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    #imagem2{
+        background: url(https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Google-256.png) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    #imagem3{
+        background: url(https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png) no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
