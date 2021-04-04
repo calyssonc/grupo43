@@ -152,16 +152,15 @@ $ npm run dev:server
 ## 👨‍💻 Autores
 <table>
   <tr>
-    <td align="center"><a href="https://www.linkedin.com/in/kayller-kaique/"><img style="border-radius: 50%;" src="public\image\Autores\Kayller.jpeg" width="100px;" alt=""/><br /><sub><b>Kayller Kaique</b></sub></a><br /><a href="https://www.linkedin.com/in/kayller-kaique/" title="Kayller_Perfil">👨‍🚀</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/alyssondesenvolvimentoandroid/"><img style="border-radius: 50%;" src="public\image\Autores\Cicero.png" width="100px;" alt=""/><br /><sub><b>Cícero Alysson</b></sub></a><br /><a href="https://www.linkedin.com/in/alyssondesenvolvimentoandroid/" title="Cicero_Perfil">👨‍🚀</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/kayller-kaique/"><img style="border-radius: 50%;" src="public\image\Autores\Kayller.jpeg" width="100px;" alt=""/><br /><sub><b>Kayller Kaique</b></sub></a><br /><a href="https://www.linkedin.com/in/kayller-kaique/" title="Kayller_Perfil">🦥</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/alyssondesenvolvimentoandroid/"><img style="border-radius: 50%;" src="public\image\Autores\Cicero.png" width="100px;" alt=""/><br /><sub><b>Cícero Alysson</b></sub></a><br /><a href="https://www.linkedin.com/in/alyssondesenvolvimentoandroid/" title="Cicero_Perfil">🧟‍♂️</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/dafne-vasques-970175147/"><img style="border-radius: 50%;" src="public\image\Autores\Dafne.png" width="110px;" alt=""/><br /><sub><b>Dafne Vasques</b></sub></a><br /><a href="https://www.linkedin.com/in/dafne-vasques-970175147/" title="Dafne_Perfil">👨‍🚀</a>  <a href="https://www.linkedin.com/in/dafne-vasques-970175147/"</a></td> 
-    <td align="center"><a href="https://www.linkedin.com/in/carlos-eduardo-martins-filho-8a38b3174/"><img style="border-radius: 50%;" src="public\image\Autores\Kadu.png" width="90px;" alt=""/><br /><sub><b>Carlos Eduardo</b></sub></a><br /><a href="https://www.linkedin.com/in/carlos-eduardo-martins-filho-8a38b3174/" title="Carlos_Perfil">👨‍🚀</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/carlos-eduardo-martins-filho-8a38b3174/"><img style="border-radius: 50%;" src="public\image\Autores\Kadu.png" width="90px;" alt=""/><br /><sub><b>Carlos Eduardo</b></sub></a><br /><a href="https://www.linkedin.com/in/carlos-eduardo-martins-filho-8a38b3174/" title="Carlos_Perfil">👾</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/yan-phillipe-silva-de-barros-820aa1ba/"><img style="border-radius: 50%;" src="public\image\Autores\Yan.png" width="105px;" alt=""/><br /><sub><b>Yan Phillipe</b></sub></a><br /><a href="https://www.linkedin.com/in/yan-phillipe-silva-de-barros-820aa1ba/" title="Yan_Perfil">🚀</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/guydo-ventura-b7b60520a/"><img style="border-radius: 50%;" src="public\image\Autores\Guydo Ventura.png" width="100px;" alt=""/><br /><sub><b>Guydo Ventura</b></sub></a><br /><a href="https://www.linkedin.com/in/guydo-ventura-b7b60520a/" title="Guydo_Perfil">🚀</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/guydo-ventura-b7b60520a/"><img style="border-radius: 50%;" src="public\image\Autores\Guydo Ventura.png" width="100px;" alt=""/><br /><sub><b>Guydo Ventura</b></sub></a><br /><a href="https://www.linkedin.com/in/guydo-ventura-b7b60520a/" title="Guydo_Perfil">👾</a></td>
     
   </tr>
 </table>
-
 
 ## 📝 Licença
 
