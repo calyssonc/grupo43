@@ -13,7 +13,7 @@ class CreateFilhoTable extends Migration
      */
     public function up()
     {
-        Schema::create('filhos', function (Blueprint $table) {
+        Schema::create('filho', function (Blueprint $table) {
             $table->id();
             $table->string("name");
             $table->string("ra");
@@ -21,7 +21,7 @@ class CreateFilhoTable extends Migration
             $table->unsignedBigInteger("id_beneficiado");
             $table->timestamps();
         });
-        Schema::table('filhos', function (Blueprint $table) {
+        Schema::table('filho', function (Blueprint $table) {
             $table->foreign('id_escola')->references('id')->on("escolas");
             $table->foreign('id_beneficiado')->references('id')->on("beneficiados");
         });
@@ -34,6 +34,6 @@ class CreateFilhoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filhos');
+        Schema::dropIfExists('filho');
     }
 }

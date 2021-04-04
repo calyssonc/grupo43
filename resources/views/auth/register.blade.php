@@ -16,14 +16,35 @@
             <div>
                 <x-label for="name" :value="__('Name')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="banana" required autofocus />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" value="bananabanana.com" required />
+            </div>
+
+             <!-- Email Address -->
+             <div class="mt-4">
+                <x-label for="cpf" :value="__('cpf')" />
+
+                <x-input id="cpf" class="block mt-1 w-full" type="number" name="cpf" value="12345678910" required />
+            </div>
+
+             <!-- Email Address -->
+             <div class="mt-4">
+                <x-label for="localizacao" :value="__('localizacao')" />
+
+                <x-input id="localizacao" class="block mt-1 w-full" type="text" name="localizacao" value="meupirualadao,696969 - sp" required />
+            </div>
+
+             <!-- Email Address -->
+             <div class="mt-4">
+                <x-label for="telefone" :value="__('telefone')" />
+
+                <x-input id="telefone" class="block mt-1 w-full" type="number" name="telefone" value="12345678911" required />
             </div>
 
             <!-- Password -->

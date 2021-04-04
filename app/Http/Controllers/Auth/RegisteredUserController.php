@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Beneficiado;
 use App\Models\Doador;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -40,11 +41,14 @@ class RegisteredUserController extends Controller
             'password' => 'required|string|confirmed|min:8',
         ]);
 
-        Auth::login($user = User::create([
+        
+
+        Auth::login($user = Beneficiado::create([
             'name' => $request->name,
             'email' => $request->email,
-            //'localizacao' => $request->localizacao,
-            //'cpf' => $request->cpf,
+            'localizacao' => $request->localizacao,
+            'cpf' => $request->cpf,
+            'telefone' => $request->telefone,
             'password' => Hash::make($request->password),
         ]));
 
