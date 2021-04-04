@@ -6,6 +6,7 @@ use App\Http\Requests\StoreEscola;
 use App\Http\Requests\StoreMaterial;
 use Illuminate\Http\Request;
 use App\Models\Escola;
+use App\Models\Filho;
 use App\Models\Material;
 
 class EscolaController extends Controller
@@ -69,7 +70,8 @@ class EscolaController extends Controller
         if(!$escola = Escola::where('id',$id)->first()){
             return redirect()->route('escola.index');
         }
-        return view('escola/show',compact('escola'));
+        $alunos = Filho::where('id_escola',$id);
+        return view('escola/show',compact('escola','alunos'));
     }
 
     //Atualiza os dados de uma escola

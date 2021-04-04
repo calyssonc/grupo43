@@ -8,7 +8,7 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <div class="md:ml-4">
-                    <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
+                    <a href="/" class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
                         Home
                     </a>
                 </div>
@@ -31,13 +31,6 @@
                 <div class="md:ml-4">
                     <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
                         Contato
-                    </a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <div class="md:ml-4">
-                    <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
-                        Galeria
                     </a>
                 </div>
             </li>
