@@ -14,15 +14,12 @@ class FilhoController extends Controller
 {
 
     //Apresentar view de cadastro
-    public function cadastro()
+    public function cadastro($beneficiado_id)
     {
         if (!$escolas = Escola::all(['id', 'name'])) {
             return redirect()->route('beneficiado.index');
         }
-        if (!$beneficiados = Beneficiado::all(['id', 'name'])) {
-            return redirect()->route('beneficiado.index');
-        }
-        return view('beneficiado.filho.cadastro',compact('escolas','beneficiados'));
+        return view('beneficiado.filho.cadastro',compact('escolas','beneficiado_id'));
     }
 
     //Apresentar view de cadastro de solicitação

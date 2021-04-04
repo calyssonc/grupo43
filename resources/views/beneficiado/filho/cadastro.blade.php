@@ -1,84 +1,59 @@
 @extends('template/template')
 
-@section('title','Cadastro de beneficiado')
+@section('title','Cadastro de Escola')
 
 @section('content')
 
-<x-guest-layout>
-    <x-auth-card>
+<div class="h-screen w-full flex flex-wrap">
+    <div class="h-0 w-0 md:h-full md:w-1/2 flex justify-center items-center">
+        <div class="hidden md:block">
+            <p class="text-3xl">Cadastre seu dependente!</p>
+            <p id="imagem1" class="h-96 w-96 mt-5"></p>
+        </div>
+    </div>
+    <div class="w-full h-full md:h-full md:w-1/2 flex justify-center items-center">
+        <div class="border-2 border-gray-300 h-auto w-5/6 p-5">
+            <p class="font-bold">Novo Dependente</p>
 
-        <h1>Cadastro de Filho</h1>
-        <br>
+            @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all(); as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
 
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('filho.cadastro') }}">
+            <form method="POST" action="{{ route('filho.store') }}">
             @csrf
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Nome do filho')" />
+            <input class="mt-4 w-full border-gray-300" type="text" name="name" id="name" placeholder="Nome" value="{{ old('name') }}" required autofocus>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
+            <input class="mt-2 w-full border-gray-300" type="text" name="ra" id="ra" placeholder="RA" value="{{ old('ra') }}" required>
 
-            <!-- RA -->
-            <div class="mt-4">
-                <x-label for="ra" :value="__('RA')" />
+            <select class="mt-2 w-full border-gray-300" name="id_escola">
+                @foreach($escolas as $item)
+                    <option value="{{$item->id}}">{{$item->name}}</option>
+                @endforeach
+            </select>
 
-                <x-input id="ra" class="block mt-1 w-full" type="text" name="ra" :value="old('ra')" required />
-            </div>
+            <input class="hidden" type="text" name="id_beneficiado" id="id_beneficiado" value="{{ $beneficiado_id }}">
 
-            <!-- ID escola -->
-            <div>
-                <x-label for="id_escola" :value="__('Escola')" />
-                <select class="form-control" name="id_escola">
-                    @foreach($escolas as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
-                    @endforeach
-                </select>
-            </div>
+            <button class="bg-blue-500 text-white w-full p-1 mt-4" type="submit" value="cadastrar" >Registrar</button>
 
-            <!-- ID beneficiado -->
-            <div>
-                <x-label for="id_beneficiado" :value="__('Beneficiado')" />
-                <select class="form-control" name="id_beneficiado">
-                    @foreach($beneficiados as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
-                    @endforeach
-                </select>
-            </div>
+            </form>
 
-            <!-- Escolher o tipo de usuário -->
-            {{-- <div class="mt-4">
-                <x-label for="role_id" value="{{ __('Registrar como:') }}"/>
-                <select name="role_id" class="block mt-1 w-full border-gray-300
-                focus:border-indigo-300 focus:ring focus:ring-indigo-200
-                focus:ring-opacity-50 rounded-md shadow-sm">
-                    <option value="escola">Escola</option>
-                    <option value="doador">Doador</option>
-                    <option value="beneficiado">Beneficiado</option>
-                </select>
-            </div> --}}
+        </div>
+    </div>
+</div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+<style>
+    #imagem1{
+        background: url(https://uploads-ssl.webflow.com/5f4db4f2bfdf4b1052de205d/5fb6d6618b59c73a19453807_undraw_education_f8ru.svg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
 
 @endsection

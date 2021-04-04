@@ -7,13 +7,13 @@
 <div class="h-screen w-full flex flex-wrap">
     <div class="h-0 w-0 md:h-full md:w-1/2 flex justify-center items-center">
         <div class="hidden md:block">
-            <p class="text-3xl">Se torne um herói e ajude a espalhar o bem!</p>
+            <p class="text-3xl">Melhore a educação do seu filho!</p>
             <p id="imagem1" class="h-96 w-96 mt-5"></p>
         </div>
     </div>
     <div class="w-full h-full md:h-full md:w-1/2 flex justify-center items-center">
         <div class="border-2 border-gray-300 h-auto w-5/6 p-5">
-            <p class="font-bold">Cadastro Doador!</p>
+            <p class="font-bold">Cadastro Responsável</p>
 
             @if ($errors->any())
                 <ul>

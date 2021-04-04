@@ -64,7 +64,7 @@
     </thead>
 </table>
 
-    <a class="btn btn-primary" href="{{ route('filho.cadastro') }}">Cadastrar Filho</a>
+    <a class="btn btn-primary" href="{{ route('filho.cadastro',$beneficiado->id) }}">Cadastrar Filho</a>
 
 <style>
     h2{
