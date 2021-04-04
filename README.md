@@ -145,6 +145,7 @@ $ npm run dev:server
 -   Diagramas e UML:  **[Drawio](https://drive.google.com/file/d/1jb0uTJ3C2xzzjFBaJ_n0w4e7omlB2vtf/view?pli=1)**
 -   Userflow:  **[Lucidchart](https://lucid.app/lucidchart/52921965-3807-456f-b99e-866596fe45b5/edit?shared=true&page=0_0#)**
 
+-   Ferramenta de teste e documentação de rotas:  **[Postman](https://documenter.getpostman.com/view/15121348/TzCMc7oU)**
 
 
 ---
