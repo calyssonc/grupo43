@@ -4,8 +4,6 @@ use App\Http\Controllers\BeneficiadoController;
 use App\Http\Controllers\FilhoController;
 use Illuminate\Support\Facades\Route;
 
-//Rota get para tela de cadastro do filho
-Route::get('/beneficiado/filho/cadastro', [FilhoController::class, 'cadastro'])->name('filho.cadastro');
 //Rota post para cadastro de formulario de filho
 Route::post('/beneficiado/filho/cadastro', [FilhoController::class, 'store'])->name('filho.store');
 //Rota post para solicitar material escolar para o filho
@@ -18,6 +16,8 @@ Route::put('/beneficiado/filho/{id}', [FilhoController::class, 'update'])->name(
 Route::delete('/beneficiado/filho/{id}', [FilhoController::class, 'destroy'])->name('filho.destroy');
 //Rota get para tela de solicitar material
 Route::get('/beneficiado/filho/solicitar-material/{id}', [FilhoController::class, 'solicitarMaterial'])->name('filho.solicitarMaterial');
+//Rota get para tela de cadastro do filho
+Route::get('/beneficiado/filho/cadastro/{id}', [FilhoController::class, 'cadastro'])->name('filho.cadastro');
 
 
 
