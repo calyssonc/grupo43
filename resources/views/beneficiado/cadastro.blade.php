@@ -23,7 +23,7 @@
                 </ul>
             @endif
 
-            <form method="POST" action=""{{ route('doador.cadastro') }}">
+            <form method="POST" action=""{{ route('beneficiado.cadastro') }}">
             @csrf
 
             <input class="mt-4 w-full border-gray-300" type="text" name="name" id="name" placeholder="Nome" value="{{ old('name') }}" required autofocus>
@@ -31,6 +31,8 @@
             <input class="mt-2 w-full border-gray-300" type="text" name="localizacao" id="localizacao" placeholder="Logradouro" value="{{ old('localizacao') }}" required>
 
             <input class="mt-2 w-full border-gray-300" type="text" name="cpf" id="cpf" placeholder="CPF" value="{{ old('cpf') }}" required>
+
+            <input class="mt-2 w-full border-gray-300" type="text" name="telefone" id="telefone" placeholder="Telefone" value="{{ old('telefone') }}" required>
 
             <input class="mt-2 w-full border-gray-300" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
 
