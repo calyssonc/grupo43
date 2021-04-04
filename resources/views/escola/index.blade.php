@@ -4,9 +4,6 @@
 
 @section('content')
 
-<h1>Escola Index</h1>
-
-@if (session('message'))
 
 
 <div class="p-11 text-center text-3xl lg:text-6xl">
@@ -14,7 +11,7 @@
 </div>
 
 <div class="grid grid-cols-1 w-screen
-            lg:grid-cols-2 pr-3 w-full ">
+            lg:grid-cols-2 pr-3 w-full">
     <div class="p-2 lg:p-8
                 lg:min-h-screen lg:items-center">
         <form action="{{ route('escola.search') }}" method="post" class="grid-rows-1 border rounded-xl my-4 bg-gradient-to-br from-gray-100">
@@ -30,20 +27,36 @@
                 </div>
             </div>
 
+            <div class="flex flex-row ...">
+                <select id="estado" name="estado" class="m-2 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="" disabled selected>Estado</option>
+                    <option>São Paulo</option>
+                    <option>Ceara</option>
+                    <option>Santa Catarina</option>
+                </select>
+                <select id="cidade" name="cidade" class="m-2 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="" disabled selected>Cidade</option>
+                    <option>São Paulo</option>
+                    <option>Mongaguá</option>
+                    <option>Santos</option>
+                    <option>São Vicente</option>
+                    <option>CiceroCity</option>
+                    <option>DafneCity</option>
+                </select>
+                <select id="bairro" name="bairro" class="m-2 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="" disabled selected>Bairro</option>
+                    <option>Aguápeu</option>
+                    <option>Parque Continental</option>
+                    <option>Aparecida</option>
+                </select>
+            </div>
+        </form>
 
-<div>
 
-<h2>Escolas</h2>
-
-<form action="{{ route('escola.search') }}" method="post">
-    @csrf
-    <input type="text" name="search" placeholder="Pesquisar:">
-    <button type="submit">Pesquisar</button>
-</form>
 
         <div class="border-4"></div>
         @empty($escolas)
-            Não há escolas cadastradas
+        Não há escolas cadastradas
         @endempty
         @foreach ($escolas as $escola)
         <div class="
@@ -79,25 +92,12 @@
     <div class="p-2 h-0">
         <img class="hidden md:hidden lg:block" src="{{ asset('image/booklover.png') }}">
     </div>
+
+
     <style>
         h2 {
             margin-top: 35px;
         }
     </style>
 
-
-@if (isset($filters))
-    {{ $escolas->appends($filters)->links() }}
-@else
-    {{ $escolas->links() }}
-@endif
-
-</div>
-
-<style>
-    h2{
-        margin-top:35px;
-    }
-</style>
-
-@endsection
+    @endsection
