@@ -21,7 +21,7 @@ class CreateFilhoTable extends Migration
             $table->unsignedBigInteger("id_beneficiado");
             $table->timestamps();
         });
-        Schema::table('filhos', function (Blueprint $table) {
+        Schema::table('filho', function (Blueprint $table) {
             $table->foreign('id_escola')->references('id')->on("escolas");
             $table->foreign('id_beneficiado')->references('id')->on("beneficiados");
         });
