@@ -12,7 +12,7 @@
 	🚧  Doaup ♻️ Em construção 🚀 🚧
 </h4>
 
-<p align="center">
+<!-- <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#-funcionalidades">Funcionalidades</a> •
  <a href="#-layout">Layout</a> • 
@@ -21,7 +21,7 @@
  <a href="#-contribuidores">Contribuidores</a> • 
  <a href="#-autor">Autor</a> • 
  <a href="#user-content--licença">Licença</a>
-</p>
+</p> -->
 
 
 ## 💻 Sobre o projeto
