@@ -14,13 +14,12 @@
 </h4>
 
 <p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
- <a href="#-layout">Layout</a> • 
- <a href="#-como-executar-o-projeto">Como executar</a> • 
- <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-contribuidores">Contribuidores</a> • 
- <a href="#-autor">Autor</a> • 
+ <a href="#-Sobre-o-projeto">Sobre</a> •
+ <a href="#-Funcionalidades">Funcionalidades</a> •
+ <a href="#-Layout">Layout</a> • 
+ <a href="#-Como-executar-o-projeto">Como executar</a> • 
+ <a href="#-Tecnologias">Tecnologias</a> • 
+ <a href="#-Autores">Autores</a> • 
  <a href="#user-content--licença">Licença</a>
 </p>
 
@@ -88,7 +87,7 @@ O layout da aplicação está disponível no Figma:
 
 ---
 
-## 🚀 Como executar o projeto 🚀
+## 🚀 Como executar o projeto
 
 💡O Frontend precisa que o Backend esteja sendo executado para funcionar.
 
