@@ -62,7 +62,7 @@
             <th scope="col">Ações</th>
         </tr>
     </thead>
-    </table>
+</table>
 
     <a class="btn btn-primary" href="{{ route('filho.cadastro') }}">Cadastrar Filho</a>
 

@@ -1,10 +1,10 @@
 @extends('template/template')
 
-@section('title','Escola Index')
+@section('title','Doador Index')
 
 @section('content')
 
-<h1>Escola Index</h1>
+<h1>Doador Index</h1>
 
 @if (session('message'))
 
@@ -17,9 +17,9 @@
 
 <div>
 
-<h2>Escolas</h2>
+<h2>Doadores</h2>
 
-<form action="{{ route('escola.search') }}" method="post">
+<form action="{{ route('doador.search') }}" method="post">
     @csrf
     <input type="text" name="search" placeholder="Pesquisar:">
     <button type="submit">Pesquisar</button>
@@ -30,22 +30,22 @@
     <tr>
         <th scope="col">ID</th>
         <th scope="col">Nome</th>
-        <th scope="col">Tipo</th>
+        <th scope="col">Email</th>
         <th scope="col">Localização</th>
-        <th scope="col">Telefone</th>
+        <th scope="col">CPF</th>
         <th scope="col">Ações</th>
     </tr>
 </thead>
 <tbody>
-@foreach ($escolas as $escola)
+@foreach ($doadors as $doador)
 <tr>
-    <th scope="row">{{ $escola->id }}</th>
-    <td>{{ $escola->name }}</td>
-    <td>{{ $escola->tipo }}</td>
-    <td>{{ $escola->localizacao }}</td>
-    <td>{{ $escola->telefone }}</td>
+    <th scope="row">{{ $doador->id }}</th>
+    <td>{{ $doador->name }}</td>
+    <td>{{ $doador->email }}</td>
+    <td>{{ $doador->localizacao }}</td>
+    <td>{{ $doador->cpf }}</td>
     <td>
-        <a href="{{ route('escola.show',$escola->id) }}">Ver/Editar</a>
+        <a href="{{ route('doador.show',$doador->id) }}">Ver/Editar</a>
     </td>
 </tr>
 @endforeach
@@ -54,20 +54,20 @@
     <tr>
         <th scope="col">ID</th>
         <th scope="col">Nome</th>
-        <th scope="col">Tipo</th>
+        <th scope="col">Email</th>
         <th scope="col">Localização</th>
-        <th scope="col">Telefone</th>
+        <th scope="col">CPF</th>
         <th scope="col">Ações</th>
     </tr>
 </thead>
 </table>
 
-<a class="btn btn-primary" href="{{ route('escola.cadastro') }}">Cadastrar Escola</a>
+<a class="btn btn-primary" href="{{ route('doador.cadastro') }}">Cadastrar Doador</a>
 
 @if (isset($filters))
-    {{ $escolas->appends($filters)->links() }}
+    {{ $doadors->appends($filters)->links() }}
 @else
-    {{ $escolas->links() }}
+    {{ $doadors->links() }}
 @endif
 
 </div>

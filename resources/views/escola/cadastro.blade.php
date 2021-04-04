@@ -4,105 +4,95 @@
 
 @section('content')
 
-<x-guest-layout>
-    <x-auth-card>
+<div class="h-screen w-full flex flex-wrap">
+    <div class="h-0 w-0 md:h-full md:w-1/2 flex justify-center items-center">
+        <div class="hidden md:block">
+            <p class="text-3xl">Seja uma escola parceira!</p>
+            <p id="imagem1" class="h-96 w-96 mt-5"></p>
+        </div>
+    </div>
+    <div class="w-full h-full md:h-full md:w-1/2 flex justify-center items-center">
+        <div class="border-2 border-gray-300 h-auto w-5/6 p-5">
+            <p class="font-bold">Cadastro Escola</p>
 
-        <h1>Cadastro de escola</h1>
-        <br>
+            @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all(); as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
 
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('escola.cadastro') }}">
+            <form method="POST" action=""{{ route('escola.cadastro') }}">
             @csrf
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Nome da escola')" />
+            <input class="mt-4 w-full border-gray-300" type="text" name="name" id="name" placeholder="Nome da instituição" value="{{ old('name') }}" required autofocus>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            <input class="mt-2 w-full border-gray-300" type="text" name="localizacao" id="localizacao" placeholder="Logradouro" value="{{ old('localizacao') }}" required>
+
+            <input class="mt-2 w-full border-gray-300" type="text" name="telefone" id="telefone" placeholder="Telefone de contato"  value="{{ old('telefone') }}"required>
+
+            <select name="tipo" class="mt-2 w-full border-gray-300" required>
+                <option value="" selected>Tipo de escola</option>
+                <option value="estadual">Estadual</option>
+                <option value="municipal">Municipal</option>
+            </select>
+
+            <input class="mt-2 w-full border-gray-300" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
+
+            <input class="mt-2 w-full border-gray-300" type="password" name="password" id="password" placeholder="Senha" value="{{ old('password') }}" required>
+
+            <button class="bg-blue-500 text-white w-full p-1 mt-4" type="submit" value="cadastrar" >Registre-se</button>
+
+            </form>
+
+            <div class="flex flex-wrap mt-4">
+
+                <div class="flex flex-row text-center justify-center w-full">
+                    <div class="w-1/3 bg-gray-300 flex flex-nowrap justify-center items-center p-2">
+                        <p id="imagem2" class="h-5 w-5"></p>
+                        <p>Google</p>
+                    </div>
+                    <div class="w-1/3"></div>
+                    <div class="w-1/3 bg-gray-300 flex flex-nowrap justify-center items-center p-2">
+                        <p id="imagem3" class="h-5 w-5"></p>
+                        <p class="">Facebook</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-row justify-center w-full mt-4">
+                    <p>Já possui uma conta?</p>
+                    <a href="{{ route("login") }}" class="text-blue-400">Login</a>
+                </div>
+
             </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+        </div>
+    </div>
+</div>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Tipo -->
-            <div class="mt-4">
-                <x-label for="tipo" value="{{ __('Tipo de escola') }}"/>
-                <select name="tipo" class="block mt-1 w-full border-gray-300
-                focus:border-indigo-300 focus:ring focus:ring-indigo-200
-                focus:ring-opacity-50 rounded-md shadow-sm">
-                    <option value="estadual">Estadual</option>
-                    <option value="municipal">Municipal</option>
-                </select>
-            </div>
-
-            <!-- Tipo -->
-            <div>
-                <x-label for="localizacao" :value="__('Localização')" />
-
-                <x-input id="localizacao" class="block mt-1 w-full" type="text" name="localizacao" :value="old('localizacao')" required />
-            </div>
-
-            <!-- Telefone -->
-            <div>
-                <x-label for="telefone" :value="__('Telefone')" />
-
-                <x-input id="telefone" class="block mt-1 w-full" type="text" name="telefone" :value="old('telefone')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <!-- Escolher o tipo de usuário -->
-            {{-- <div class="mt-4">
-                <x-label for="role_id" value="{{ __('Registrar como:') }}"/>
-                <select name="role_id" class="block mt-1 w-full border-gray-300
-                focus:border-indigo-300 focus:ring focus:ring-indigo-200
-                focus:ring-opacity-50 rounded-md shadow-sm">
-                    <option value="escola">Escola</option>
-                    <option value="doador">Doador</option>
-                    <option value="beneficiado">Beneficiado</option>
-                </select>
-            </div> --}}
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+<style>
+    #imagem1{
+        background: url(https://uploads-ssl.webflow.com/5f4db4f2bfdf4b1052de205d/5fb6d6618b59c73a19453807_undraw_education_f8ru.svg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    #imagem2{
+        background: url(https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Google-256.png) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    #imagem3{
+        background: url(https://cdn3.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
 
 @endsection

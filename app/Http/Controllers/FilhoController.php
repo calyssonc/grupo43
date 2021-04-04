@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Filho;
 use App\Models\Escola;
 use App\Http\Requests\StoreFilho;
+use App\Http\Requests\StoreNecessita;
+use App\Models\Beneficiado;
+use App\Models\Necessita;
 
 class FilhoController extends Controller
 {
@@ -16,7 +19,19 @@ class FilhoController extends Controller
         if (!$escolas = Escola::all(['id', 'name'])) {
             return redirect()->route('beneficiado.index');
         }
-        return view('beneficiado.filho.cadastro',compact('escolas'));
+        if (!$beneficiados = Beneficiado::all(['id', 'name'])) {
+            return redirect()->route('beneficiado.index');
+        }
+        return view('beneficiado.filho.cadastro',compact('escolas','beneficiados'));
+    }
+
+    //Apresentar view de cadastro de solicitação
+    public function solicitarMaterial($id)
+    {
+        if (!$filho = Filho::where('id', $id)->first()) {
+            return redirect()->route('beneficiado.index');
+        }
+        return view('beneficiado.filho.solicitar-material',compact('filho'));
     }
 
     //Mostra os dados de um filho
@@ -28,7 +43,10 @@ class FilhoController extends Controller
         if (!$escolas = Escola::all(['id', 'name'])) {
             return redirect()->route('beneficiado.index');
         }
-        return view('beneficiado/filho/show', compact('filho', 'escolas'));
+        if (!$necessita = Necessita::where('id_filho', $id)->get()) {
+            return redirect()->route('beneficiado.index');
+        }
+        return view('beneficiado/filho/show', compact('filho', 'escolas','necessita'));
     }
 
     //Atualiza os dados de um filho
@@ -74,4 +92,19 @@ class FilhoController extends Controller
                 ->with('message', "Erro ao adicionar!");
         }
     }
+
+    //Realiza o cadastro de uma nova beneficiado
+    public function storeSolicitarMaterial(StoreNecessita $request)
+    {
+        if (Necessita::create($request->all())) {
+            return redirect()
+                ->route('beneficiado.index')
+                ->with('message', "Adicionado!");
+        } else {
+            return redirect()
+                ->route('beneficiado.index')
+                ->with('message', "Erro ao adicionar!");
+        }
+    }
+
 }

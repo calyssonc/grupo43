@@ -1,13 +1,13 @@
 @extends('template/template')
 
-@section('title','Cadastro de beneficiado')
+@section('title','Cadastro de doador')
 
 @section('content')
 
 <x-guest-layout>
     <x-auth-card>
 
-        <h1>Cadastro de Filho</h1>
+        <h1>Cadastro de doador</h1>
         <br>
 
         <x-slot name="logo">
@@ -19,41 +19,54 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('filho.cadastro') }}">
+        <form method="POST" action="{{ route('doador.cadastro') }}">
             @csrf
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Nome do filho')" />
+                <x-label for="name" :value="__('Nome do doador')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
-            <!-- RA -->
+            <!-- Email Address -->
             <div class="mt-4">
-                <x-label for="ra" :value="__('RA')" />
+                <x-label for="email" :value="__('Email')" />
 
-                <x-input id="ra" class="block mt-1 w-full" type="text" name="ra" :value="old('ra')" required />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
-            <!-- ID escola -->
+            <!-- CPF -->
             <div>
-                <x-label for="id_escola" :value="__('Escola')" />
-                <select class="form-control" name="id_escola">
-                    @foreach($escolas as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
-                    @endforeach
-                </select>
+                <x-label for="cpf" :value="__('CPF do doador')" />
+
+                <x-input id="cpf" class="block mt-1 w-full" type="text" name="cpf" :value="old('cpf')" required />
             </div>
 
-            <!-- ID beneficiado -->
+            <!-- Localização (ENREDEÇO) -->
             <div>
-                <x-label for="id_beneficiado" :value="__('Beneficiado')" />
-                <select class="form-control" name="id_beneficiado">
-                    @foreach($beneficiados as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
-                    @endforeach
-                </select>
+                <x-label for="localizacao" :value="__('Localização')" />
+
+                <x-input id="localizacao" class="block mt-1 w-full" type="text" name="localizacao" :value="old('localizacao')" required />
+            </div>
+
+            <!-- Password -->
+            <div class="mt-4">
+                <x-label for="password" :value="__('Password')" />
+
+                <x-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="new-password" />
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mt-4">
+                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+
+                <x-input id="password_confirmation" class="block mt-1 w-full"
+                                type="password"
+                                name="password_confirmation" required />
             </div>
 
             <!-- Escolher o tipo de usuário -->
