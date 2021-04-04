@@ -13,7 +13,11 @@ Route::get('/escola/index', [EscolaController::class, 'index'])->name('escola.in
 Route::get('/escola/cadastro', [EscolaController::class, 'cadastro'])->name('escola.cadastro');
 //Rota para realizar o cadastro
 Route::post('/escola/cadastro', [EscolaController::class, 'store'])->name('escola.store');
-//Rota para realizar pesquisa por escolas
+//Rota get para mostrar a tela cadstro de material
+Route::get('/escola/cadastro-material', [EscolaController::class, 'cadastroMaterial'])->name('escola.cadastroMaterial');
+//Rota para realizar o cadastro do material
+Route::post('/escola/cadastro-material', [EscolaController::class, 'storeMaterial'])->name('escola.storeMaterial');
+//Rota para realizar o cadastro de materiais
 Route::any('/escola/search',[EscolaController::class,'search'])->name('escola.search');
 //Rota para mostrar o perfil de uma escola
 Route::get('/escola/{id}', [EscolaController::class, 'show'])->name('escola.show');

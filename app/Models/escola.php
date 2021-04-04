@@ -15,19 +15,14 @@ class Escola extends Model
 
     protected $fillable = ['name','email','password',"tipo","localizacao","telefone"];
 
-
-    //FK User
-    public function user() {
-        return $this->belongsTo('App\Models\Users');
-    }
-
     //FK Material
-    public function materiais() {
-        return $this->hasMany('App\Models\Material');
+    public function material() {
+        return $this->hasMany(Material::class, 'id_escola');
     }
     //FK Filho
-    public function filhos() {
-        return $this->hasMany('App\Models\Filho');
+    public function filho() {
+        return $this->hasMany(Filho::class, 'id_escola');
     }
+
 };
 

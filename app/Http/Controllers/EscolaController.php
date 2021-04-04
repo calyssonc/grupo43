@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEscola;
+use App\Http\Requests\StoreMaterial;
 use Illuminate\Http\Request;
 use App\Models\Escola;
+use App\Models\Material;
 
 class EscolaController extends Controller
 {
@@ -14,7 +16,6 @@ class EscolaController extends Controller
 
     //Retorna todos os registros de escolas
     public function index(){
-        echo csrf_token(); 
         $escolas = Escola::paginate();
         return view('escola/index', compact('escolas'));
     }
@@ -24,11 +25,34 @@ class EscolaController extends Controller
         return view('escola.cadastro');
     }
 
+    //Apresentar view de cadastro
+    public function cadastroMaterial(){
+        if (!$escolas = Escola::all(['id', 'name'])) {
+            return redirect()->route('beneficiado.index');
+        }
+        return view('escola.cadastro-material',compact('escolas'));
+    }
+
     //Realiza o cadastro de uma nova escola
     public function store(StoreEscola $request)
     {
-        dd($request->all());
+
         if(Escola::create($request->all())){
+            return redirect()
+            ->route('escola.index')
+            ->with('message', "Adicionado!");
+        }else{
+            return redirect()
+            ->route('escola.index')
+            ->with('message', "Erro ao adicionar!");
+        }
+
+    }
+
+    //Realiza o cadastro de uma nova escola
+    public function storeMaterial(StoreMaterial $request)
+    {
+        if(Material::create($request->all())){
             return redirect()
             ->route('escola.index')
             ->with('message', "Adicionado!");

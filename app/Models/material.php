@@ -8,16 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Material extends Model
 {
     use HasFactory;
-    protected $fillable = ['nome','escola_id'];
+    protected $table = "material";
+    protected $fillable = ['name','id_escola'];
 
     //FK Escola
     public function escola() {
-        return $this->belongsTo('App\Models\Escola');
-    }
-
-    //FK Necessita
-    public function necessidades() {
-        return $this->hasMany('App\Models\Necessita');
+        return $this->belongsTo(Escola::class,'id_escola');
     }
 
 }

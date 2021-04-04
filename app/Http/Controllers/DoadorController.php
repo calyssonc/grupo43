@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreDoador;
 use Illuminate\Http\Request;
 use App\Models\Doador;
+use App\Models\Escola;
 
 class DoadorController extends Controller
 {
@@ -14,8 +15,8 @@ class DoadorController extends Controller
 
     //Retorna todos os registros de doadors
     public function index(){
-        $doadors = Doador::paginate();
-        return view('doador/index', compact('doadors'));
+        $escolas = Escola::paginate();
+        return view('doador.index', compact('escolas'));
     }
 
     //Apresentar view de cadastro
