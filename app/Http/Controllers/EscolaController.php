@@ -7,6 +7,8 @@ use App\Http\Requests\StoreMaterial;
 use Illuminate\Http\Request;
 use App\Models\Escola;
 use App\Models\Material;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class EscolaController extends Controller
 {
@@ -37,7 +39,14 @@ class EscolaController extends Controller
     public function store(StoreEscola $request)
     {
 
-        if(Escola::create($request->all())){
+        if(Escola::create([
+            'name' => $request->name,
+            'localizacao' => $request->localizacao,
+            'tipo' => $request->tipo,
+            'telefone' => $request->telefone,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ])){
             return redirect()
             ->route('escola.index')
             ->with('message', "Adicionado!");
@@ -65,7 +74,8 @@ class EscolaController extends Controller
     }
 
     //Mostra o perfil de uma escola cadastrada
-    public function show($id){
+    public function show(){
+        $id = Auth::guard('escola')->user()->id;
         if(!$escola = Escola::where('id',$id)->first()){
             return redirect()->route('escola.index');
         }

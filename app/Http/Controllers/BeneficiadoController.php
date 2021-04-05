@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Beneficiado;
 use App\Models\Escola;
 use App\Models\Filho;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class BeneficiadoController extends Controller
@@ -15,7 +16,7 @@ class BeneficiadoController extends Controller
 
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth:beneficiado');
     }
 
     // public function index(){
@@ -57,7 +58,8 @@ class BeneficiadoController extends Controller
     }
 
     //Mostra o perfil de uma beneficiado cadastrada
-    public function show($id){
+    public function show(){
+        $id = Auth::guard('beneficiado')->user()->id;
         if(!$beneficiado = Beneficiado::where('id',$id)->first()){
             return redirect()->route('beneficiado.index');
         }

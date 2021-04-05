@@ -63,7 +63,7 @@
                     <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Editar Perfil</button>
                     <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Medalhas</button>
                     <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Lista de amigos</button>
-                    <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Sair</button>
+                    <a class="bg-blue-500 rounded text-white px-5 p-1 m-2 text-center" href="{{ route('logout') }}">Sair</a>
                 </div>
             </div>
         </div>

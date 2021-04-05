@@ -8,18 +8,38 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <div class="md:ml-4">
-                    <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
+                    <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('dashboard') }}">
                         Home
                     </a>
                 </div>
             </li>
-            <li class="nav-item">
-                <div class="md:ml-4">
-                    <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
-                        Perfil
-                    </a>
-                </div>
-            </li>
+            @if (Auth::guard('beneficiado')->check())
+                <li class="nav-item">
+                    <div class="md:ml-4">
+                        <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('beneficiado.show') }}">
+                            Perfil
+                        </a>
+                    </div>
+                </li>
+            @endif
+            @if (Auth::guard('doador')->check())
+                <li class="nav-item">
+                    <div class="md:ml-4">
+                        <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('doador.show') }}">
+                            Perfil
+                        </a>
+                    </div>
+                </li>
+            @endif
+            @if (Auth::guard('escola')->check())
+                <li class="nav-item">
+                    <div class="md:ml-4">
+                        <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('escola.show') }}">
+                            Perfil
+                        </a>
+                    </div>
+                </li>
+            @endif
             <li class="nav-item">
                 <div class="md:ml-4">
                     <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">

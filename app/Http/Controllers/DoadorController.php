@@ -6,6 +6,8 @@ use App\Http\Requests\StoreDoador;
 use Illuminate\Http\Request;
 use App\Models\Doador;
 use App\Models\Escola;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class DoadorController extends Controller
 {
@@ -28,7 +30,13 @@ class DoadorController extends Controller
     public function store(StoreDoador $request)
     {
 
-        if(Doador::create($request->all())){
+        if(Doador::create([
+            'name' => $request->name,
+            'localizacao' => $request->localizacao,
+            'cpf' => $request->cpf,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ])){
             return redirect()
             ->route('doador.index')
             ->with('message', "Adicionado!");
@@ -41,7 +49,8 @@ class DoadorController extends Controller
     }
 
     //Mostra o perfil de uma doador cadastrada
-    public function show($id){
+    public function show(){
+        $id = Auth::guard('doador')->user()->id;
         if(!$doador = Doador::where('id',$id)->first()){
             return redirect()->route('doador.index');
         }

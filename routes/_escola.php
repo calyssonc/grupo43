@@ -20,7 +20,7 @@ Route::post('/escola/cadastro-material', [EscolaController::class, 'storeMateria
 //Rota para realizar o cadastro de materiais
 Route::any('/escola/search',[EscolaController::class,'search'])->name('escola.search');
 //Rota para mostrar o perfil de uma escola
-Route::get('/escola/{id}', [EscolaController::class, 'show'])->name('escola.show');
+Route::get('/escola', [EscolaController::class, 'show'])->name('escola.show');
 //Rota para atualizar os dados
 Route::put('/escola/{id}',[EscolaController::class,'update'])->name('escola.update');
 //Rota delete para deletar escola do banco de dados
