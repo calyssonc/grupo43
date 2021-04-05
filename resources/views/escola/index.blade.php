@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="h-screen w-full mt-44">
+<div class="">
 
     <table class="table table-hover">
         <thead>

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="h-screen w-full flex flex-wrap">
+<div class="h-screen w-full flex flex-wrap pt-11">
     <div class="h-0 w-0 md:h-full md:w-1/2 flex justify-center items-center px-4">
         <div class="hidden md:block">
             <p class="text-3xl text-center">Se torne um herói e ajude a espalhar o bem!</p>

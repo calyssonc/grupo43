@@ -1,12 +1,9 @@
 @extends('template/template')
 
-@section('title','Escola Index')
+@section('title','Lista de escolas')
 
 @section('content')
-
-
-
-<div class="pt-20 p-11 text-center text-3xl lg:text-6xl">
+<div class="p-11 text-center text-3xl lg:text-6xl pt-20">
     <h1> Comece agora e pesquise por escolas próximas a você! </h1>
 </div>
 
@@ -16,7 +13,7 @@
                 lg:min-h-screen lg:items-center">
         <form action="{{ route('escola.search') }}" method="post" class="grid-rows-1 border rounded-xl my-4 bg-gradient-to-br from-gray-100">
             @csrf
-            <div class="flex flex-row py-4 px-1 ">
+            <div class="flex flex-row py-4 px-1 mx-2">
                 <div class="mt-1 flex rounded-full shadow-sm w-full pr-2 ">
                     <input type="text" name="search" id="search" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-full sm:text-sm border-gray-300" placeholder="Digite o nome da escola">
                 </div>
@@ -56,9 +53,9 @@
 
 
         <div class="border-4"></div>
-        @empty($escolas)
+        @if(isset($escolas) && $escolas->count() == 0)
         Não há escolas cadastradas
-        @endempty
+        @endif
         @foreach ($escolas as $escola)
         <div class="
             h-32 bg-gradient-to-br from-gray-200 shadow-2xl border-2 border-gray-300 hover:border-blue-500 m-2 rounded-3xl p-2 grid grid-cols-5 lg:rounded-full lg:min-h-42 ">
@@ -94,6 +91,5 @@
         <img class="hidden md:hidden lg:block" src="{{ asset('image/booklover.png') }}">
     </div>
 </div>
-
 
 @endsection

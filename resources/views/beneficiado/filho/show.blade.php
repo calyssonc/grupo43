@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1>Perfil {{ $filho->name }}</h1>
+<h1 class="pt-11">Perfil {{ $filho->name }}</h1>
 
 <form action="{{ route('filho.update', $filho->id) }}" method="post">
     @method('PUT')
