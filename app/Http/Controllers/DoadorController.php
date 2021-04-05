@@ -39,7 +39,7 @@ class DoadorController extends Controller
             'password' => Hash::make($request->password),
         ])){
             return redirect()
-            ->route('doador.index')
+            ->route('login')
             ->with('message', "Adicionado!");
         }else{
             return redirect()
