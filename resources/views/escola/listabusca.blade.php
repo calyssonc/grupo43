@@ -6,8 +6,8 @@
 
 
 
-<div class="pt-20 p-11 text-center text-3xl lg:text-6xl">
-    <h1> Comece agora e pesquise por escolas próximas a você! </h1>
+<div class="p-11 text-center text-3xl lg:text-6xl">
+    <h1> Pesquise por escolas próximas a você! </h1>
 </div>
 
 <div class="grid grid-cols-1 w-screen
@@ -17,16 +17,16 @@
         <form action="{{ route('escola.search') }}" method="post" class="grid-rows-1 border rounded-xl my-4 bg-gradient-to-br from-gray-100">
             @csrf
             <div class="flex flex-row py-4 px-1 ">
-                <div class="mt-1 flex rounded-full shadow-sm w-full pr-2 ">
-                    <input type="text" name="search" id="search" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-full sm:text-sm border-gray-300" placeholder="Digite o nome da escola">
-                </div>
                 <button type="submit" class="w-14 rounded-full shadow-sm border-2 hover:border-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </button>
+                <div class="mt-1 flex rounded-full shadow-sm w-full">
+                    <input type="text" name="search" id="search" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-full sm:text-sm border-gray-300" placeholder="Digite o nome da escola">
+                </div>
             </div>
-            <!--
+
             <div class="flex flex-row ...">
                 <select id="estado" name="estado" class="m-2 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option value="" disabled selected>Estado</option>
@@ -50,7 +50,6 @@
                     <option>Aparecida</option>
                 </select>
             </div>
-            -->
         </form>
 
 

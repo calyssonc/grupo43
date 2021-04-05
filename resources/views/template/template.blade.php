@@ -7,6 +7,7 @@
     <title>@yield('title') - {{ config('app.name') }} </title>
     <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   <link rel="shortcut icon" href="image/logo111.png">
 </head>
 <body>
     <div class="content">
