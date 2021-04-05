@@ -41,6 +41,21 @@ return [
             'provider' => 'users',
         ],
 
+        'beneficiado' => [
+            'driver' => 'session',
+            'provider' => 'beneficiados',
+        ],
+
+        'doador' => [
+            'driver' => 'session',
+            'provider' => 'doadors',
+        ],
+
+        'escola' => [
+            'driver' => 'session',
+            'provider' => 'escolas',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -69,6 +84,21 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'beneficiados' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Beneficiado::class,
+        ],
+
+        'doadors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Doador::class,
+        ],
+
+        'escolas' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Escola::class,
         ],
 
         // 'users' => [

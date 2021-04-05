@@ -13,6 +13,9 @@ class Doador extends Authenticatable
     use LaratrustUserTrait;
     use HasFactory, Notifiable;
 
+    protected $table = 'doadors';
+	protected $guard = 'doador';
+
     /**
      * The attributes that are mass assignable.
      *

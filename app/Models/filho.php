@@ -9,6 +9,7 @@ class Filho extends Model
 {
     use HasFactory;
 
+    protected $table = "filho";
     protected $fillable = ['name', 'ra', 'id_escola', 'id_beneficiado'];
 
     public function escola()

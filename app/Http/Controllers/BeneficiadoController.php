@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 use App\Models\Beneficiado;
 use App\Models\Escola;
 use App\Models\Filho;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class BeneficiadoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:beneficiado');
+    }
+
     // public function index(){
     //     return view('dashboard-beneficiado');
     // }
@@ -30,9 +38,16 @@ class BeneficiadoController extends Controller
     public function store(StoreBeneficiado $request)
     {
 
-        if(Beneficiado::create($request->all())){
+        if(Beneficiado::create([
+            'name' => $request->name,
+            'localizacao' => $request->localizacao,
+            'cpf' => $request->cpf,
+            'telefone' => $request->telefone,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ])){
             return redirect()
-            ->route('beneficiado.index')
+            ->route('beneficiado.login')
             ->with('message', "Adicionado!");
         }else{
             return redirect()
@@ -43,7 +58,8 @@ class BeneficiadoController extends Controller
     }
 
     //Mostra o perfil de uma beneficiado cadastrada
-    public function show($id){
+    public function show(){
+        $id = Auth::guard('beneficiado')->user()->id;
         if(!$beneficiado = Beneficiado::where('id',$id)->first()){
             return redirect()->route('beneficiado.index');
         }

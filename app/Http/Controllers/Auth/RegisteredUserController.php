@@ -41,14 +41,12 @@ class RegisteredUserController extends Controller
             'password' => 'required|string|confirmed|min:8',
         ]);
 
-        
-
-        Auth::login($user = Beneficiado::create([
+        Auth::login($user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'localizacao' => $request->localizacao,
-            'cpf' => $request->cpf,
-            'telefone' => $request->telefone,
+            //'localizacao' => $request->localizacao,
+            //'cpf' => $request->cpf,
+            //'telefone' => $request->telefone,
             'password' => Hash::make($request->password),
         ]));
 

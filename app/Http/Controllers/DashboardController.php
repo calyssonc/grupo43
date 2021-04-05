@@ -10,6 +10,8 @@ class DashboardController extends Controller
     public function index()
     {
 
+        //Auth::guard('beneficiado')->attempt(['email' => "banana@banana.com", 'password' => "123123123"]);
+
         if (Auth::user()) {
             if (Auth::user()->hasRole('escola')) {
                 return view('dashboard-escola');

@@ -1,5 +1,5 @@
 <nav style="background-color: white;" class="navbar fixed w-full navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">DoaUP!</a>     
+    <a class="navbar-brand" href="#">DoaUP!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,18 +8,38 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <div class="md:ml-4">
-                    <a href="/" class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
+                    <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('dashboard') }}">
                         Home
                     </a>
                 </div>
             </li>
-            <li class="nav-item">
-                <div class="md:ml-4">
-                    <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
-                        Perfil
-                    </a>
-                </div>
-            </li>
+            @if (Auth::guard('beneficiado')->check())
+                <li class="nav-item">
+                    <div class="md:ml-4">
+                        <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('beneficiado.show') }}">
+                            Perfil
+                        </a>
+                    </div>
+                </li>
+            @endif
+            @if (Auth::guard('doador')->check())
+                <li class="nav-item">
+                    <div class="md:ml-4">
+                        <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('doador.show') }}">
+                            Perfil
+                        </a>
+                    </div>
+                </li>
+            @endif
+            @if (Auth::guard('escola')->check())
+                <li class="nav-item">
+                    <div class="md:ml-4">
+                        <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('escola.show') }}">
+                            Perfil
+                        </a>
+                    </div>
+                </li>
+            @endif
             <li class="nav-item">
                 <div class="md:ml-4">
                     <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
