@@ -11,7 +11,7 @@
         <p class="text-white text-xl sm:text-3xl">Apresentação do projeto tentando vender a ideia</p>
     </div>
     <div class="w-2/5 sm:w-1/2 h-auto mt-3 sm:mt-5 ml-3">
-        <button class="text-white rounded bg-blue-500 p-3">Escolas próximas!</button>
+        <button class="text-white rounded bg-blue-500 p-3"><a href="{{ route('doador.index') }}">Escolas próximas!</a></button>
     </div>
 </div>
 <div class="h-screen sm:h-2/4 flex flex-wrap m-3">

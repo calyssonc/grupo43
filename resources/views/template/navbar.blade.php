@@ -106,9 +106,9 @@
     class="bg-blue-500 border rounded-sm transform scale-0 group-hover:scale-100 absolute
   transition duration-150 ease-iphn-out origin-top min-w-32"
   >
-    <li class="bg-blue-500 text-white hover:bg-blue-700  px-14 py-2.5 rounded" href="#">Beneficiado</li>
-    <li class="bg-blue-500 text-white hover:bg-blue-700  px-14 py-2.5 rounded" href="#">Doador</li>
-    <li class="bg-blue-500 text-white hover:bg-blue-700 px-14 py-2.5 rounded" href="#">Escola</li>
+    <li class="bg-blue-500 text-white hover:bg-blue-700  px-14 py-2.5 rounded"><a href="{{ route('beneficiado.cadastro') }}">Beneficiado</a></li>
+    <li class="bg-blue-500 text-white hover:bg-blue-700  px-14 py-2.5 rounded"><a href="{{ route('doador.cadastro') }}">Doador</a></li>
+    <li class="bg-blue-500 text-white hover:bg-blue-700 px-14 py-2.5 rounded"><a href="{{ route('escola.cadastro') }}">Escola</a></li>
   </ul>
   </a>
         </div>

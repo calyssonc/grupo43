@@ -15,10 +15,10 @@ class BeneficiadoController extends Controller
 {
 
     //Retorna todos os registros de beneficiados
-    public function index(){
-        $beneficiados = Beneficiado::paginate();
-        return view('beneficiado/index', compact('beneficiados'));
-    }
+    // public function index(){
+    //     $beneficiados = Beneficiado::paginate();
+    //     return view('beneficiado/index', compact('beneficiados'));
+    // }
 
     //Apresentar view de cadastro
     public function cadastro(){
@@ -38,11 +38,11 @@ class BeneficiadoController extends Controller
             'password' => Hash::make($request->password),
         ])){
             return redirect()
-            ->route('beneficiado.login')
+            ->route('beneficiado.show')
             ->with('message', "Adicionado!");
         }else{
             return redirect()
-            ->route('beneficiado.index')
+            ->back()
             ->with('message', "Erro ao adicionar!");
         }
 
@@ -52,7 +52,7 @@ class BeneficiadoController extends Controller
     public function show(){
         $id = Auth::guard('beneficiado')->user()->id;
         if(!$beneficiado = Beneficiado::where('id',$id)->first()){
-            return redirect()->route('beneficiado.index');
+            return redirect()->route('beneficiado.show');
         }
         return view('beneficiado/show',compact('beneficiado'));
     }
@@ -66,7 +66,7 @@ class BeneficiadoController extends Controller
         $beneficiado->update($request->all());
 
         return redirect()
-        ->route('beneficiado.index')
+        ->route('beneficiado.show')
         ->with('message',"Atualizado!");
     }
 
@@ -76,13 +76,13 @@ class BeneficiadoController extends Controller
 
         if (!$beneficiado = Beneficiado::find($id)) {
             return redirect()
-                ->route('beneficiado.index')
+                ->route('beneficiado.show')
                 ->with('message', "beneficiado não encontrado!");
         }
 
         $beneficiado->delete();
         return redirect()
-            ->route('beneficiado.index')
+            ->route('beneficiado.show')
             ->with('message', "Apagado!");
     }
 
@@ -96,7 +96,7 @@ class BeneficiadoController extends Controller
             ->orWhere('email', 'LIKE', "%{$request->search}%")
             ->orWhere('telefone', 'LIKE', "%{$request->search}%")
             ->paginate();
-        return view("/beneficiado/index", compact('beneficiados', 'filters'));
+        return view("/beneficiado/show", compact('beneficiados', 'filters'));
     }
 
 }
