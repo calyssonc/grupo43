@@ -19,22 +19,27 @@
         <div class="text-center">
             <p class="mb-10 font-bold border-b-2 border-yellow-600">Seja um doador!</p>
             <p class="">Torne-se um herói e doe alguma coisa logo!</p>
-            <button class="mt-10 text-white rounded bg-blue-500 p-2">Doador!</button>
-            <a class="mt-10 text-white rounded bg-blue-500 p-2 text-center" href="{{ route('doador.cadastro') }}"></a>
+            <div class="mt-4">
+                <a class="mt-10 text-white rounded bg-blue-500 p-2 text-center" href="{{ route('doador.cadastro') }}">Doador</a>
+            </div>
         </div>
     </div>
     <div class="w-full sm:w-2/6 h-2/6 sm:h-full flex justify-center items-center border-b-4 sm:border-r-4 sm:border-b-0 border-yellow-600">
         <div class="text-center">
             <p class="mb-10 font-bold border-b-2 border-yellow-600">Cadastre sua escola!</p>
             <p class="max-w-xs">Se tem interesse que sua escola participe desse programa se cadastre aqui.</p>
-            <button class="mt-10 text-white rounded bg-blue-500 p-2">Escola!</button>
+            <div class="mt-4">
+                <a class="mt-10 text-white rounded bg-blue-500 p-2 text-center" href="{{ route('escola.cadastro') }}">Escola</a>
+            </div>
         </div>
     </div>
     <div class="w-full sm:w-2/6 h-2/6 sm:h-full flex justify-center items-center">
         <div class="text-center">
             <p class="mb-10 font-bold border-b-2 border-yellow-600">Cadastre seus dependentes!</p>
             <p class="max-w-xs">Participe e receba doações de materiais escolares para melhorar o aprendizado de seus filhos</p>
-            <button class="mt-10 text-white rounded bg-blue-500 p-2">Beneficiados!</button>
+            <div class="mt-4">
+                <a class="mt-10 text-white rounded bg-blue-500 p-2 text-center" href="{{ route('beneficiado.cadastro') }}">Beneficiado</a>
+            </div>
         </div>
     </div>
 </div>
