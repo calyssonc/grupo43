@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreDoacao;
 use App\Http\Requests\StoreDoador;
+use App\Http\Requests\StoreNecessita;
+use App\Models\Doacao;
 use Illuminate\Http\Request;
 use App\Models\Doador;
 use App\Models\Escola;
+use App\Models\Necessita;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class DoadorController extends Controller
 {
-    public function __construct()
-    {
-        //$this->middleware('auth:doador');
-    }
 
     //Retorna todos os registros de doadors
     public function index(){
@@ -49,13 +49,44 @@ class DoadorController extends Controller
 
     }
 
+    //Realiza o cadastro de uma nova doador
+    public function doarMaterial($necessita_id)
+    {
+
+        $id = Auth::guard('doador')->user()->id;
+        if(!$necessita = Necessita::where('id',$necessita_id)->first()){
+            return redirect()->back();
+        }
+
+        if($necessita->update([
+            'status' => '1',
+        ]) &&
+            Doacao::create([
+                'id_doador' => $id,
+                'id_necessita' => $necessita_id,
+            ])
+        ){
+            return redirect()
+            ->route('doador.index')
+            ->with('message', "Adicionado!");
+        }else{
+            return redirect()
+            ->route('doador.index')
+            ->with('message', "Erro ao adicionar!");
+        }
+
+    }
+
     //Mostra o perfil de uma doador cadastrada
     public function show(){
         $id = Auth::guard('doador')->user()->id;
         if(!$doador = Doador::where('id',$id)->first()){
             return redirect()->route('doador.index');
         }
-        return view('doador/show',compact('doador'));
+        if (!$doacoes = Doacao::where(['id_doador' => $id])->get()) {
+            return redirect()->route('doador.index');
+        }
+        return view('doador/show',compact('doador','doacoes'));
     }
 
     //Atualiza os dados de uma doador

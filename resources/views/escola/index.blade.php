@@ -43,4 +43,6 @@
     <a href="{{ route('escola.cadastroMaterial') }}">cadastrar material</a>
 </div>
 
+<link href="https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css" rel="stylesheet">
+
 @endsection
