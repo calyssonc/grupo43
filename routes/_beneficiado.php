@@ -7,6 +7,8 @@ use App\Http\Controllers\Auth\BeneficiadoLoginController;
 
 Route::group(['middleware' => ['auth:beneficiado']], function () {
 
+    //Rota get para tela de cadastro do filho
+    Route::get('/beneficiado/filho/cadastro', [FilhoController::class, 'cadastro'])->name('filho.cadastro');
     //Rota post para cadastro de formulario de filho
     Route::post('/beneficiado/filho/cadastro', [FilhoController::class, 'store'])->name('filho.store');
     //Rota post para solicitar material escolar para o filho
@@ -19,11 +21,9 @@ Route::group(['middleware' => ['auth:beneficiado']], function () {
     Route::delete('/beneficiado/filho/{id}', [FilhoController::class, 'destroy'])->name('filho.destroy');
     //Rota get para tela de solicitar material
     Route::get('/beneficiado/filho/solicitar-material/{id}', [FilhoController::class, 'solicitarMaterial'])->name('filho.solicitarMaterial');
-    //Rota get para tela de cadastro do filho
-    Route::get('/beneficiado/filho/cadastro/{id}', [FilhoController::class, 'cadastro'])->name('filho.cadastro');
 
     //Rota temporária para index
-    Route::get('/beneficiado/index', [BeneficiadoController::class, 'index'])->name('beneficiado.index');
+    //Route::get('/beneficiado/index', [BeneficiadoController::class, 'index'])->name('beneficiado.index');
     //Rota para realizar pesquisa por beneficiados
     Route::any('/beneficiado/search', [BeneficiadoController::class, 'search'])->name('beneficiado.search');
     //Rota delete para deletar beneficiado do banco de dados

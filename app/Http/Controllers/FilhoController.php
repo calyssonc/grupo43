@@ -9,16 +9,20 @@ use App\Http\Requests\StoreFilho;
 use App\Http\Requests\StoreNecessita;
 use App\Models\Beneficiado;
 use App\Models\Necessita;
+use Illuminate\Support\Facades\Auth;
 
 class FilhoController extends Controller
 {
 
     //Apresentar view de cadastro
-    public function cadastro($beneficiado_id)
+    public function cadastro()
     {
-        if (!$escolas = Escola::all(['id', 'name'])) {
+        if(Auth::guard('beneficiado')->check()){
+            $beneficiado_id = Auth::guard('beneficiado')->user()->id;
+        }else{
             return redirect()->route('beneficiado.index');
         }
+        $escolas = Escola::all(['id', 'name']);
         return view('beneficiado.filho.cadastro',compact('escolas','beneficiado_id'));
     }
 
@@ -81,11 +85,11 @@ class FilhoController extends Controller
     {
         if (Filho::create($request->all())) {
             return redirect()
-                ->route('beneficiado.index')
+                ->route('beneficiado.show')
                 ->with('message', "Adicionado!");
         } else {
             return redirect()
-                ->route('beneficiado.index')
+                ->route('beneficiado.show')
                 ->with('message', "Erro ao adicionar!");
         }
     }

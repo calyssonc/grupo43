@@ -46,15 +46,13 @@
     <div class="w-46 rounded border-b-8 border-yellow-600">
         <p class="font-bold text-center text-2xl mb-4">Cadastro de dependentes</p>
     </div>
-         <div class="flex flex-row items-center rounded-full bg-blue-200 p-2 w-4/5">
-                        <p class="w-2/5 font-bold">Samuel</p>
-                        <p class="w-2/5 font-bold text-right">Modificar lista</p>
-                    </div>
-                    <div class="flex flex-row mt-2 items-center rounded-full bg-blue-200 p-2 w-4/5">
-                        <p class="w-2/5 font-bold">Maria</p>
-                        <p class="w-2/5  font-bold text-right">Modificar lista</p>
-                     </div>
-                     <button class="bg-blue-500 text-white rounded py-1 px-14 mt-3">Novo dependente</button>
+        @foreach ($beneficiado->filho as $filho)
+            <div class="flex flex-row items-center rounded-full bg-blue-200 p-2 w-4/5">
+                <p class="w-2/5 font-bold">{{ $filho->name }}</p>
+                <p class="w-2/5 font-bold text-right"><a href="">Modificar lista</a></p>
+            </div>
+        @endforeach
+            <button class="bg-blue-500 text-white rounded py-1 px-14 mt-3"><a href="{{ route('filho.cadastro') }}">Novo dependente</a></button>
         </div>
     </div>
     </div>
