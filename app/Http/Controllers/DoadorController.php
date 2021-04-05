@@ -53,7 +53,12 @@ class DoadorController extends Controller
     public function doarMaterial($necessita_id)
     {
 
-        $id = Auth::guard('doador')->user()->id;
+        if(Auth::guard('doador')->check()){
+            $id = Auth::guard('doador')->user()->id;
+        }else{
+            $id = null;
+        }
+
         if(!$necessita = Necessita::where('id',$necessita_id)->first()){
             return redirect()->back();
         }
@@ -79,7 +84,10 @@ class DoadorController extends Controller
 
     //Mostra o perfil de uma doador cadastrada
     public function show(){
+
+
         $id = Auth::guard('doador')->user()->id;
+
         if(!$doador = Doador::where('id',$id)->first()){
             return redirect()->route('doador.index');
         }

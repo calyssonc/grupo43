@@ -5,7 +5,7 @@
 @section('content')
 
 
-<div class="banana grid grid-rows-2 mx-2 pt-20 bg-gradient-to-br from-blue-400 to-blue-200 rounded-t-3xl lg:grid-cols-3 lg:grid-rows-1">
+<div class="grid grid-rows-2 mx-2 pt-20 bg-gradient-to-br from-blue-400 to-blue-200 rounded-t-3xl lg:grid-cols-3 lg:grid-rows-1">
     <div class="row-span-1 mx-2 place-self-left lg:col-span-1 ">
         <div class="border-2 border-black-500 rounded-full w-48 w-48 overflow-hidden">
             <img class="w-42 h-42" src="https://i.pinimg.com/originals/99/8e/1c/998e1cce79d61f1f3d5c69091a5bd455.jpg">

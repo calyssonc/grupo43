@@ -63,7 +63,9 @@
                     @foreach ($necessita as $item)
                         <div class="flex justify-start cursor-pointer text-gray-700 hover:text-blue-400 hover:bg-blue-100 rounded-md px-2 py-2 my-2">
                             <div class="flex-grow font-medium px-2">{{ $item->material->name }}</div>
-                            <a href="{{ route('doador.doarMaterial',$item->id) }}">Doar</a>
+                            @if (!Auth::guard('beneficiado')->check())
+                                <a href="{{ route('doador.doarMaterial',$item->id) }}">Doar</a>
+                            @endif
                         </div>
                     @endforeach
                 </div>
