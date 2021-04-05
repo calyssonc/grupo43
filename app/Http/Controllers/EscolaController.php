@@ -14,15 +14,13 @@ use Illuminate\Support\Facades\Hash;
 class EscolaController extends Controller
 {
 
-    public function __construct()
-    {
-        //$this->middleware('auth:escola');
-    }
-
     //Retorna todos os registros de escolas
     public function index(){
-        $escolas = Escola::paginate();
-        return view('escola/index', compact('escolas'));
+        $id = Auth::guard('escola')->user()->id;
+        if(!$escola = Escola::where('id',$id)->first()){
+            return redirect()->route('escola.index');
+        }
+        return view('escola/index', compact('escola'));
     }
 
     //Apresentar view de cadastro
@@ -78,11 +76,26 @@ class EscolaController extends Controller
 
     //Mostra o perfil de uma escola cadastrada
     public function show(){
-        $id = Auth::guard('escola')->user()->id;
+
+        if(Auth::guard('escola')->check()){
+            $id = Auth::guard('escola')->user()->id;
+        }else{
+            return redirect()->route('escola.index');
+        }
+
         if(!$escola = Escola::where('id',$id)->first()){
             return redirect()->route('escola.index');
         }
-        $alunos = Filho::where('id_escola',$id);
+        $alunos = $escola->filho;
+        return view('escola/show',compact('escola','alunos'));
+    }
+
+    //Mostra o perfil de uma escola para um doador
+    public function show2($id){
+        if(!$escola = Escola::where('id',$id)->first()){
+            return redirect()->route('doador.index');
+        }
+        $alunos = $escola->filho;
         return view('escola/show',compact('escola','alunos'));
     }
 

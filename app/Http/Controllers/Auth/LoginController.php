@@ -68,7 +68,7 @@ class LoginController extends Controller
 
         if($guard == "beneficiado"){
             if(Auth::guard('beneficiado')->attempt(['email' => $request->email, 'password' => $request->password],$request->remember)){
-                return redirect()->intended(route('beneficiado.index'));
+                return redirect()->intended(route('beneficiado.show'));
             }
         }elseif($guard == "doador"){
             if(Auth::guard('doador')->attempt(['email' => $request->email, 'password' => $request->password],$request->remember)){

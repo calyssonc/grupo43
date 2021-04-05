@@ -14,11 +14,6 @@ use Illuminate\Support\Facades\Hash;
 class BeneficiadoController extends Controller
 {
 
-    public function __construct()
-    {
-        //$this->middleware('auth:beneficiado');
-    }
-
     //Retorna todos os registros de beneficiados
     public function index(){
         $beneficiados = Beneficiado::paginate();
