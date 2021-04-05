@@ -67,9 +67,48 @@
             <a class="inline-block block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
                 <span class="border-2 border-blue-500 text-blue-500 px-16 py-2.5 rounded">Login</span>
             </a>
-            <a class="inline-block block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
-                <span class="bg-blue-500 text-white px-14 py-2.5 rounded">Cadastro</span>
-            </a>
+            <div class="group inline-block">
+        <a class="group inline-block" href="#">
+  <button
+    class="outline-none focus:outline-none px-3 py-2 rounded-sm flex items-center min-w-32"
+  >
+    <span class="bg-blue-500 text-white px-14 py-2.5 rounded">Cadastro</span>
+    <span>
+      <svg
+        class="fill-current h-4 w-4 transform group-hover:-rotate-180
+        transition duration-150 ease-in-out"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+        />
+      </svg>
+    </span>
+  </button>
+  <ul
+    class="bg-blue-500 border rounded-sm transform scale-0 group-hover:scale-100 absolute 
+  transition duration-150 ease-iphn-out origin-top min-w-32"
+  >
+    <li class="bg-blue-500 text-white hover:bg-blue-700  px-14 py-2.5 rounded" href="#">Beneficiado</li>
+    <li class="bg-blue-500 text-white hover:bg-blue-700  px-14 py-2.5 rounded" href="#">Doador</li>  
+    <li class="bg-blue-500 text-white hover:bg-blue-700 px-14 py-2.5 rounded" href="#">Escola</li>  
+  </ul>
+  </a>
         </div>
     </div>
+    </div>
 </nav>
+<style>
+ 
+  li>ul                 { transform: translatex(100%) scale(0) }
+  li:hover>ul           { transform: translatex(101%) scale(1) }
+  li > button svg       { transform: rotate(-90deg) }
+  li:hover > button svg { transform: rotate(-270deg) }
+
+  
+  .group:hover .group-hover\:scale-100 { transform: scale(1) }
+  .group:hover .group-hover\:-rotate-180 { transform: rotate(180deg) }
+  .scale-0 { transform: scale(0) }
+  .min-w-32 { min-width: 8rem }
+</style>
