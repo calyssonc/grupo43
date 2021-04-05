@@ -99,11 +99,11 @@ class FilhoController extends Controller
     {
         if (Necessita::create($request->all())) {
             return redirect()
-                ->route('beneficiado.index')
+                ->route('beneficiado.show')
                 ->with('message', "Adicionado!");
         } else {
             return redirect()
-                ->route('beneficiado.index')
+                ->route('beneficiado.show')
                 ->with('message', "Erro ao adicionar!");
         }
     }

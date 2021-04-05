@@ -49,7 +49,7 @@
         @foreach ($beneficiado->filho as $filho)
             <div class="flex flex-row items-center rounded-full bg-blue-200 p-2 w-4/5">
                 <p class="w-2/5 font-bold">{{ $filho->name }}</p>
-                <p class="w-2/5 font-bold text-right"><a href="">Modificar lista</a></p>
+                <p class="w-2/5 font-bold text-right"><a href="{{ route('filho.show',$filho->id) }}">Modificar lista</a></p>
             </div>
         @endforeach
             <button class="bg-blue-500 text-white rounded py-1 px-14 mt-3"><a href="{{ route('filho.cadastro') }}">Novo dependente</a></button>
