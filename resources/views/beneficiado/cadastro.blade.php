@@ -7,13 +7,13 @@
 <div class="h-screen w-full flex flex-wrap pt-11">
     <div class="h-0 w-0 md:h-full md:w-1/2 flex justify-center items-center">
         <div class="hidden md:block">
-            <p class="text-3xl">Melhore a educação do seu filho!</p>
-            <p id="imagem1" class="h-96 w-96 mt-5"></p>
+            <p class="text-3xl font-bold text-center">Melhore a educação do seu filho!</p>
+            <img src="{{ asset('image/truefriends.png') }}" />
         </div>
     </div>
     <div class="w-full h-full md:h-full md:w-1/2 flex justify-center items-center">
-        <div class="border-2 border-gray-300 h-auto w-5/6 p-5">
-            <p class="font-bold">Cadastro Responsável</p>
+        <div class="border-2 border-gray-300 h-auto w-5/6 p-5 rounded-md">
+            <p class="font-bold text-center text-lg">Cadastro Responsável</p>
 
             @if ($errors->any())
                 <ul>
@@ -26,19 +26,19 @@
             <form method="POST" action=""{{ route('beneficiado.cadastro') }}">
             @csrf
 
-            <input class="mt-4 w-full border-gray-300" type="text" name="name" id="name" placeholder="Nome" value="{{ old('name') }}" required autofocus>
+            <input class="mt-4 w-full border-gray-300 rounded-md" type="text" name="name" id="name" placeholder="Nome" value="{{ old('name') }}" required autofocus>
 
-            <input class="mt-2 w-full border-gray-300" type="text" name="localizacao" id="localizacao" placeholder="Logradouro" value="{{ old('localizacao') }}" required>
+            <input class="mt-2 w-full border-gray-300 rounded-md" type="text" name="localizacao" id="localizacao" placeholder="Logradouro" value="{{ old('localizacao') }}" required>
 
-            <input class="mt-2 w-full border-gray-300" type="text" name="cpf" id="cpf" placeholder="CPF" value="{{ old('cpf') }}" required>
+            <input class="mt-2 w-full border-gray-300 rounded-md" type="text" name="cpf" id="cpf" placeholder="CPF" value="{{ old('cpf') }}" required>
 
-            <input class="mt-2 w-full border-gray-300" type="text" name="telefone" id="telefone" placeholder="Telefone" value="{{ old('telefone') }}" required>
+            <input class="mt-2 w-full border-gray-300 rounded-md" type="text" name="telefone" id="telefone" placeholder="Telefone" value="{{ old('telefone') }}" required>
 
-            <input class="mt-2 w-full border-gray-300" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
+            <input class="mt-2 w-full border-gray-300 rounded-md" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
 
-            <input class="mt-2 w-full border-gray-300" type="password" name="password" id="password" placeholder="Senha" value="{{ old('password') }}" required>
+            <input class="mt-2 w-full border-gray-300 rounded-md" type="password" name="password" id="password" placeholder="Senha" value="{{ old('password') }}" required>
 
-            <button class="bg-blue-500 text-white w-full p-1 mt-4" type="submit" value="cadastrar" >Registre-se</button>
+            <button class="bg-blue-500 text-white w-full p-1 mt-4 rounded-md" type="submit" value="cadastrar" >Registre-se</button>
 
             </form>
 
@@ -68,13 +68,6 @@
 </div>
 
 <style>
-    #imagem1{
-        background: url(https://uploads-ssl.webflow.com/5f4db4f2bfdf4b1052de205d/5fb6d6618b59c73a19453807_undraw_education_f8ru.svg) no-repeat center center;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
     #imagem2{
         background: url(https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Google-256.png) no-repeat center center;
         -webkit-background-size: cover;

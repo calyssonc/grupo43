@@ -7,12 +7,12 @@
 <div class="h-screen w-full flex flex-wrap pt-11">
     <div class="h-0 w-0 md:h-full md:w-1/2 flex justify-center items-center">
         <div class="hidden md:block">
-            <p class="text-3xl">Cadastre seu dependente!</p>
-            <p id="imagem1" class="h-96 w-96 mt-5"></p>
+            <p class="text-3xl font-bold text-center">Cadastre seu dependente!</p>
+            <img src="{{ asset('image/playtime.png') }}" />
         </div>
     </div>
     <div class="w-full h-full md:h-full md:w-1/2 flex justify-center items-center">
-        <div class="border-2 border-gray-300 h-auto w-5/6 p-5">
+        <div class="border-2 border-gray-300 h-auto w-5/6 p-5 rounded-md">
             <p class="font-bold">Novo Dependente</p>
 
             @if ($errors->any())
@@ -26,11 +26,11 @@
             <form method="POST" action="{{ route('filho.store') }}">
             @csrf
 
-            <input class="mt-4 w-full border-gray-300" type="text" name="name" id="name" placeholder="Nome" value="{{ old('name') }}" required autofocus>
+            <input class="mt-4 w-full border-gray-300 rounded-md" type="text" name="name" id="name" placeholder="Nome" value="{{ old('name') }}" required autofocus>
 
-            <input class="mt-2 w-full border-gray-300" type="text" name="ra" id="ra" placeholder="RA" value="{{ old('ra') }}" required>
+            <input class="mt-2 w-full border-gray-300 rounded-md" type="text" name="ra" id="ra" placeholder="RA" value="{{ old('ra') }}" required>
 
-            <select class="mt-2 w-full border-gray-300" name="id_escola">
+            <select class="mt-2 w-full border-gray-300 rounded-md" name="id_escola">
                 @foreach($escolas as $item)
                     <option value="{{$item->id}}">{{$item->name}}</option>
                 @endforeach
