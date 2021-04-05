@@ -29,7 +29,7 @@
 
             <input class="mt-4 w-full border-gray-300 rounded-md" type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
 
-            <input class="mt-2 w-full border-gray-300 rounded-md" type="text" name="password" id="password" placeholder="Senha" value="{{ old('password') }}" required>
+            <input class="mt-2 w-full border-gray-300 rounded-md" type="password" name="password" id="password" placeholder="Senha" value="{{ old('password') }}" required>
 
             <select name="tipo" class="mt-2 w-full border-gray-300 rounded-md" required>
                 <option value="" selected>Tipo de login</option>

@@ -15,7 +15,7 @@ class CreateDoacaoTable extends Migration
     {
         Schema::create('doacao', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_doador');
+            $table->unsignedBigInteger('id_doador')->nullable();
             $table->unsignedBigInteger('id_necessita');
             $table->timestamps();
         });

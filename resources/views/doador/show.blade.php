@@ -118,7 +118,7 @@
                             <p class="w-2/5 text-right">{{ $item->updated_at }}</p>
                         </div>
                     @endforeach
-                    <button class="bg-blue-500 text-white rounded py-1 px-14 mt-3">Nova doação</button>
+                    <button class="bg-blue-500 text-white rounded py-1 px-14 mt-3"><a href="{{ route('doador.index') }}">Nova doação</a></button>
                 </div>
             </div>
         </div>
