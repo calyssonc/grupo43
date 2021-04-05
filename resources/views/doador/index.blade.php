@@ -53,9 +53,9 @@
 
 
         <div class="border-4"></div>
-        @empty($escolas)
+        @if(isset($escolas) && $escolas->count() == 0)
         Não há escolas cadastradas
-        @endempty
+        @endif
         @foreach ($escolas as $escola)
         <div class="
             h-32 bg-gradient-to-br from-gray-200 shadow-2xl border-2 border-gray-300 hover:border-blue-500 m-2 rounded-3xl p-2 grid grid-cols-5 lg:rounded-full lg:min-h-42 ">
