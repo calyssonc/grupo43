@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Hash;
 
 class EscolaController extends Controller
 {
-    // public function index(){
-    //     return view('dashboard-escola');
-    // }
+
+    public function __construct()
+    {
+        //$this->middleware('auth:escola');
+    }
 
     //Retorna todos os registros de escolas
     public function index(){
