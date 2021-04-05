@@ -86,7 +86,7 @@ class EscolaController extends Controller
         if(!$escola = Escola::where('id',$id)->first()){
             return redirect()->route('escola.index');
         }
-        $alunos = Filho::where('id_escola',$id);
+        $alunos = $escola->filho;
         return view('escola/show',compact('escola','alunos'));
     }
 
@@ -95,7 +95,7 @@ class EscolaController extends Controller
         if(!$escola = Escola::where('id',$id)->first()){
             return redirect()->route('doador.index');
         }
-        $alunos = Filho::where('id_escola',$id);
+        $alunos = $escola->filho;
         return view('escola/show',compact('escola','alunos'));
     }
 

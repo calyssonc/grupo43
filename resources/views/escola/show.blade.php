@@ -112,14 +112,12 @@
     <div class="border-2 m-2 rounded-3xl border-black text-center bg-gradient-to-tr from-blue-400 to-blue-200">
         <h1 class="text-2xl font-bold py-1">Lista de alunos</h1>
         <div class="border-2 m-2 rounded-3xl border-black bg-white">
+            @foreach ($alunos as $filho)
             <div class="grid grid-cols-3 border-black border-2 m-2 rounded-3xl bg-white shadow-sm">
-                <h1 class="text-2xl font-bold col-span-2 self-center"> Juquinha </h1>
+                <h1 class="text-2xl font-bold col-span-2 self-center"> {{ $filho->name }} </h1>
                 <button class="border-2 m-1 rounded-2xl bg-blue-400 text-white">Ver Lista Completa</button>
             </div>
-            <div class="grid grid-cols-3 border-black border-2 m-2 rounded-3xl bg-white shadow-sm">
-                <h1 class="text-2xl font-bold col-span-2 self-center"> Maria </h1>
-                <button class="border-2 m-1 rounded-2xl bg-blue-400 text-white">Ver Lista Completa</button>
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="p-2">

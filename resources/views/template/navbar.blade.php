@@ -17,13 +17,6 @@
             @if (Auth::guard('beneficiado')->check())
                 <li class="nav-item">
                     <div class="md:ml-4">
-                        <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('beneficiado.index') }}">
-                            Início
-                        </a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <div class="md:ml-4">
                         <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="{{ route('beneficiado.show') }}">
                             Perfil
                         </a>
