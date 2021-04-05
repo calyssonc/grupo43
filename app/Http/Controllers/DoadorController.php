@@ -11,9 +11,10 @@ use Illuminate\Support\Facades\Hash;
 
 class DoadorController extends Controller
 {
-    // public function index(){
-    //     return view('dashboard-doador');
-    // }
+    public function __construct()
+    {
+        //$this->middleware('auth:doador');
+    }
 
     //Retorna todos os registros de doadors
     public function index(){

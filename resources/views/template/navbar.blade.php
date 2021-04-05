@@ -1,5 +1,5 @@
 <nav style="background-color: white;" class="navbar fixed w-full navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">DoaUP!</a>
+    <a class="navbar-brand" href="{{ route('dashboard') }}">DoaUP!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -63,13 +63,15 @@
             </li>
         </ul>
 
-        <div>
-            <a class="inline-block block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
-                <span class="border-2 border-blue-500 text-blue-500 px-16 py-2.5 rounded">Login</span>
-            </a>
-            <a class="inline-block block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
-                <span class="bg-blue-500 text-white px-14 py-2.5 rounded">Cadastro</span>
-            </a>
-        </div>
+        @if (!Auth::guard('beneficiado')->check() && !Auth::guard('doador')->check() && !Auth::guard('escola')->check())
+            <div>
+                <a class="inline-block block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="{{ route('login') }}">
+                    <span class="border-2 border-blue-500 text-blue-500 px-16 py-2.5 rounded">Login</span>
+                </a>
+                <a class="inline-block block no-underline hover:underline py-2 hover:text-black md:border-none md:p-0" href="#">
+                    <span class="bg-blue-500 text-white px-14 py-2.5 rounded">Cadastro</span>
+                </a>
+            </div>
+        @endif
     </div>
 </nav>
