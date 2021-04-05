@@ -39,6 +39,11 @@ class EscolaController extends Controller
     //Realiza o cadastro de uma nova escola
     public function store(StoreEscola $request)
     {
+        /*
+        if(Escola::where('telefone', $request->telefone){
+            
+        })
+        */
 
         if(Escola::create([
             'name' => $request->name,
