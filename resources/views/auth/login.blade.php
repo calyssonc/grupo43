@@ -8,13 +8,13 @@
 <div class="h-screen w-full flex flex-wrap">
     <div class="h-0 w-0 md:h-full md:w-1/2 flex justify-center items-center">
         <div class="hidden md:block">
-            <p class="text-3xl">Seja bem-vindo de volta!</p>
-            <p id="imagem1" class="h-96 w-96 mt-6"></p>
+            <p class="text-3xl text-center font-bold">Seja bem-vindo de volta!</p>
+            <img src="{{ asset('image/login.png') }}"/>
         </div>
     </div>
     <div class="w-full h-full md:h-full md:w-1/2 flex justify-center items-center">
-        <div class="border-2 border-gray-300 h-auto w-5/6 p-5">
-            <p class="w-full font-bold">Login</p>
+        <div class="border-2 border-gray-300 h-auto w-5/6 p-5 rounded-md">
+            <p class="w-full text-3xl text-center font-bold">Login</p>
 
             @if ($errors->any())
                 <ul>
@@ -27,18 +27,18 @@
             <form method="POST" action=""{{ route('login') }}">
             @csrf
 
-            <input class="mt-4 w-full border-gray-300" type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
+            <input class="mt-4 w-full border-gray-300 rounded-md" type="text" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
 
-            <input class="mt-2 w-full border-gray-300" type="text" name="password" id="password" placeholder="Senha" value="{{ old('password') }}" required>
+            <input class="mt-2 w-full border-gray-300 rounded-md" type="text" name="password" id="password" placeholder="Senha" value="{{ old('password') }}" required>
 
-            <select name="tipo" class="mt-2 w-full border-gray-300" required>
+            <select name="tipo" class="mt-2 w-full border-gray-300 rounded-md" required>
                 <option value="" selected>Tipo de login</option>
                 <option value="doador">Doador</option>
                 <option value="escola">Escola</option>
                 <option value="beneficiado">Beneficiado</option>
             </select>
 
-            <button class="bg-blue-500 text-white w-full p-1 mt-4" type="submit" value="cadastrar" >Login</button>
+            <button class="bg-blue-500 text-white w-full p-1 mt-4 rounded-md" type="submit" value="cadastrar" >Login</button>
 
             </form>
 
