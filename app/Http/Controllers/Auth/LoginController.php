@@ -43,7 +43,7 @@ class LoginController extends Controller
     public function showLoginForm(){
 
         if(Auth::guard('beneficiado')->check()){
-            return redirect()->intended(route('beneficiado.index'));
+            return redirect()->intended(route('beneficiado.show'));
         }
 
         if(Auth::guard('doador')->check()){

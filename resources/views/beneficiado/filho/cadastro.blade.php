@@ -31,6 +31,7 @@
             <input class="mt-2 w-full border-gray-300 rounded-md" type="text" name="ra" id="ra" placeholder="RA" value="{{ old('ra') }}" required>
 
             <select class="mt-2 w-full border-gray-300 rounded-md" name="id_escola">
+                <option value="" selected>Escolha uma escola...</option>
                 @foreach($escolas as $item)
                     <option value="{{$item->id}}">{{$item->name}}</option>
                 @endforeach
