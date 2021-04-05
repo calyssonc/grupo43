@@ -16,12 +16,8 @@ class BeneficiadoController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:beneficiado');
+        //$this->middleware('auth:beneficiado');
     }
-
-    // public function index(){
-    //     return view('dashboard-beneficiado');
-    // }
 
     //Retorna todos os registros de beneficiados
     public function index(){
