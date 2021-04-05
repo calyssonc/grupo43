@@ -34,7 +34,7 @@
         <div class="h-20 w-full sm:w-2/6 flex justify-center items-center">
             <a href="#" class="flex justify-center items-center">
                
-               <img src="image/logo111.png" x="0px" y="0px" width="55" height="55">
+               <img src="{{ asset('image/logo111.png') }}" x="0px" y="0px" width="55" height="55">
                     
                 <span class="text-xl tracking-wide">DoaUP!</span>
             </a>

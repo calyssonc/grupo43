@@ -60,9 +60,9 @@
         <div class="
             h-32 bg-gradient-to-br from-gray-200 shadow-2xl border-2 border-gray-300 hover:border-blue-500 m-2 rounded-3xl p-2 grid grid-cols-5 lg:rounded-full lg:min-h-42 ">
             <div class="text-center col-span-1 ">
-                <div class="py-3">
-                    <div class="w-3/5 h-3/5 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10 lg-w-3/4">
-
+                <div class="py-3 px-4">
+                    <div class="border-2 border-black-500 rounded-full w-20 h-20 overflow-hidden">
+                        <img class="w-42 h-42" src="https://i.pinimg.com/originals/99/8e/1c/998e1cce79d61f1f3d5c69091a5bd455.jpg">
                     </div>
                 </div>
             </div>
