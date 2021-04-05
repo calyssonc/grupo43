@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1>Beneficiado Index</h1>
+<h1 class="pt-11">Beneficiado Index</h1>
 
 @if (session('message'))
 

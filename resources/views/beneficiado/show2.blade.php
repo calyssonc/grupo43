@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1>Perfil beneficiado</h1>
+<h1 class="pt-11">Perfil beneficiado</h1>
 
 <form action="{{ route('beneficiado.update', $beneficiado->id) }}" method="post">
     @method('PUT')

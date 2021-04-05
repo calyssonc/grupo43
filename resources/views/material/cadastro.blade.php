@@ -12,7 +12,7 @@
             }
         </style>
     </head>
-    <body>
+    <body class="pt-11">
         <form method="POST" action="/material/cadastro">
             @csrf
                 <div><label for="nome">Nome</label><input type="text" name="nome" id="nome"></div>

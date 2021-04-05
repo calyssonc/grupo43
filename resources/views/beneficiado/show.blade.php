@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="h-2/3 w-full bg-blue-200 rounded-3xl flex flex-col md:flex-wrap">
+<div class="h-2/3 w-full bg-blue-200 rounded-3xl flex flex-col md:flex-wrap pt-11">
         <div class="h-2/6 md:h-1/2 w-full md:w-1/5 md:order-1">
             <div class="flex justify-center items-center h-full w-full">
                 <p id="imagem1" class="rounded-full h-48 w-48"></p>

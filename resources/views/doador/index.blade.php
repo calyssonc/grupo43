@@ -6,7 +6,7 @@
 
 
 
-<div class="pt-20 p-11 text-center text-3xl lg:text-6xl">
+<div class="pt-20 p-11 text-center text-3xl lg:text-6xl pt-11">
     <h1> Comece agora e pesquise por escolas próximas a você! </h1>
 </div>
 

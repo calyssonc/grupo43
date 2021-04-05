@@ -7,7 +7,7 @@
 <x-guest-layout>
     <x-auth-card>
 
-        <h1>Cadastro de Materiais</h1>
+        <h1 class="pt-11">Cadastro de Materiais</h1>
         <br>
 
         <x-slot name="logo">
