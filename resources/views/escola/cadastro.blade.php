@@ -8,7 +8,7 @@
     <div class="h-0 w-0 md:h-full md:w-1/2 flex justify-center items-center">
         <div class="hidden md:block">
             <p class="text-3xl">Seja uma escola parceira!</p>
-            <p id="imagem1" class="h-96 w-96 mt-5"></p>
+            <img src="{{ asset('image/superwoman.png') }}"/>
         </div>
     </div>
     <div class="w-full h-full md:h-full md:w-1/2 flex justify-center items-center">

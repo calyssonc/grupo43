@@ -5,13 +5,13 @@
 @section('content')
 
 
-<div class="grid  grid-rows-2 mx-2 mt-2 p-4 bg-gradient-to-br from-blue-400 to-blue-200 rounded-t-3xl lg:grid-cols-3 lg:grid-rows-1 pt-11">
-    <div class="row-span-1 mx-2 place-self-left lg:col-span-1">
+<div class="banana grid grid-rows-2 mx-2 pt-20 bg-gradient-to-br from-blue-400 to-blue-200 rounded-t-3xl lg:grid-cols-3 lg:grid-rows-1">
+    <div class="row-span-1 mx-2 place-self-left lg:col-span-1 ">
         <div class="border-2 border-black-500 rounded-full w-48 w-48 overflow-hidden">
             <img class="w-42 h-42" src="https://i.pinimg.com/originals/99/8e/1c/998e1cce79d61f1f3d5c69091a5bd455.jpg">
         </div>
     </div>
-    <div class="row-span-1 mx-2 lg:col-span-2">
+    <div class="row-span-1 mx-2 lg:col-span-2 ">
         <h1 class="font-bold text-2xl text-white">{{$escola->name}}</h1>
         <div class="py-3">
             <h1 class="text-bold mb-1">Lv: 2</h1>
@@ -78,8 +78,8 @@
             <button class="shadow-2xl rounded-xl p-2 w-full bg-gradient-to-br from-blue-500 to-blue-700 text-white lg:w-1/2">Saiba mais</button>
         </div>
         <div class="row-span-1 mx-2 p-2">
-        <button class="text-white lg:w-1/2 text-center shadow-2xl rounded-xl p-2 w-full bg-gradient-to-br from-blue-500 to-blue-700">
-            <a href="{{ route('logout') }}">Sair</a></button>
+            <button class="text-white lg:w-1/2 text-center shadow-2xl rounded-xl p-2 w-full bg-gradient-to-br from-blue-500 to-blue-700">
+                <a href="{{ route('logout') }}">Sair</a></button>
         </div>
     </div>
 </div>
@@ -111,6 +111,9 @@
 <div class="grid grid-cols-1 w-screen lg:grid-cols-2 min-h-min">
     <div class="border-2 m-2 rounded-3xl border-black text-center bg-gradient-to-tr from-blue-400 to-blue-200">
         <h1 class="text-2xl font-bold py-1">Lista de alunos</h1>
+        @if(isset($alunos) && $alunos->count() == 0)
+            Não há alunos cadastrados
+        @endif
         <div class="border-2 m-2 rounded-3xl border-black bg-white">
             @foreach ($alunos as $filho)
             <div class="grid grid-cols-3 border-black border-2 m-2 rounded-3xl bg-white shadow-sm">
