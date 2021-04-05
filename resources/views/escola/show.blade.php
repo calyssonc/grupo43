@@ -118,7 +118,7 @@
             @foreach ($alunos as $filho)
             <div class="grid grid-cols-3 border-black border-2 m-2 rounded-3xl bg-white shadow-sm">
                 <h1 class="text-2xl font-bold col-span-2 self-center"> {{ $filho->name }} </h1>
-                <button class="border-2 m-1 rounded-2xl bg-blue-400 text-white">Ver Lista Completa</button>
+                <button class="border-2 m-1 rounded-2xl bg-blue-400 text-white"><a href="{{ route('filho.show',$filho->id) }}">Ver Lista Completa</a></button>
             </div>
             @endforeach
         </div>

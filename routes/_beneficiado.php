@@ -13,8 +13,6 @@ Route::group(['middleware' => ['auth:beneficiado']], function () {
     Route::post('/beneficiado/filho/cadastro', [FilhoController::class, 'store'])->name('filho.store');
     //Rota post para solicitar material escolar para o filho
     Route::post('/beneficiado/filho/solicitar-material', [FilhoController::class, 'storeSolicitarMaterial'])->name('filho.storeSolicitarMaterial');
-    //Rota para mostrar o perfil de um filho do beneficiado
-    Route::get('/beneficiado/filho/{id}', [FilhoController::class, 'show'])->name('filho.show');
     //Rota para atualizar os dados
     Route::put('/beneficiado/filho/{id}', [FilhoController::class, 'update'])->name('filho.update');
     //Rota delete para deletar beneficiado do banco de dados
@@ -39,3 +37,5 @@ Route::group(['middleware' => ['auth:beneficiado']], function () {
 Route::get('/beneficiado/cadastro', [BeneficiadoController::class, 'cadastro'])->name('beneficiado.cadastro');
 //Rota para realizar o cadastro
 Route::post('/beneficiado/cadastro', [BeneficiadoController::class, 'store'])->name('beneficiado.store');
+//Rota para mostrar o perfil de um filho do beneficiado
+Route::get('/beneficiado/filho/{id}', [FilhoController::class, 'show'])->name('filho.show');

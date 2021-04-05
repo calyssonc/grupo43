@@ -44,7 +44,7 @@ class FilhoController extends Controller
         if (!$escolas = Escola::all(['id', 'name'])) {
             return redirect()->route('beneficiado.index');
         }
-        if (!$necessita = Necessita::where('id_filho', $id)->get()) {
+        if (!$necessita = Necessita::where(['id_filho' => $id, 'status' => '0'])->get()) {
             return redirect()->route('beneficiado.index');
         }
         return view('beneficiado/filho/show', compact('filho', 'escolas','necessita'));
@@ -99,11 +99,11 @@ class FilhoController extends Controller
     {
         if (Necessita::create($request->all())) {
             return redirect()
-                ->route('beneficiado.index')
+                ->route('filho.show',$request->id_filho)
                 ->with('message', "Adicionado!");
         } else {
             return redirect()
-                ->route('beneficiado.index')
+                ->route('beneficiado.show')
                 ->with('message', "Erro ao adicionar!");
         }
     }

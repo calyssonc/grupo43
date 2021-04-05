@@ -109,20 +109,15 @@
             <div class="w-full h-full">
                 <div class="w-full h-full flex flex-col items-center justify-center">
                     <p class="font-bold text-2xl text-center mb-4">Histórico de Doações</p>
-                    <div class="flex flex-row items-center rounded-full bg-blue-200 p-2 w-4/5">
-                        <div class="h-full w-1/5">
-                            <p id="imagem3" class="bg-blue-300 rounded-full h-16 w-16"></p>
+                    @foreach ($doacoes as $item)
+                        <div class="flex flex-row items-center rounded-full bg-blue-200 p-2 w-4/5">
+                            <div class="h-full w-1/5">
+                                <p id="imagem3" class="bg-blue-300 rounded-full h-16 w-16"></p>
+                            </div>
+                            <p class="w-2/5">{{ $item->necessita->filho->escola->name }}</p>
+                            <p class="w-2/5 text-right">{{ $item->updated_at }}</p>
                         </div>
-                        <p class="w-2/5">Escola X</p>
-                        <p class="w-2/5 text-right">22/04/21</p>
-                    </div>
-                    <div class="flex flex-row mt-2 items-center rounded-full bg-blue-200 p-2 w-4/5">
-                        <div class="h-full w-1/5">
-                            <p id="imagem3" class="bg-blue-300 rounded-full h-16 w-16"></p>
-                        </div>
-                        <p class="w-2/5">Escola X</p>
-                        <p class="w-2/5 text-right">22/04/21</p>
-                    </div>
+                    @endforeach
                     <button class="bg-blue-500 text-white rounded py-1 px-14 mt-3">Nova doação</button>
                 </div>
             </div>
