@@ -5,9 +5,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth:escola']], function () {
 
+    //Rota para mostrar o perfil de uma escola
+    Route::get('/escola', [EscolaController::class, 'show'])->name('escola.show');
     //Rota temporária para index
     Route::get('/escola/index', [EscolaController::class, 'index'])->name('escola.index');
-    //Rota get para tela de cadastro de escola
     //Rota get para mostrar a tela cadstro de material
     Route::get('/escola/cadastro-material', [EscolaController::class, 'cadastroMaterial'])->name('escola.cadastroMaterial');
     //Rota para realizar o cadastro do material
@@ -21,13 +22,10 @@ Route::group(['middleware' => ['auth:escola']], function () {
 
 });
 
-Route::group(['middleware' => ['auth:escola','auth:doador']], function () {
+//Rota para mostrar o perfil de uma escola
+Route::get('/escola/doar/{id}', [EscolaController::class, 'show2'])->name('escola.show2');
 
-    //Rota para mostrar o perfil de uma escola
-    Route::get('/escola', [EscolaController::class, 'show'])->name('escola.show');
-
-});
-
+//Rota get para tela de cadastro de escola
 Route::get('/escola/cadastro', [EscolaController::class, 'cadastro'])->name('escola.cadastro');
 //Rota para realizar o cadastro
 Route::post('/escola/cadastro', [EscolaController::class, 'store'])->name('escola.store');

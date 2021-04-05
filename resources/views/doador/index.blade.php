@@ -82,7 +82,7 @@
             </div>
             <div class="flex col-span-1">
                 <div class="py-4 w-full">
-                    <a href="{{ route('escola.show',$escola->id)}}" class="w-10/12 text-xs flex items-center justify-center px-7 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 lg-w-3/4 lg:text-lg ">
+                    <a href="{{ route('escola.show2',$escola->id)}}" class="w-10/12 text-xs flex items-center justify-center px-7 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 lg-w-3/4 lg:text-lg ">
                         Doar!
                     </a>
                 </div>

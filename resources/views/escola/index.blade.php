@@ -78,7 +78,7 @@
             <button class="shadow-2xl rounded-xl p-2 w-full bg-gradient-to-br from-blue-500 to-blue-700 text-white lg:w-1/2">Saiba mais</button>
         </div>
         <div class="row-span-1 mx-2 p-2">
-            <a class="shadow-2xl rounded-xl p-2 w-full bg-gradient-to-br from-blue-500 to-blue-700 text-white lg:w-1/2 text-center" href="{{ route('logout') }}">Sair</a>
+            <button class="shadow-2xl rounded-xl p-2 w-full bg-gradient-to-br from-blue-500 to-blue-700 text-white lg:w-1/2"><a  href="{{ route('logout') }}">Sair</a></button>
         </div>
     </div>
 </div>
