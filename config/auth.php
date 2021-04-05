@@ -41,25 +41,25 @@ return [
             'provider' => 'users',
         ],
 
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
-            'hash' => false,
-        ],
-
-        'doador' => [
-            'driver' => 'session',
-            'provider' => 'doadores',
-        ],
-
         'beneficiado' => [
             'driver' => 'session',
             'provider' => 'beneficiados',
         ],
 
+        'doador' => [
+            'driver' => 'session',
+            'provider' => 'doadors',
+        ],
+
         'escola' => [
             'driver' => 'session',
             'provider' => 'escolas',
+        ],
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
         ],
     ],
 
@@ -86,19 +86,19 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'doadores' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\doardor::class,
-        ],
-
         'beneficiados' => [
             'driver' => 'eloquent',
-            'model' => App\Models\beneficiado::class,
+            'model' => App\Models\Beneficiado::class,
+        ],
+
+        'doadors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Doador::class,
         ],
 
         'escolas' => [
             'driver' => 'eloquent',
-            'model' => App\Models\escola::class,
+            'model' => App\Models\Escola::class,
         ],
 
         // 'users' => [

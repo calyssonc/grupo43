@@ -1,29 +1,27 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EscolaController;
-use App\Http\Controllers\FilhoController;
-
-//Rota get para tela de cadastro de escola
-Route::get('escola/cadastro',[EscolaController::class, 'cadastro'])->name('escola.cadastro');
-//Rota post para cadastro de formulario de escola
-Route::post('escola/cadastro',[EscolaController::class, 'store'])->name('escola.store');
-
-//Rota get para tela de cadastro do filho
-Route::get('filho/cadastro',[FilhoController::class, 'cadastro'])->name('filho.cadastro');
-//Rota post para cadastro de formulario de escola
-Route::post('filho/cadastro',[FilhoController::class, 'store'])->name('filho.store');
-
-
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+//Redireciona automaticamente para o dashboard correspondente
+Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::get('/login',[LoginController::class,'showLoginForm'])->name('login');
+Route::post('/login',[LoginController::class,'login'])->name('login.submit');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 
+require __DIR__ . '/_beneficiado.php';
+require __DIR__ . '/_doador.php';
+require __DIR__ . '/_escola.php';
+require __DIR__ . '/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

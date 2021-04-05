@@ -15,7 +15,16 @@ class CreateBeneficiadosTable extends Migration
     {
         Schema::create('beneficiados', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
+
+            $table->string('localizacao');
+            $table->string('cpf',11)->unique();
+            $table->string('telefone',11)->unique();
         });
     }
 

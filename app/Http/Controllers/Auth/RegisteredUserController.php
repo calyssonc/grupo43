@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Beneficiado;
+use App\Models\Doador;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -32,6 +34,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -41,8 +44,15 @@ class RegisteredUserController extends Controller
         Auth::login($user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            //'localizacao' => $request->localizacao,
+            //'cpf' => $request->cpf,
+            //'telefone' => $request->telefone,
             'password' => Hash::make($request->password),
         ]));
+
+        Auth::attempt(['email' => $request->name, 'password' => Hash::make($request->password)]);
+
+        $user->attachRole($request->role_id);
 
         event(new Registered($user));
 
