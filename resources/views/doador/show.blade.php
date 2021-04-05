@@ -10,6 +10,12 @@
             <div class="flex justify-center items-center h-full w-full">
                 <p id="imagem1" class="rounded-full h-48 w-48"></p>
             </div>
+                <div class="flex flex-col">
+                    <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Editar Perfil</button>
+                    <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Medalhas</button>
+                    <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Lista de amigos</button>
+                    <a class="bg-blue-500 rounded text-white px-5 p-1 m-2 text-center" href="{{ route('logout') }}">Sair</a>
+                </div>
         </div>
         <div class="h-2/6 md:h-full w-full md:w-4/5   ">
             <div class="w-full flex justify-center items-center md:mt-20">
@@ -34,7 +40,7 @@
                     <input class="h-20 md:h-52 w-4/5 rounded-2xl" type="text" placeholder="Descrição...">
                 </div>
                 <div class="w-full flex justify-center items-center">
-                    <div class="w-4/5 md:mt-10">
+                    <div class="w-4/5 md:mt-0">
                         <p class="font-bold mt-2">Últimas conquistas</p>
                         <div class="flex flex-row space-x-10 items-center justify-center md:justify-start">
                             <div class="bg-white rounded-full mt-2 h-10 md:h-20 w-10 md:w-20 flex justify-center items-center">
@@ -57,16 +63,7 @@
                 </div>
             </div>
         </div>
-        <div class="h-2/6 md:h-1/2 w-full md:w-1/5 md:order-2">
-            <div class="flex justify-center items-center h-full md:h-3/5 w-full">
-                <div class="flex flex-col">
-                    <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Editar Perfil</button>
-                    <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Medalhas</button>
-                    <button class="bg-blue-500 rounded text-white px-5 p-1 m-2">Lista de amigos</button>
-                    <a class="bg-blue-500 rounded text-white px-5 p-1 m-2 text-center" href="{{ route('logout') }}">Sair</a>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
     {{-- Pontos --}}
