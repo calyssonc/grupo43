@@ -1,4 +1,4 @@
-<nav style="background-color: white;" class="navbar navbar-expand-lg navbar-light bg-light">
+<nav style="background-color: white;" class="navbar fixed w-full navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">DoaUP!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,13 +51,6 @@
                 <div class="md:ml-4">
                     <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
                         Contato
-                    </a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <div class="md:ml-4">
-                    <a class="block hover:underdivne py-2 hover:text-black md:p-0" href="#">
-                        Galeria
                     </a>
                 </div>
             </li>

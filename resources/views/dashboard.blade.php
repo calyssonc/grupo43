@@ -1,6 +1,6 @@
 @extends('template/template')
 
-@section('title','Escola Index')
+@section('title','DOAUP')
 
 @section('content')
     <div id="imagem1" class="flex flex-col w-auto h-screen text-center">
