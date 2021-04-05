@@ -1,12 +1,9 @@
 <?php
 
 use App\Http\Controllers\DoadorController;
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth:doador']], function () {
-    //Rota temporária para index
-    Route::get('/doador/index', [DoadorController::class, 'index'])->name('doador.index');
     //Rota para realizar pesquisa por doadors
     Route::any('/doador/search', [DoadorController::class, 'search'])->name('doador.search');
     //Rota delete para deletar doador do banco de dados
@@ -21,3 +18,7 @@ Route::group(['middleware' => ['auth:doador']], function () {
 Route::get('/doador/cadastro', [DoadorController::class, 'cadastro'])->name('doador.cadastro');
 //Rota para realizar o cadastro
 Route::post('/doador/cadastro', [DoadorController::class, 'store'])->name('doador.store');
+//Rota para realizar a doação
+Route::get('/doador/doar-material/{id}', [DoadorController::class, 'doarMaterial'])->name('doador.doarMaterial');
+//Rota temporária para index
+Route::get('/doador/index', [DoadorController::class, 'index'])->name('doador.index');

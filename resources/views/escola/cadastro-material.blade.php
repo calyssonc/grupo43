@@ -1,6 +1,6 @@
 @extends('template/template')
 
-@section('title','Cadastro de Escola')
+@section('title','Cadastro de materiais')
 
 @section('content')
 
@@ -29,23 +29,18 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
-            <!-- ID escola -->
-            <div>
-                <x-label for="id_escola" :value="__('Escola')" />
-                <select class="form-control" name="id_escola">
-                    @foreach($escolas as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
-                    @endforeach
-                </select>
-            </div>
+
+            @if (Auth::guard('escola')->check())
+                <input type="hidden" name="id_escola" id="id_escola" value="{{ Auth::guard('escola')->user()->id }}">
+            @endif
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                {{-- <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
-                </a>
+                </a> --}}
 
                 <x-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Cadastrar') }}
                 </x-button>
             </div>
         </form>

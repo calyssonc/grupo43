@@ -30,10 +30,7 @@ class EscolaController extends Controller
 
     //Apresentar view de cadastro
     public function cadastroMaterial(){
-        if (!$escolas = Escola::all(['id', 'name'])) {
-            return redirect()->route('beneficiado.index');
-        }
-        return view('escola.cadastro-material',compact('escolas'));
+        return view('escola.cadastro-material');
     }
 
     //Realiza o cadastro de uma nova escola
@@ -62,6 +59,7 @@ class EscolaController extends Controller
     //Realiza o cadastro de uma nova escola
     public function storeMaterial(StoreMaterial $request)
     {
+
         if(Material::create($request->all())){
             return redirect()
             ->route('escola.index')
