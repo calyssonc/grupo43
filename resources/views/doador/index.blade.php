@@ -23,31 +23,6 @@
                     </svg>
                 </button>
             </div>
-            <!--
-            <div class="flex flex-row ...">
-                <select id="estado" name="estado" class="m-2 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option value="" disabled selected>Estado</option>
-                    <option>São Paulo</option>
-                    <option>Ceara</option>
-                    <option>Santa Catarina</option>
-                </select>
-                <select id="cidade" name="cidade" class="m-2 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option value="" disabled selected>Cidade</option>
-                    <option>São Paulo</option>
-                    <option>Mongaguá</option>
-                    <option>Santos</option>
-                    <option>São Vicente</option>
-                    <option>CiceroCity</option>
-                    <option>DafneCity</option>
-                </select>
-                <select id="bairro" name="bairro" class="m-2 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option value="" disabled selected>Bairro</option>
-                    <option>Aguápeu</option>
-                    <option>Parque Continental</option>
-                    <option>Aparecida</option>
-                </select>
-            </div>
-            -->
         </form>
 
 
