@@ -1,16 +1,20 @@
 
-<p align="center">
-  <a href="https://github.com/calyssonc/grupo43/blob/DEV/LICENSE">
-  <img alt="lICENSE" src="https://img.shields.io/github/license/calyssonc/grupo43?color=orange&style=plastic">
-  
- 
-</p>
+<h1 align="center">
+<a href="http://rafaux.com/jobs/doaup/public/dashboard">
+   📚Doaup!📚
+</h1>
+
+
+
 <h1 align="center">
     <img alt="Doaup_Banner" title="Doaup_Banner" src="public\image\Banner_inicial.jpg" />
 </h1>
 
+---
+
 <h4 align="center"> 
-	🚧  Doaup ♻️ Em construção 🚀 🚧
+  <a href="http://rafaux.com/jobs/doaup/public/dashboard">
+	🚧  Em construção 🚧
 </h4>
 
 <p align="center">
@@ -45,7 +49,7 @@ O Programa de formação é uma experiência online que dura 2 semanas, e tem co
   - [x] O doador pode escolher crianças para fazerem a doação.
   - [x] Escolas podem se cadastrar.
   - [x] Escolas podem colocar sua lista de materiais.
-  - [ ] Filtro por localidade(Facilita para o doador).
+  - [x] Filtro por localidade(Facilita para o doador).
   - [ ] Gamificação de Xp para doadores. 
 
 ---
@@ -63,13 +67,8 @@ O layout da aplicação está disponível no Figma:
 🚧 Em desenvolvimento 🚧
 
 <p align="top"style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="Mobile_Index" title="Mobile_Index" src="public\image\mobile_Index.png"width="150" >
+  <img alt="Mobile_Index" title="Mobile_Index" src="public\image\MobileDoaup.gif"width="200" >
 
-  <img alt="Mobile_Perfil_Doador" title="Mobile_Perfil_Doador" src="public\image\mobile_Perfil_Doador.png" width="162px">
-
-   <img alt="mobile_Perfil_Escola" title="mobile_Perfil_Escola" src="public\image\mobile_Perfil_Escola.png" width="170px"> 
-
-<img alt="mobile_Perfil_Beneficiado" title="mobile_Perfil_Beneficiado" src="public\image\mobile_Perfil_Beneficiado.png" width="170px"> 
 
 </p>
 
@@ -79,12 +78,8 @@ O layout da aplicação está disponível no Figma:
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
 
-  <img alt="Perfil_Escola" title="Perfil_Escola" src="public\image\Perfil_Escola.png" width="400px">
+  <img alt="Perfil_Escola" title="Perfil_Escola" src="public\image\WebDoaup.gif" width="">
 
-  <img alt="Perfil_Beneficiado" title="Perfil_Beneficiado" src="public\image\Perfil_Beneficiado.png" width="400px" >
-
-  <img alt="Perfil_Doador" title="Perfil_Doador" src="public\image\Perfil_Doador.png" width="400px" >
-</p>
 
 ---
 
@@ -92,32 +87,49 @@ O layout da aplicação está disponível no Figma:
 
 💡O Frontend precisa que o Backend esteja sendo executado para funcionar.
 
+---
+
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Xampp](https://www.apachefriends.org/pt_br/index.html) (banco de dados MySQL), [Composer](https://getcomposer.org/) (é uma ferramenta para o gerenciamento de dependências em PHP) e o [GitHub](https://github.com/). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
 
-#### 🎲 Rodando o Projeto (servidor)
+#### 🎲 Rodando o Projeto 
 
 ```bash
 
 # Clone este repositório
 $ git clone https://github.com/calyssonc/grupo43
 
-# Acesse a pasta do projeto e abrir no VSCode
-$ cd 
+# Acesse a pasta do projeto no terminal do seu PC
+$ cd grupo43
 
-# Abrir o VSCode
-$ cd server
+# Digitar no terminal(Para baixar todas as dependencias do projeto)"Vai demorar um pouco".
+$ composer install
 
-# Instale as dependências
-$ npm install
+# Digitar no terminal
+$ copy .env.example .env
 
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
+# Digitar no terminal
+$ php artisan key:generate
 
-# O servidor inciará na porta:3333 - acesse http://localhost:3333 
+# Configurando banco de dados no código.
+("Exemplo")
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1 ("Caminho do seu banco de dados").
+DB_PORT=3306 ("Porta configurada do seu banco de dados").
+DB_DATABASE=laravel ("O nome do DB criado").
+DB_USERNAME=root ("Configuração pessoal").
+DB_PASSWORD= ("Sua senha do banco de dados").
+
+# Digitar no terminal, dentro da pasta do projeto(Cadastrando as tabelas e relacionamentos no DB)
+$ php artisan migrate
+
+# Digitar no terminal
+php artisan serve
+
+# O servidor inciará na porta:8000 - acesse http://localhost:8000
 
 ```
 
@@ -144,8 +156,8 @@ $ npm run dev:server
 -   Linguagem de marcação: **[Markdown](https://docs.pipz.com/central-de-ajuda/learning-center/guia-basico-de-markdown#open)**
 -   Diagramas e UML:  **[Drawio](https://drive.google.com/file/d/1jb0uTJ3C2xzzjFBaJ_n0w4e7omlB2vtf/view?pli=1)**
 -   Userflow:  **[Lucidchart](https://lucid.app/lucidchart/52921965-3807-456f-b99e-866596fe45b5/edit?shared=true&page=0_0#)**
-
--   Ferramenta de teste e documentação de rotas:  **[Postman](https://documenter.getpostman.com/view/15121348/TzCMc7oU)**
+-   Ferramenta de teste e documentação de rotas:  **[Postman](https://documenter.getpostman.com/view/15121348/TzCQc76w)**
+-   Plataforma de Artigos de design UX:  **[Behance](https://www.behance.net/gallery/116822585/Artigo-DoaUP-Hackathon-FCamara-2021)**
 
 
 ---
@@ -159,14 +171,19 @@ $ npm run dev:server
     <td align="center"><a href="https://www.linkedin.com/in/carlos-eduardo-martins-filho-8a38b3174/"><img style="border-radius: 50%;" src="public\image\Autores\Kadu.png" width="90px;" alt=""/><br /><sub><b>Carlos Eduardo</b></sub></a><br /><a href="https://www.linkedin.com/in/carlos-eduardo-martins-filho-8a38b3174/" title="Carlos_Perfil">👾</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/yan-phillipe-silva-de-barros-820aa1ba/"><img style="border-radius: 50%;" src="public\image\Autores\Yan.png" width="105px;" alt=""/><br /><sub><b>Yan Phillipe</b></sub></a><br /><a href="https://www.linkedin.com/in/yan-phillipe-silva-de-barros-820aa1ba/" title="Yan_Perfil">🚀</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/guydo-ventura-b7b60520a/"><img style="border-radius: 50%;" src="public\image\Autores\Guydo Ventura.png" width="100px;" alt=""/><br /><sub><b>Guydo Ventura</b></sub></a><br /><a href="https://www.linkedin.com/in/guydo-ventura-b7b60520a/" title="Guydo_Perfil">👾</a></td>
-    
+
   </tr>
 </table>
 
 ## 📝 Licença
 
-Este projeto esta sobe a licença [MIT](https://github.com/calyssonc/grupo43/blob/DEV/LICENSE).
+Este projeto esta sobe a licença.
+<p align="">
+  <a href="https://github.com/calyssonc/grupo43/blob/DEV/LICENSE">
+  <img alt="lICENSE" src="https://img.shields.io/github/license/calyssonc/grupo43?color=orange&style=plastic">
+</p>
 
 ---
 
 🧡 Nós somos aqueles que deixam o dia mais brilhante. 🧡 
+<a href="https://github.com/calyssonc/grupo43/blob/DEV/LICENSE">
