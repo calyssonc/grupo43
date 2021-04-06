@@ -6,6 +6,8 @@
 
 <div class="">
 
+    <div class="pt-32"></div>
+
     <table class="table table-hover">
         <thead>
             <tr>
@@ -40,7 +42,9 @@
         </thead>
     </table>
 
-    <a href="{{ route('escola.cadastroMaterial') }}">cadastrar material</a>
+    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{{ route('escola.cadastroMaterial') }}">cadastrar material</a>
+    <div class="mb-12" ></div>
+
 </div>
 
 <link href="https://unpkg.com/tailwindcss@%5E2/dist/tailwind.min.css" rel="stylesheet">
